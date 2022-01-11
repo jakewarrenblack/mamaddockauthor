@@ -1,27 +1,36 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style>
+@import "assets/colors.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: var(--white);
+  /* margin-top: 60px; */
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("./assets/fonts/Oswald.ttf");
+}
+@font-face {
+  font-family: "STIXTwo Italic";
+  src: url("./assets/fonts/STIXTwo_Italic.ttf");
+}
+@font-face {
+  font-family: "STIXTwo";
+  src: url("./assets/fonts/STIXTwo.ttf");
 }
 </style>
