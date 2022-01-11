@@ -27,7 +27,7 @@ export default {
 <style scoped>
 @import "../assets/colors.css";
 header {
-  background: var(--crimson);
+  /* background: var(--crimson); */
   padding: 46px 0 90px;
 }
 #container {
