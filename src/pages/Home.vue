@@ -51,7 +51,7 @@ export default {
       baseColor: 0x20202,
       blurFactor: 0.41,
       speed: 0.4,
-      zoom: 0.5,
+      zoom: 1,
     });
   },
   beforeDestroy() {
