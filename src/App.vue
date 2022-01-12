@@ -33,4 +33,9 @@ export default {
   font-family: "STIXTwo";
   src: url("./assets/fonts/STIXTwo.ttf");
 }
+
+@font-face {
+  font-family: "Prociono";
+  src: url("./assets/fonts/Prociono.otf");
+}
 </style>
