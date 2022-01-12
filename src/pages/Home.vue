@@ -70,10 +70,29 @@
         </div>
       </div>
     </section>
+    <section id="book_images">
+      <div id="example">
+        <carousel-3d :inverse-scaling="1500" :space="800">
+          <slide v-for="slide in slides" :index="slide.img" :key="slide.img">
+            <!-- <span class="title">You know</span>
+            <p>
+              You know, being a test pilot isn't always the healthiest business
+              in the world.
+            </p> -->
+            <img
+              class="carousel_img"
+              :src="require(`@/assets/review_images/${slide.img}.jpg`)"
+            />
+            <span class="carousel_img_caption">{{ slide.caption }}</span>
+          </slide>
+        </carousel-3d>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
+import { Carousel3d, Slide } from "vue-carousel-3d";
 import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import * as THREE from "three";
@@ -84,9 +103,39 @@ export default {
   components: {
     Navbar,
     Divider,
+    Carousel3d,
+    Slide,
   },
   data() {
-    return {};
+    return {
+      slides: [
+        {
+          img: 0,
+          caption: "The lotus flower - engraved on Asai Nara’s Katana sword.",
+        },
+        { img: 1, caption: "The Kelpie – a Scottish mythical creature." },
+        {
+          img: 2,
+          caption:
+            "fictional map of the lower Highlands - circa late 1500’s early 1600’s – by Lewis Hickson - Instagram    fantasy_map_cartographer",
+        },
+        { img: 3, caption: "The Kelpie – a Scottish mythical creature." },
+        {
+          img: 4,
+          caption: "Scottish dirk (dagger) belonging to Eleanor Shaw.",
+        },
+        {
+          img: 5,
+          caption:
+            "Oran Shaw’s coffer (chest) - contains hidden secrets from his past.",
+        },
+        {
+          img: 6,
+          caption:
+            "The Shaw crest (broach) – made from solid silver. Oran had this made especially for himself, to give him a sense of ‘belonging’, linking him to his ancestors who were of Pictish origin.",
+        },
+      ],
+    };
   },
   methods: {},
   mounted() {
@@ -117,6 +166,9 @@ export default {
 
 <style scoped>
 @import "../assets/colors.css";
+#container {
+  background: var(--silver);
+}
 #header {
   /* background: var(--crimson); */
   position: relative;
@@ -256,6 +308,38 @@ export default {
   padding-bottom: 0;
 }
 
+/* Book gallery */
+
+#book_images {
+  background: var(--silver);
+  padding: 5rem 0;
+}
+
+.carousel_img {
+  position: relative;
+}
+
+.carousel_img_caption {
+  color: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.carousel_img_caption:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
 /* Helpers */
 
 .two-rem {
@@ -292,5 +376,42 @@ export default {
 
 .align-items-center {
   align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    letter-spacing: 0.5rem;
+  }
+  .four-rem {
+    font-size: 3rem;
+  }
+  .short_bio_container {
+    font-size: 4rem;
+  }
+  .author_image {
+    margin: 0;
+    background-size: cover;
+    height: 30rem;
+    background-position: center;
+  }
+  .author_bio_text {
+    margin: 0;
+    text-align: center;
+  }
+  .full_bio_container {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
