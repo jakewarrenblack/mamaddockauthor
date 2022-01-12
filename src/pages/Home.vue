@@ -70,15 +70,42 @@
         </div>
       </div>
     </section>
+
+    <Divider />
+    <section id="full_bio">
+      <div
+        class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
+      >
+        <div
+          class="author_image bg-size-cover bg-position-center book-image"
+        ></div>
+        <div class="author_bio_text">
+          <h2 class="author_bio_title">Beyond the Darkness</h2>
+          <h5 class="author_bio_body">
+            It belongs to just one-the Magus-Lord of all Warlocks-and he belongs
+            to it. But the world of mortals has been overshadowed by a menace:
+            an evil entity that would have it in order to dominate and destroy
+            all that is good.
+
+            <br />
+
+            And yet, all is not lost. From within this stone, a light is about
+            to re-ignite by innocence, instilling hope into the hearts of those
+            who would risk everything, to see it placed in the hands of the
+            chosen one-to see it shine beyond the darkness.
+          </h5>
+        </div>
+      </div>
+    </section>
     <section id="book_images">
       <div id="example">
-        <carousel-3d :inverse-scaling="1500" :space="800">
+        <carousel-3d
+          :width="400"
+          :height="400"
+          :inverse-scaling="1500"
+          :space="800"
+        >
           <slide v-for="slide in slides" :index="slide.img" :key="slide.img">
-            <!-- <span class="title">You know</span>
-            <p>
-              You know, being a test pilot isn't always the healthiest business
-              in the world.
-            </p> -->
             <img
               class="carousel_img"
               :src="require(`@/assets/review_images/${slide.img}.jpg`)"
@@ -155,6 +182,15 @@ export default {
       speed: 0.4,
       zoom: 1,
     });
+
+    // var canvas = document.querySelector(".vanta-canvas");
+
+    // canvas.style.zIndex = "1";
+    // canvas.style.top = "0";
+    // canvas.style.color = "red";
+    // canvas.style.left = "0";
+    // canvas.style.width = "100%";
+    // canvas.style.height = "100vh";
   },
   beforeDestroy() {
     if (this.vantaEffect) {
@@ -166,6 +202,7 @@ export default {
 
 <style scoped>
 @import "../assets/colors.css";
+
 #container {
   background: var(--silver);
 }
@@ -256,6 +293,10 @@ export default {
   background-image: url("https://images.gr-assets.com/authors/1628960457p5/21176498.jpg");
 }
 
+.book-image {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.LKTfC2I1I_e094f0yXKRKgAAAA%26pid%3DApi&f=1");
+}
+
 .full_bio_container {
   max-width: 1800px;
   margin: auto;
@@ -309,6 +350,11 @@ export default {
 }
 
 /* Book gallery */
+.carousel_img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
 
 #book_images {
   background: var(--silver);
@@ -341,6 +387,22 @@ export default {
 }
 
 /* Helpers */
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.bg-size-cover {
+  background-size: cover;
+}
+
+.bg-size-contain {
+  background-size: contain;
+}
+
+.bg-position-center {
+  background-position: center;
+}
 
 .two-rem {
   font-size: 2rem;
