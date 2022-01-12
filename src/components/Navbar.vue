@@ -46,6 +46,29 @@ ul {
   list-style: none;
   align-items: center;
 }
+li {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+li::after {
+  transition: all 0.3s ease;
+  opacity: 0;
+  content: "●";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li:hover::after {
+  opacity: 1;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
