@@ -97,6 +97,11 @@
         </div>
       </div>
     </section>
+    <br /><br />
+    <Divider />
+    <h2 class="author_bio_title">Concept Art</h2>
+    <br /><br />
+    <Divider />
     <section id="book_images">
       <div id="example">
         <carousel-3d
