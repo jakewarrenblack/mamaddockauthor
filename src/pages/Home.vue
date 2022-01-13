@@ -30,7 +30,7 @@
       <div
         class="full_bio_container d-flex justify-space-between align-items-center"
       >
-        <div class="author_image"></div>
+        <div class="author_image clip_towards_left"></div>
         <div class="author_bio_text">
           <h2 class="author_bio_title">About the Author</h2>
           <h5 class="author_bio_body">
@@ -77,7 +77,7 @@
         class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
       >
         <div
-          class="author_image bg-size-cover bg-position-center book-image"
+          class="author_image bg-size-cover bg-position-center book-image clip_towards_right_pointed_bottom"
         ></div>
         <div class="author_bio_text">
           <h2 class="author_bio_title">Beyond the Darkness</h2>
@@ -438,6 +438,18 @@ export default {
 
 .align-items-center {
   align-items: center;
+}
+
+.clip_towards_left {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+}
+
+.clip_towards_right {
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+}
+
+.clip_towards_right_pointed_bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 52%, 23% 100%, 0 78%);
 }
 
 @media only screen and (max-width: 600px) {
