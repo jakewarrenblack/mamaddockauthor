@@ -77,9 +77,14 @@ li:hover::after {
   }
 
   ul {
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-left: 0;
     padding-left: 0;
+    border-bottom: 2px solid var(--white);
+  }
+
+  header {
+    padding: none;
   }
 }
 
@@ -90,7 +95,7 @@ li:hover::after {
   }
 
   ul {
-    flex-direction: column;
+    /* flex-direction: column; */
     margin-left: 0;
     padding-left: 0;
   }

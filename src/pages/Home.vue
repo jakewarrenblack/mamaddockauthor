@@ -5,8 +5,10 @@
       <section id="header">
         <div class="header_container">
           <div class="hero_text">
-            <h3 class="author_short_desc">Lorem ipsum Ipsum Dolor Sit Amet</h3>
-            <h1 class="author_name">M.A Maddock</h1>
+            <h3 data-aos="fade-down" class="author_short_desc">
+              Lorem ipsum Ipsum Dolor Sit Amet
+            </h3>
+            <h1 data-aos="fade-up" class="author_name">M.A Maddock</h1>
           </div>
           <div class="img_contain">
             <div class="img_contain_content">
@@ -30,8 +32,8 @@
       <div
         class="full_bio_container d-flex justify-space-between align-items-center"
       >
-        <div class="author_image clip_towards_left"></div>
-        <div class="author_bio_text">
+        <div data-aos="fade-right" class="author_image clip_towards_left"></div>
+        <div data-aos="fade-left" class="author_bio_text">
           <h2 class="author_bio_title">About the Author</h2>
           <h5 class="author_bio_body">
             Asking an Irish person to write a ‘few’ words about themselves is,
@@ -77,9 +79,10 @@
         class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
       >
         <div
+          data-aos="fade-left"
           class="author_image bg-size-cover bg-position-center book-image clip_towards_right_pointed_bottom"
         ></div>
-        <div class="author_bio_text">
+        <div data-aos="fade-right" class="author_bio_text">
           <h2 class="author_bio_title">Beyond the Darkness</h2>
           <h5 class="author_bio_body">
             It belongs to just one-the Magus-Lord of all Warlocks-and he belongs
@@ -99,10 +102,10 @@
     </section>
     <br /><br />
     <Divider />
-    <h2 class="author_bio_title">Concept Art</h2>
+    <h2 data-aos="fade-up" class="author_bio_title">Concept Art</h2>
     <br /><br />
     <Divider />
-    <section id="book_images">
+    <section data-aos="fade-up" id="book_images">
       <div id="example">
         <carousel-3d
           :width="400"
@@ -295,7 +298,7 @@ export default {
 
 /* Author full bio section */
 .author_image {
-  background-image: url("https://images.gr-assets.com/authors/1628960457p5/21176498.jpg");
+  background-image: url("~@/assets/bio_photo.jpg");
 }
 
 .book-image {
@@ -455,6 +458,16 @@ export default {
 
 .clip_towards_right_pointed_bottom {
   clip-path: polygon(0 0, 100% 0, 100% 52%, 23% 100%, 0 78%);
+}
+
+@media only screen and (max-width: 600px) {
+  .hero_text {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 18vh;
+  }
 }
 
 @media only screen and (max-width: 600px) {
