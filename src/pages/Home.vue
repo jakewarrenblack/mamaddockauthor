@@ -108,6 +108,7 @@
     <section data-aos="fade-up" id="book_images">
       <div id="example">
         <carousel-3d
+          :startIndex="6"
           :width="400"
           :height="400"
           :inverse-scaling="1500"
@@ -283,6 +284,7 @@ export default {
   color: var(--white);
 }
 .author_short_desc {
+  font-family: "STIXTwo Italic";
   font-size: 2rem;
   font-weight: 500;
   margin: 0;
