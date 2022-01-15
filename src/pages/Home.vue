@@ -218,15 +218,6 @@ export default {
       speed: 0.4,
       zoom: 1,
     });
-
-    // var canvas = document.querySelector(".vanta-canvas");
-
-    // canvas.style.zIndex = "1";
-    // canvas.style.top = "0";
-    // canvas.style.color = "red";
-    // canvas.style.left = "0";
-    // canvas.style.width = "100%";
-    // canvas.style.height = "100vh";
   },
   beforeDestroy() {
     if (this.vantaEffect) {
@@ -238,6 +229,7 @@ export default {
 
 <style scoped>
 @import "../assets/colors.css";
+@import "../assets/helpers.css";
 
 #container {
   background: var(--silver);
@@ -341,7 +333,9 @@ export default {
 
 .author_image {
   background-attachment: fixed;
-  background-size: contain;
+  /* background-size: contain; */
+  /* contain seems to cause second image to break on Chrome */
+  background-size: cover;
   background-repeat: no-repeat;
   height: 55rem;
   width: 75%;
@@ -443,71 +437,6 @@ export default {
 
 .flip_control:hover {
   cursor: pointer;
-}
-/* Helpers */
-
-.row-reverse {
-  flex-direction: row-reverse;
-}
-
-.bg-size-cover {
-  background-size: cover;
-}
-
-.bg-size-contain {
-  background-size: contain;
-}
-
-.bg-position-center {
-  background-position: center;
-}
-
-.two-rem {
-  font-size: 2rem;
-}
-
-.four-rem {
-  font-size: 4rem;
-}
-
-.prociono {
-  font-family: "Prociono", serif;
-}
-
-.STIXTwo {
-  font-family: "STIXTwo", serif;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.justify-content-center {
-  justify-content: center;
-}
-
-.justify-space-between {
-  justify-content: space-between;
-}
-
-.justify-space-around {
-  justify-content: space-around;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.clip_towards_left {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
-}
-
-.clip_towards_right {
-  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
-}
-
-.clip_towards_right_pointed_bottom {
-  clip-path: polygon(0 0, 100% 0, 100% 52%, 23% 100%, 0 78%);
 }
 
 @media only screen and (max-width: 600px) {
