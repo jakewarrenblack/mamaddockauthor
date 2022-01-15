@@ -77,7 +77,7 @@
     </section>
 
     <Divider />
-    <section id="full_bio">
+    <section id="full_bio" ref="bookSection">
       <div
         class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
       >
@@ -100,6 +100,7 @@
             who would risk everything, to see it placed in the hands of the
             chosen one-to see it shine beyond the darkness.
           </h5>
+          <button class="swiper" @click="reviews()">Reviews</button>
         </div>
       </div>
     </section>
@@ -144,6 +145,7 @@
         </Flipbook>
       </div>
     </section>
+    <Footer />
   </div>
 </template>
 
@@ -151,6 +153,7 @@
 import { Carousel3d, Slide } from "vue-carousel-3d";
 import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
+import Footer from "@/components/Footer";
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
 import Flipbook from "flipbook-vue";
@@ -166,6 +169,7 @@ export default {
 
   components: {
     Flipbook,
+    Footer,
     Navbar,
     Divider,
     Carousel3d,
@@ -173,6 +177,7 @@ export default {
   },
   data() {
     return {
+      // reviewSwipeCount: 1,
       pages: [null, page1, page2, page3, page4],
       slides: [
         {
@@ -203,7 +208,37 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    reviews() {},
+    // swipeReviews() {
+    //   console.log("running");
+    //   var bookSection = this.$refs.bookSection;
+    //   var reviewSection = this.$refs.reviews;
+    //   // odd, eg first click
+    //   if (this.reviewSwipeCount % 2 != 0) {
+    //     bookSection.style.transform = "translateX(100%)";
+    //     reviewSection.style.transform = "translateX(0%)";
+    //     reviewSection.style.display = "block";
+    //     bookSection.style.display = "none";
+    //   } else {
+    //     bookSection.style.transform = "translateX(0%)";
+    //     reviewSection.style.transform = "translateX(-100%)";
+    //     reviewSection.style.display = "none";
+    //     bookSection.style.display = "block";
+    //   }
+    //   this.reviewSwipeCount++;
+    // if (
+    //   bookSection.style.transform ||
+    //   bookSection.style.transform == "translateX(0%)"
+    // ) {
+    //   console.log("true, show books");
+    // } else {
+    //   console.log("false, show reviews");
+    //   bookSection.style.transform = "translateX(100%)";
+    //   reviewSection.style.transform = "translateX(0%)";
+    // }
+    //},
+  },
   mounted() {
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
