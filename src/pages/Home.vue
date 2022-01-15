@@ -124,6 +124,23 @@
         </carousel-3d>
       </div>
     </section>
+    <section class="balloch_castle">
+      <div>
+        <Flipbook class="flipbook" :pages="pages" v-slot="flipbook">
+          <div>
+            <button class="flip_control" @click="flipbook.flipLeft">
+              Previous Page
+            </button>
+
+            <button class="flip_control" @click="flipbook.zoomOut">-</button>
+            <button class="flip_control" @click="flipbook.zoomIn">+</button>
+            <button class="flip_control" @click="flipbook.flipRight">
+              Next Page
+            </button>
+          </div>
+        </Flipbook>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -133,10 +150,19 @@ import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
+import Flipbook from "flipbook-vue";
+
+// Flipbook pages
+import page1 from "@/assets/balloch_castle/1.jpg";
+import page2 from "@/assets/balloch_castle/2.jpg";
+import page3 from "@/assets/balloch_castle/3.jpg";
+import page4 from "@/assets/balloch_castle/4.jpg";
 
 export default {
   name: "Home",
+
   components: {
+    Flipbook,
     Navbar,
     Divider,
     Carousel3d,
@@ -144,6 +170,7 @@ export default {
   },
   data() {
     return {
+      pages: [null, page1, page2, page3, page4],
       slides: [
         {
           img: 0,
@@ -396,6 +423,27 @@ export default {
   cursor: pointer;
 }
 
+/* Balloch Castle */
+
+.flipbook {
+  margin: auto;
+}
+
+.flip_control {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  font-family: "STIXTwo";
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  /* border: 2px solid var(--crimson); */
+  color: var(--white);
+}
+
+.flip_control:hover {
+  cursor: pointer;
+}
 /* Helpers */
 
 .row-reverse {

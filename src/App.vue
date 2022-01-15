@@ -14,6 +14,10 @@ export default {
 <style>
 @import "assets/colors.css";
 
+html {
+  background: var(--silver);
+}
+
 canvas {
   width: 100% !important;
 }
