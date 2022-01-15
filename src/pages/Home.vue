@@ -32,7 +32,10 @@
       <div
         class="full_bio_container d-flex justify-space-between align-items-center"
       >
-        <div data-aos="fade-right" class="author_image clip_towards_left"></div>
+        <div
+          data-aos="fade-right"
+          class="author_image bg_size_cover clip_towards_left"
+        ></div>
         <div data-aos="fade-left" class="author_bio_text">
           <h2 class="author_bio_title">About the Author</h2>
           <h5 class="author_bio_body">
@@ -296,8 +299,6 @@ export default {
   flex-flow: column;
 }
 
-.img_contain_content {
-}
 .hero_text {
   text-align: center;
   color: var(--white);
@@ -333,13 +334,9 @@ export default {
 
 .author_image {
   background-attachment: fixed;
-  /* background-size: contain; */
-  /* contain seems to cause second image to break on Chrome */
-  background-size: cover;
   background-repeat: no-repeat;
   height: 55rem;
   width: 75%;
-  padding: m;
   margin: 4rem 4rem 0 0;
   filter: blur(5px);
   /* clip-path: polygon(
