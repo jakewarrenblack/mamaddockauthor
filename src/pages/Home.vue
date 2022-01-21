@@ -128,6 +128,31 @@
         </carousel-3d>
       </div>
     </section>
+
+    <br /><br />
+    <Divider />
+    <h2 data-aos="fade-up" class="author_bio_title">Reviews</h2>
+    <br /><br />
+    <Divider />
+    <section data-aos="fade-up" id="reviews">
+      <div class="quotation_container"></div>
+      <swiper class="review_swiper" ref="mySwiper" :options="swiperOptions">
+        <swiper-slide v-for="review in reviews" :key="review.body">
+          <div class="review_quote_contain">
+            <q class="quote_body">{{ review.body }}</q>
+            <br />
+            <h2 class="quote_credit">{{ review.credit }}</h2>
+            <h4 class="quote_credit_credential">
+              {{ review.credential }}
+            </h4>
+          </div>
+        </swiper-slide>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+        <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+      </swiper>
+    </section>
+
     <section class="balloch_castle">
       <div>
         <Flipbook class="flipbook" :pages="pages" v-slot="flipbook">
@@ -150,6 +175,9 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
+
 import { Carousel3d, Slide } from "vue-carousel-3d";
 import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
@@ -168,6 +196,8 @@ export default {
   name: "Home",
 
   components: {
+    Swiper,
+    SwiperSlide,
     Flipbook,
     Footer,
     Navbar,
@@ -175,8 +205,22 @@ export default {
     Carousel3d,
     Slide,
   },
+  directives: {
+    swiper: directive,
+  },
   data() {
     return {
+      swiperOptions: {
+        centeredSlides: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
+
       // reviewSwipeCount: 1,
       pages: [null, page1, page2, page3, page4],
       slides: [
@@ -206,39 +250,33 @@ export default {
             "The Shaw crest (broach) – made from solid silver. Oran had this made especially for himself, to give him a sense of ‘belonging’, linking him to his ancestors who were of Pictish origin.",
         },
       ],
+      reviews: [
+        {
+          body: "A tapestry of familiar mythology - and wholly original creations - weaved through a world you'll happily get lost in. A story that truly sings.",
+          credit: "Gavin Gardiner",
+          credential:
+            "Author of For Rye and The Last Testament of Crighton Smythe",
+        },
+        {
+          body: "A sumptuous slow burn of a book, in the grand style of epic fantasy, that consumes its reader and transports them to another place and time.",
+          credit: "Julia Blake",
+          credential:
+            "Author of For Rye and The Last Testament of Crighton Smythe",
+        },
+        {
+          body: "An epic historical fantasy read, enriched with unique and wonderful characters whose journey will keep you hooked from beginning to end. Maddock has an eye for detail through her incredible imagination. So glad this is a series; one book is not enough!",
+          credit: "Sarah O’Neill",
+          credential: "Author of Deadly Obsession and Fatal Beliefs",
+        },
+        {
+          body: "Masterfully weaved together, with such great flair, you can’t help but immerse yourself in the fantastical world M. A. Maddock has created. The diverse locations along with her motley cast of misfits will hold your attention from the start. The Sixth Amulet is an epic fantasy (historical) fiction read that packs a punch.",
+          credit: "Emma Moohan",
+          credential: "Actor/Writer",
+        },
+      ],
     };
   },
-  methods: {
-    reviews() {},
-    // swipeReviews() {
-    //   console.log("running");
-    //   var bookSection = this.$refs.bookSection;
-    //   var reviewSection = this.$refs.reviews;
-    //   // odd, eg first click
-    //   if (this.reviewSwipeCount % 2 != 0) {
-    //     bookSection.style.transform = "translateX(100%)";
-    //     reviewSection.style.transform = "translateX(0%)";
-    //     reviewSection.style.display = "block";
-    //     bookSection.style.display = "none";
-    //   } else {
-    //     bookSection.style.transform = "translateX(0%)";
-    //     reviewSection.style.transform = "translateX(-100%)";
-    //     reviewSection.style.display = "none";
-    //     bookSection.style.display = "block";
-    //   }
-    //   this.reviewSwipeCount++;
-    // if (
-    //   bookSection.style.transform ||
-    //   bookSection.style.transform == "translateX(0%)"
-    // ) {
-    //   console.log("true, show books");
-    // } else {
-    //   console.log("false, show reviews");
-    //   bookSection.style.transform = "translateX(100%)";
-    //   reviewSection.style.transform = "translateX(0%)";
-    // }
-    //},
-  },
+  methods: {},
   mounted() {
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
@@ -256,6 +294,11 @@ export default {
       speed: 0.4,
       zoom: 1,
     });
+
+    var swiper_wrapper = document.getElementsByClassName("swiper-wrapper");
+
+    swiper_wrapper[0].style.display = "flex";
+    swiper_wrapper[0].style.alignItems = "center";
   },
   beforeDestroy() {
     if (this.vantaEffect) {
@@ -310,15 +353,7 @@ export default {
   max-width: 1040px;
   padding: 120px 0;
 }
-/* .header_img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-top: -5%;
-  position: relative;
-  z-index: -1;
-  filter: brightness(0.4);
-} */
+
 .img_contain {
   margin-top: -5%;
   height: 50rem;
@@ -374,15 +409,6 @@ export default {
   width: 75%;
   margin: 4rem 4rem 0 0;
   filter: blur(5px);
-  /* clip-path: polygon(
-    5% 5%,
-    100% 0%,
-    100% 75%,
-    75% 75%,
-    75% 100%,
-    50% 75%,
-    0% 75%
-  ); */
 }
 
 .author_bio_text {
@@ -407,7 +433,7 @@ export default {
 .author_bio_title {
   font-size: 4rem;
   color: var(--crimson);
-  font-family: "STIXTwo";
+  font-family: "GotischA";
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -469,6 +495,80 @@ export default {
 
 .flip_control:hover {
   cursor: pointer;
+}
+
+/* Reviews */
+
+.review_swiper {
+  min-height: 20rem;
+}
+
+.quotation {
+  width: 100%;
+  height: 100%;
+  /* filter: invert(100%); */
+  filter: saturate(20);
+}
+
+.quotation_container {
+  width: 10rem;
+  height: 10rem;
+  background: url("~@/assets/quotation_vantabg.svg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rem;
+  padding: 5rem 0;
+}
+
+.swiper-container {
+  /* margin-top: 8rem; */
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.quote_credit {
+  color: var(--crimson);
+  font-weight: 700;
+}
+
+.quote_credit {
+  font-weight: lighter;
+  font-family: "GotischA";
+}
+
+.quote_body {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: 300;
+  font-family: "STIXTwo";
+}
+
+.review_quote_contain {
+  width: 75%;
+  margin: auto;
+}
+
+.quote_credit_credential {
+  font-weight: 300;
+  font-family: "STIXTwo";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--crimson);
 }
 
 @media only screen and (max-width: 600px) {

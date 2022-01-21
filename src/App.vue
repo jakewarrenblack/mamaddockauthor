@@ -48,4 +48,19 @@ canvas {
   font-family: "Prociono";
   src: url("./assets/fonts/Prociono.otf");
 }
+
+@font-face {
+  font-family: "Cloister";
+  src: url("./assets/fonts/CloisterOpti.otf");
+}
+
+@font-face {
+  font-family: "Frederick";
+  src: url("./assets/fonts/Frederick.TTF");
+}
+
+@font-face {
+  font-family: "GotischA";
+  src: url("./assets/fonts/GotischA.otf");
+}
 </style>
