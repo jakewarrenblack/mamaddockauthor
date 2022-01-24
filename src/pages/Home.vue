@@ -204,7 +204,7 @@
 
     <br /><br />
     <Divider />
-    <h2 data-aos="fade-up" class="author_bio_title">Reviews</h2>
+    <h2 data-aos="fade-up" class="author_bio_title">Acclaims</h2>
     <br /><br />
     <Divider />
     <section data-aos="fade-up" id="reviews">
@@ -711,7 +711,7 @@ export default {
   color: var(--crimson);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   .hero_text {
     height: 100vh;
     display: flex;
@@ -719,9 +719,12 @@ export default {
     justify-content: start;
     margin-top: 18vh;
   }
+  .swiper {
+    margin: auto;
+  }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   .author_short_desc {
     font-size: 1.5rem;
   }
@@ -729,7 +732,7 @@ export default {
     font-size: 3rem;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   .author_short_desc {
     font-size: 1.5rem;
   }

@@ -70,8 +70,8 @@ li:hover::after {
   opacity: 1;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Tablet size and down */
+@media only screen and (max-width: 767px) {
   nav {
     flex-direction: column;
   }
@@ -89,7 +89,7 @@ li:hover::after {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   nav {
     flex-direction: column;
   }
