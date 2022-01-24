@@ -100,7 +100,9 @@
             who would risk everything, to see it placed in the hands of the
             chosen one-to see it shine beyond the darkness.
           </h5>
-          <button class="swiper" @click="reviews()">Reviews</button>
+          <button class="swiper" @click="reviews()">
+            <span class="swiper_text">View synopsis</span>
+          </button>
         </div>
       </div>
     </section>
@@ -525,6 +527,42 @@ export default {
   align-items: center;
   margin-bottom: 10rem;
   padding: 5rem 0;
+}
+
+/* button */
+.swiper {
+  padding-left: 0;
+  background: transparent;
+  color: var(--crimson);
+  /* border: 2px solid var(--crimson); */
+
+  padding: 1rem 0;
+
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-family: "Oswald";
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  border: none;
+
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: all;
+  box-shadow: inset 0 0 0 4px var(--silver), 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.swiper:hover {
+  cursor: pointer;
+}
+
+.swiper:hover {
+  padding: 1rem 2rem;
+  justify-content: center;
+  box-shadow: inset 0 0 0 4px var(--crimson), 0 0 1px rgba(0, 0, 0, 0);
 }
 
 .swiper-container {
