@@ -88,23 +88,94 @@
         <div data-aos="fade-right" class="author_bio_text">
           <h2 class="author_bio_title">Beyond the Darkness</h2>
           <h5 class="author_bio_body">
-            It belongs to just one-the Magus-Lord of all Warlocks-and he belongs
-            to it. But the world of mortals has been overshadowed by a menace:
-            an evil entity that would have it in order to dominate and destroy
-            all that is good.
-
+            <q>In the realm of my soul, I believe him to be a great Ruler. </q>
+            <br /><cite>Lothian</cite>
+            <br />
             <br />
 
-            And yet, all is not lost. From within this stone, a light is about
-            to re-ignite by innocence, instilling hope into the hearts of those
-            who would risk everything, to see it placed in the hands of the
-            chosen one-to see it shine beyond the darkness.
+            <strong>Scotland: 1564</strong><br />
+            Deep within the bowels of Elboru, it waits—an immense force—locked
+            inside a sacred stone, destined to give its bearer the power to be a
+            formidable Ruler. It belongs to just one—the Magus—Lord of all
+            Warlocks—and he belongs to it. But the world of mortals has been
+            overshadowed by a menace: an evil entity that would have it to
+            dominate and destroy all that is good. And yet, all is not lost.
+            From within this stone, a light is about to re-ignite by innocence,
+            instilling hope into the hearts of those who would risk everything,
+            to see it placed in the hands of the chosen one—to see it shine
+            beyond the darkness.
           </h5>
-          <button class="swiper" @click="reviews()">
+          <button class="swiper" @click="show()">
             <span class="swiper_text">View synopsis</span>
           </button>
         </div>
       </div>
+
+      <modal
+        :adaptive="true"
+        :minWidth="800"
+        :minHeight="1400"
+        height="auto"
+        :scrollable="true"
+        name="synopsis-modal"
+      >
+        <article class="synopsis_contain">
+          <h1>Synopsis</h1>
+          <br />
+
+          <p>
+            <strong>Scotland 1564:</strong>
+            Oran Shaw is no ordinary man: a Warlock, determined to leave his
+            lengthy past behind, he disregards his elders, choosing to live a
+            normal life among mortals … until he crosses paths with Kristene—a
+            young, innocent woman, wrongfully accused of witchcraft. He feels
+            compelled to rescue her from her death sentence. It is an act he
+            would later regret.
+          </p>
+
+          <p>
+            Together, they flee to a new life, settling in Triora—Italy. But
+            life alters when a sinister rival from Oran’s past—Magia Nera, a
+            dark Warlock—discovers them. He secretly manipulates Kristene,
+            luring her away from Oran, bitterly ending their relationship.
+            However, his interference eventually forces the three to go their
+            separate ways.
+          </p>
+
+          <p>
+            <strong>Four decades later:</strong>
+            Oran has returned to Scotland, where he meets Rosalyn, a young widow
+            with a baby. They marry and settle in the small village of Balloch,
+            near the shores of Lac Lomond. At last, Oran feels content, living a
+            normal and peaceful life with his new family. But when Rosalyn bears
+            him a son, Gillis, life changes utterly for the reluctant Warlock.
+          </p>
+
+          <p>
+            Oran’s past creeps up on him in the form of a Sorceress, named
+            L’Ordana. He recognises her as Kristene, and there is an element of
+            evil inside her. She is not alone and wants something from him: the
+            location of a powerful amulet—the Shenn. Aware his son is destined
+            to rule over the precious item, Oran vows to protect him … no matter
+            what! Bound by duty, he is forced by his “council”—the Elliyan—to
+            seek out the Sorceress and destroy her. Oran, however, is torn
+            between their past and the present. But, when they come face to
+            face, the Warlock unexpectedly finds himself as her prisoner.
+          </p>
+
+          <p>
+            Over time, he allies with three unlikely characters, to help him
+            escape; they are not what they seem. Half-human—half Vampire, the
+            three Dhampir, Reece (a Soldier), Asai (a Samurai), and Tam (a
+            Highlander), are also L’Ordana’s prisoners—through no fault of their
+            own. They, too, want freedom and their mortality restored.
+            Therefore, Oran makes a bargain with them: in exchange for their
+            freedom, they find and protect his son. With many lives at stake,
+            and time running out, a twist of fate then turns the table on them
+            all, when Reece makes a shocking discovery …
+          </p>
+        </article>
+      </modal>
     </section>
     <br /><br />
     <Divider />
@@ -278,7 +349,14 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    show() {
+      this.$modal.show("synopsis-modal");
+    },
+    hide() {
+      this.$modal.hide("synopsis-modal");
+    },
+  },
   mounted() {
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
@@ -575,6 +653,30 @@ export default {
 .swiper-wrapper {
   display: flex !important;
   align-items: center !important;
+}
+
+.synopsis_contain {
+  color: var(--black);
+  padding: 2rem;
+  font-family: "STIXTwo";
+  background: var(--white);
+  text-align: left;
+  font-size: 1.15rem;
+}
+
+.synopsis_contain h1,
+.synopsis_contain strong {
+  font-family: "GotischA";
+}
+
+.synopsis_contain h1 {
+  color: var(--crimson);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.synopsis-modal {
+  color: var(--black);
 }
 
 .quote_credit {
