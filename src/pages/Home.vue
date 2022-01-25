@@ -226,6 +226,13 @@
       </swiper>
     </section>
 
+    <br /><br />
+    <Divider />
+    <h2 data-aos="fade-up" class="author_bio_title">Balloch Castle</h2>
+    <br /><br />
+    <Divider />
+    <br />
+
     <section class="balloch_castle">
       <div>
         <Flipbook class="flipbook" :pages="pages" v-slot="flipbook">
@@ -243,7 +250,39 @@
         </Flipbook>
       </div>
     </section>
-    <Footer />
+
+    <div class="slant">&nbsp;</div>
+
+    <section id="contact" class="contact_section">
+      <h1 class="contact_title">Say Hello</h1>
+      <br />
+      <div class="contact_form_contain" id="vanta_form">
+        <form action="" class="contact">
+          <div class="form_input_contain">
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              placeholder="Your subject here"
+            />
+          </div>
+
+          <div class="form_input_contain">
+            <input type="email" placeholder="name@example.com" />
+          </div>
+
+          <div class="form_input_contain">
+            <textarea placeholder="Your message here" />
+          </div>
+
+          <button class="swiper contact_button" type="submit" value="Submit">
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <Footer />
+    </section>
   </div>
 </template>
 
@@ -365,6 +404,22 @@ export default {
       touchControls: true,
       gyroControls: false,
       minHeight: 200.0,
+      minWidth: 200.0,
+      highlightColor: 0x460303,
+      midtoneColor: 0x780e04,
+      lowlightColor: 0x70707,
+      baseColor: 0x20202,
+      blurFactor: 0.41,
+      speed: 0.4,
+      zoom: 1,
+    });
+    this.vantaEffect = Vanta({
+      el: "#contact",
+      THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 800.0,
       minWidth: 200.0,
       highlightColor: 0x460303,
       midtoneColor: 0x780e04,
@@ -557,6 +612,10 @@ export default {
 
 /* Balloch Castle */
 
+.balloch_castle {
+  overflow: hidden;
+}
+
 .flipbook {
   margin: auto;
 }
@@ -603,7 +662,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
   padding: 5rem 0;
 }
 
@@ -631,6 +690,13 @@ export default {
   -webkit-transition-property: box-shadow;
   transition-property: all;
   box-shadow: inset 0 0 0 4px var(--silver), 0 0 1px rgba(0, 0, 0, 0);
+}
+
+/* contact button */
+
+.contact_button {
+  padding: 1rem 2rem;
+  justify-content: center;
 }
 
 .swiper:hover {
@@ -709,6 +775,61 @@ export default {
 .swiper-button-prev,
 .swiper-button-next {
   color: var(--crimson);
+}
+
+/* Contact section */
+
+canvas.vanta-canvas:nth-child(4) {
+  height: 1200px;
+  margin-top: -15%;
+  z-index: 0;
+}
+
+.balloch_castle {
+  z-index: 1;
+  padding: revert;
+  position: relative;
+  z-index: 10;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.contact_form_contain {
+  width: 50%;
+  margin: auto;
+  height: 25rem;
+  padding: 5rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 0.25rem;
+}
+
+.form_input_contain {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input,
+textarea {
+  background: rgba(255, 255, 255, 0.4);
+  color: var(--white);
+  padding: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "Oswald";
+}
+
+.contact_title {
+  z-index: 10;
+  position: relative;
+  padding: 5rem 0 2rem 0;
 }
 
 @media only screen and (max-width: 767px) {
