@@ -254,7 +254,7 @@
     <div class="slant">&nbsp;</div>
 
     <section id="contact" class="contact_section">
-      <h1 class="contact_title">Say Hello</h1>
+      <h1 class="contact_title">Contact</h1>
       <br />
       <div class="contact_form_contain" id="vanta_form">
         <form action="" class="contact">
@@ -361,6 +361,14 @@ export default {
           caption:
             "The Shaw crest (broach) – made from solid silver. Oran had this made especially for himself, to give him a sense of ‘belonging’, linking him to his ancestors who were of Pictish origin.",
         },
+        {
+          img: 7,
+          caption: "Lorem ipsum",
+        },
+        {
+          img: 8,
+          caption: "Lorem ipsum",
+        },
       ],
       reviews: [
         {
@@ -419,7 +427,7 @@ export default {
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
-      minHeight: 800.0,
+      minHeight: 1200.0,
       minWidth: 200.0,
       highlightColor: 0x460303,
       midtoneColor: 0x780e04,
@@ -818,18 +826,51 @@ canvas.vanta-canvas:nth-child(4) {
 
 input,
 textarea {
-  background: rgba(255, 255, 255, 0.4);
+  /* background: rgba(255, 255, 255, 0.4); */
   color: var(--white);
   padding: 1rem;
   font-size: 1rem;
   text-transform: uppercase;
   font-family: "Oswald";
+  background: transparent;
+  /* border: 2px solid var(--white); */
+  border: none;
+  box-shadow: inset 0 0 0 4px var(--silver), 0 0 1px rgba(0, 0, 0, 0);
+
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: all;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  box-shadow: inset 0 0 0 4px var(--crimson), 0 0 1px rgba(0, 0, 0, 0);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+.swiper:nth-of-type(1) {
+  color: var(--white);
+  /* box-shadow: inset 0 0 0 4px var(--white), 0 0 1px rgba(0, 0, 0, 0); */
 }
 
 .contact_title {
   z-index: 10;
   position: relative;
   padding: 5rem 0 2rem 0;
+  font-family: "GotischA";
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#contact {
+  margin-top: -5%;
+  padding-top: 10rem;
 }
 
 @media only screen and (max-width: 767px) {
@@ -843,17 +884,24 @@ textarea {
   .swiper {
     margin: auto;
   }
-}
 
-@media only screen and (max-width: 767px) {
+  .contact_form_contain {
+    width: auto;
+    margin: 0 1.5rem;
+    padding: 1rem;
+  }
+
+  .contact_button {
+    margin: 0;
+  }
+
   .author_short_desc {
     font-size: 1.5rem;
   }
   .author_name {
     font-size: 3rem;
   }
-}
-@media only screen and (max-width: 767px) {
+
   .author_short_desc {
     font-size: 1.5rem;
   }
