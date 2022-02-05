@@ -480,6 +480,7 @@ export default {
 }
 #short_bio {
   background: var(--silver);
+  position: relative;
 }
 .short_bio_container {
   color: var(--white);
