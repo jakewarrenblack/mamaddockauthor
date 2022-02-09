@@ -73,7 +73,45 @@
             this location. And who knows? Maybe I’ll retire there … one day.
           </h5>
         </div>
+        <button id="readMore" @click="readMore()" class="swiper">Read more</button>
       </div>
+    </section>
+
+    <br /><br />
+    <Divider />
+    <h2 data-aos="fade-up" style="margin-top:8rem;" class="author_bio_title">Join My Mailing List</h2>    
+    <!-- <hr style="max-width: 500px; margin: 2rem auto; color:var(--white)"/> -->
+    <div class="diamond" style="margin: 2rem auto; font-size:2vh;">♦</div>
+    <h4 style="font-family: 'STIXTwo">Stay up to date on all things Beyond the Darkness.</h4>
+    <br/><br/>
+    <section id="newsletter">
+      <!-- Begin Mailchimp Signup Form -->
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
+
+      <div id="mc_embed_signup">
+        <form action="https://mamaadockauthor.us14.list-manage.com/subscribe/post?u=fa07aa1683c597bd4ef14056f&amp;id=d311ec318a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div class="d-flex justify-space-between" id="mc_embed_signup_scroll">          
+            <div class="mc-field-group w-50">
+              <!-- <label for="mce-EMAIL">Email Address </label> -->
+              <input required placeholder="name@example.com" type="email" value="" name="EMAIL" class="required email w-100 text-align-left" id="mce-EMAIL">
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_fa07aa1683c597bd4ef14056f_d311ec318a" tabindex="-1" value="">
+            </div>
+            <div class="optionalParent">
+              <div class="clear foot">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button swiper contact_button newsletter_button">
+                <!-- <p class="brandingLogo"><a href="http://eepurl.com/hUkEIv" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p> -->
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--End mc_embed_signup-->
     </section>
 
     <Divider />
@@ -322,6 +360,7 @@ export default {
   },
   data() {
     return {
+      
       swiperOptions: {
         centeredSlides: true,
         pagination: {
@@ -363,11 +402,11 @@ export default {
         },
         {
           img: 7,
-          caption: "Lorem ipsum",
+          caption: "The Arezzo Mirror",
         },
         {
           img: 8,
-          caption: "Lorem ipsum",
+          caption: "The Window",
         },
       ],
       reviews: [
@@ -381,7 +420,7 @@ export default {
           body: "A sumptuous slow burn of a book, in the grand style of epic fantasy, that consumes its reader and transports them to another place and time.",
           credit: "Julia Blake",
           credential:
-            "Author of For Rye and The Last Testament of Crighton Smythe",
+            "Author of Erinsmore and The Forest ~ a tale of old magic ~",
         },
         {
           body: "An epic historical fantasy read, enriched with unique and wonderful characters whose journey will keep you hooked from beginning to end. Maddock has an eye for detail through her incredible imagination. So glad this is a series; one book is not enough!",
@@ -403,6 +442,18 @@ export default {
     hide() {
       this.$modal.hide("synopsis-modal");
     },
+    readMore(){      
+      // the full text
+      var fullBio = localStorage.getItem('bio');
+      var shortBio = localStorage.getItem('bio_shortened');
+
+      var currentValue = document.getElementsByClassName("author_bio_body")[0];
+
+      currentValue.innerHTML == fullBio ? currentValue.innerHTML = shortBio : currentValue.innerHTML = fullBio;      
+      
+      var readMore = document.getElementById("readMore");
+      readMore.innerHTML.toLowerCase() == "read more" ? readMore.innerHTML = "read less" : readMore.innerHTML = "read more"
+    }
   },
   mounted() {
     this.vantaEffect = Vanta({
@@ -442,6 +493,19 @@ export default {
 
     swiper_wrapper[0].style.display = "flex";
     swiper_wrapper[0].style.alignItems = "center";
+
+    // Shorten the very long bio  
+    var author_bio_body = document.getElementsByClassName("author_bio_body");
+    localStorage.setItem('bio', author_bio_body[0].innerHTML)        
+
+    // Split the text by its spaces, get first 29 words, join array into a string again separated by spaces
+    var bio_shortened = author_bio_body[0].innerHTML.split(' ').splice(0, 29).join(' ') + "...";
+    localStorage.setItem('bio_shortened', bio_shortened);
+
+    if(window.innerWidth <= 767){      
+      document.getElementById("readMore").style.display = "block";
+      author_bio_body[0].innerHTML = bio_shortened;
+    }
   },
   beforeDestroy() {
     if (this.vantaEffect) {
@@ -843,6 +907,7 @@ textarea {
   transition-duration: 0.3s;
   -webkit-transition-property: box-shadow;
   transition-property: all;
+  text-align:center;
 }
 
 input:focus-visible,
@@ -873,6 +938,34 @@ textarea:focus-visible {
   margin-top: -5%;
   padding-top: 10rem;
 }
+
+/* Newsletter */
+#newsletter{
+  max-width:1200px;
+  margin:auto;
+  margin-bottom:8rem;
+}
+
+#mc_embed_signup{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#mc-embedded-subscribe-form{
+  border-bottom: 2px solid var(--crimson);
+  width:75%;
+}
+
+.newsletter_button:hover{
+  box-shadow:none;
+  color:var(--crimson)
+}
+
+#readMore{
+  display:none;
+}
+
 
 @media only screen and (max-width: 767px) {
   .hero_text {
