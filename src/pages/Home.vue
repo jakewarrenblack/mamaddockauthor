@@ -594,6 +594,7 @@ export default {
   font-size: 10rem;
   font-family: "STIXTwo";
   letter-spacing: 2rem;
+  text-transform:uppercase;
 }
 
 /* Author full bio section */
