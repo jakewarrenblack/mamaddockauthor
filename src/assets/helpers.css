@@ -68,18 +68,30 @@
   clip-path: polygon(0 0, 100% 0, 100% 52%, 23% 100%, 0 78%);
 }
 
-.w-100{
-  width:100%;
+.w-100 {
+  width: 100%;
 }
 
-.w-50{
+.w-50 {
   width: 50%;
 }
 
-.text-align-left{
-  text-align:left!important;
+.text-align-left {
+  text-align: left !important;
 }
 
-.text-align-center{
-  text-align:center!important;
+.text-align-center {
+  text-align: center !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .clip_towards_left {
+    clip-path: unset;
+  }
+  .clip_towards_right {
+    clip-path: unset;
+  }
+  .clip_towards_right_pointed_bottom {
+    clip-path: unset;
+  }
 }

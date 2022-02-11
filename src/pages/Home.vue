@@ -10,12 +10,26 @@
             </h3>
             <h1 data-aos="fade-up" class="author_name">M.A Maddock</h1>
           </div>
-          <div class="img_contain">
-            <div class="img_contain_content">
+          <vue-video-section
+            class="img_contain"
+            :elementId="'header-background-video'"
+            :ref="'header-background-video'"
+            :mp4Source="require('@/assets/sample.mp4')"
+            :posterSource="require('@/assets/sample.jpg')"
+            :mobileBreakpoint="762"
+            :desktopHeight="750"
+            :mobileHeight="450"
+            :playsinline="true"
+            :loop="true"
+            :autoplay="true"
+            :autobuffer="true"
+            :muted="true"
+          >
+            <div slot="overlay-content" class="overlay-content">
               <h4 class="two-rem STIXTwo">Latest Release</h4>
               <h2 class="four-rem STIXTwo">Title of book to be re-released</h2>
             </div>
-          </div>
+          </vue-video-section>
         </div>
       </section>
     </div>
@@ -34,7 +48,7 @@
       >
         <div
           data-aos="fade-right"
-          class="author_image bg_size_cover clip_towards_left"
+          class="author_image miriam_image bg_size_cover clip_towards_left"
         ></div>
         <div data-aos="fade-left" class="author_bio_text">
           <h2 class="author_bio_title">About the Author</h2>
@@ -91,77 +105,8 @@
     </h4>
     <br /><br />
     <section id="newsletter">
-      <!-- Begin Mailchimp Signup Form -->
-      <link
-        href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css"
-        rel="stylesheet"
-        type="text/css"
-      />
-
-      <div id="mc_embed_signup">
-        <form
-          action="https://mamaadockauthor.us14.list-manage.com/subscribe/post?u=fa07aa1683c597bd4ef14056f&amp;id=d311ec318a"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          name="mc-embedded-subscribe-form"
-          class="validate"
-          target="_blank"
-          novalidate
-        >
-          <div class="d-flex justify-space-between" id="mc_embed_signup_scroll">
-            <div class="mc-field-group w-50">
-              <!-- <label for="mce-EMAIL">Email Address </label> -->
-              <input
-                required
-                style="border: none"
-                placeholder="name@example.com"
-                type="email"
-                value=""
-                name="EMAIL"
-                class="required email w-100 text-align-left"
-                id="mce-EMAIL"
-              />
-            </div>
-            <div id="mce-responses" class="clear foot">
-              <div
-                class="response"
-                id="mce-error-response"
-                style="display: none"
-              ></div>
-              <div
-                class="response"
-                id="mce-success-response"
-                style="display: none"
-              ></div>
-            </div>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px" aria-hidden="true">
-              <input
-                type="text"
-                name="b_fa07aa1683c597bd4ef14056f_d311ec318a"
-                tabindex="-1"
-                value=""
-              />
-            </div>
-            <div class="optionalParent">
-              <div class="clear foot">
-                <input
-                  style="margin: 0; border: none"
-                  type="submit"
-                  value="Subscribe"
-                  name="subscribe"
-                  id="mc-embedded-subscribe"
-                  class="swiper contact_button newsletter_button"
-                />
-                <!-- <p class="brandingLogo"><a href="http://eepurl.com/hUkEIv" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p> -->
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      <!--End mc_embed_signup-->
+      <ConvertKitForm v-bind="convertKitConfig" />
     </section>
-
     <Divider />
     <section id="full_bio" ref="bookSection">
       <div
@@ -376,6 +321,8 @@
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 import "swiper/css/swiper.css";
 
+import VueVideoSection from "vue-video-section";
+
 import { Carousel3d, Slide } from "vue-carousel-3d";
 import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
@@ -383,6 +330,7 @@ import Footer from "@/components/Footer";
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
 import Flipbook from "flipbook-vue";
+import ConvertKitForm from "convertkit-vue";
 
 // Flipbook pages
 import page1 from "@/assets/balloch_castle/1.jpg";
@@ -394,6 +342,8 @@ export default {
   name: "Home",
 
   components: {
+    VueVideoSection,
+    ConvertKitForm,
     Swiper,
     SwiperSlide,
     Flipbook,
@@ -480,6 +430,13 @@ export default {
           credential: "Actor/Writer",
         },
       ],
+
+      convertKitConfig: {
+        formId: 2986098,
+        template: "clare",
+        hideName: true,
+        stack: false,
+      },
     };
   },
   methods: {
@@ -540,6 +497,14 @@ export default {
       zoom: 1,
     });
 
+    var video = document.getElementsByClassName(
+      "vue-video-section__overlay-content-wrapper__content-wrapper__content"
+    )[0];
+
+    video.style.display = "flex";
+    video.style.justifyContent = "center";
+    video.style.alignItems = "center";
+
     var swiper_wrapper = document.getElementsByClassName("swiper-wrapper");
 
     swiper_wrapper[0].style.display = "flex";
@@ -570,6 +535,12 @@ export default {
 <style scoped>
 @import "../assets/colors.css";
 @import "../assets/helpers.css";
+
+@import "../../node_modules/vue-video-section/dist/vue-video-section.css";
+
+.formkit-powered-by-convertkit {
+  display: none;
+}
 
 #container {
   background: var(--silver);
@@ -627,6 +598,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+
+  z-index: -1;
 }
 
 .hero_text {
@@ -669,7 +642,7 @@ export default {
   height: 55rem;
   width: 75%;
   margin: 4rem 4rem 0 0;
-  filter: blur(5px);
+  /* filter: blur(5px); */
 }
 
 .author_bio_text {
@@ -996,6 +969,8 @@ textarea:focus-visible {
   max-width: 1200px;
   margin: auto;
   margin-bottom: 8rem;
+  display: flex;
+  justify-content: center;
 }
 
 #mc_embed_signup {
@@ -1021,6 +996,10 @@ textarea:focus-visible {
 
 #readMore {
   display: none;
+}
+
+.miriam_image {
+  filter: saturate(0);
 }
 
 @media only screen and (max-width: 767px) {

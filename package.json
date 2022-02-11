@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "convertkit-vue": "^0.1.6",
     "core-js": "^3.6.5",
     "flipbook-vue": "^0.10.4",
     "swiper": "^5.4.5",
@@ -18,7 +19,8 @@
     "vue-awesome-swiper": "^4.1.1",
     "vue-carousel-3d": "^1.0.1",
     "vue-js-modal": "^2.0.1",
-    "vue-router": "^3.5.3"
+    "vue-router": "^3.5.3",
+    "vue-video-section": "^1.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
