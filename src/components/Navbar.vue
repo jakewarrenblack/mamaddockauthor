@@ -4,9 +4,9 @@
       <nav>
         <h2>MA MADDOCK</h2>
         <ul>
-          <li class="navlink">HOME</li>
-          <li class="navlink">NOVEL</li>
           <li class="navlink">BIO</li>
+          <li class="navlink">NOVEL</li>
+          <li class="navlink">CONTACT</li>
         </ul>
       </nav>
     </div>
