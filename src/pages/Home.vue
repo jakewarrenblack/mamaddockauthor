@@ -155,13 +155,16 @@
 
       <modal
         :adaptive="true"
-        :minWidth="800"
         :minHeight="1400"
         height="auto"
         :scrollable="true"
         name="synopsis-modal"
+        classes="modal-mobile"
       >
         <article class="synopsis_contain">
+          <div slot="top-right">
+            <button @click="$modal.hide('synopsis-modal')">❌</button>
+          </div>
           <h1>Synopsis</h1>
           <br />
 
@@ -569,6 +572,21 @@ export default {
 };
 </script>
 
+<!-- Can't be scoped -->
+<style>
+@media only screen and (max-width: 767px) {
+  /* Allow scroll on mobile */
+  .modal-mobile {
+    left: 0 !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    margin-left: 0 !important;
+    height: unset !important;
+    /* height: 100% !important; */
+  }
+}
+</style>
+
 <style scoped>
 @import "../assets/colors.css";
 @import "../assets/helpers.css";
@@ -873,7 +891,7 @@ export default {
   color: var(--black);
   padding: 2rem;
   font-family: "STIXTwo";
-  background: var(--white);
+  /* background: var(--white); */
   text-align: left;
   font-size: 1.15rem;
 }
@@ -1143,6 +1161,12 @@ textarea:focus-visible {
   .full_bio_container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .synopsis_contain {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 }
 </style>
