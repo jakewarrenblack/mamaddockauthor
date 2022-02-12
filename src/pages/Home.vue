@@ -484,12 +484,18 @@ export default {
       if (this.playButtonClicks % 2 != 0) {
         video_title.style.opacity = "0";
         video_subtitle.style.opacity = "0";
-        container.style.transform = "translateY(50%)";
+
+        if (window.innerWidth >= 768) {
+          container.style.transform = "translateY(50%)";
+        }
+
         this.$refs["header-background-video"].playVideo();
       } else {
         video_title.style.opacity = "1";
         video_subtitle.style.opacity = "1";
-        container.style.transform = "translateY(0%)";
+        if (window.innerWidth >= 768) {
+          container.style.transform = "translateY(0%)";
+        }
         this.$refs["header-background-video"].pauseVideo();
       }
     },
@@ -1044,6 +1050,43 @@ textarea:focus-visible {
 
 .miriam_image {
   filter: saturate(0);
+}
+
+/* laptops */
+@media only screen and (max-width: 1224px) {
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    font-size: 3rem;
+  }
+
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    letter-spacing: 0.5rem;
+  }
+  .four-rem {
+    font-size: 3rem;
+  }
+  .short_bio_container {
+    font-size: 4rem;
+  }
+  .author_image {
+    margin: 0;
+    background-size: cover;
+    height: 30rem;
+    background-position: center;
+  }
+  .author_bio_text {
+    margin: 0;
+    text-align: center;
+  }
+  .full_bio_container {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 767px) {
