@@ -21,13 +21,24 @@
             :mobileHeight="450"
             :playsinline="true"
             :loop="true"
-            :autoplay="true"
+            :autoplay="false"
             :autobuffer="true"
             :muted="true"
           >
-            <div slot="overlay-content" class="overlay-content">
-              <h4 class="two-rem STIXTwo">Latest Release</h4>
-              <h2 class="four-rem STIXTwo">Title of book to be re-released</h2>
+            <div
+              slot="overlay-content"
+              id="overlay-content"
+              class="overlay-content"
+            >
+              <h4 id="video_title" class="two-rem STIXTwo" @click="playVideo()">
+                Latest Release
+              </h4>
+              <h2 id="video_subtitle" class="four-rem STIXTwo">
+                Title of book to be re-released
+              </h2>
+              <button id="video_button" @click="toggleVideo">
+                Play trailer
+              </button>
             </div>
           </vue-video-section>
         </div>
@@ -358,6 +369,7 @@ export default {
   },
   data() {
     return {
+      playButtonClicks: 0,
       swiperOptions: {
         centeredSlides: true,
         pagination: {
@@ -461,6 +473,25 @@ export default {
       readMore.innerHTML.toLowerCase() == "read more"
         ? (readMore.innerHTML = "read less")
         : (readMore.innerHTML = "read more");
+    },
+    toggleVideo() {
+      this.playButtonClicks++;
+
+      var container = document.getElementById("overlay-content");
+      var video_title = document.getElementById("video_title");
+      var video_subtitle = document.getElementById("video_subtitle");
+
+      if (this.playButtonClicks % 2 != 0) {
+        video_title.style.opacity = "0";
+        video_subtitle.style.opacity = "0";
+        container.style.transform = "translateY(50%)";
+        this.$refs["header-background-video"].playVideo();
+      } else {
+        video_title.style.opacity = "1";
+        video_subtitle.style.opacity = "1";
+        container.style.transform = "translateY(0%)";
+        this.$refs["header-background-video"].pauseVideo();
+      }
     },
   },
   mounted() {
@@ -600,6 +631,19 @@ export default {
   flex-flow: column;
 
   z-index: -1;
+}
+
+#video_title,
+#video_subtitle {
+  transition: all ease-in-out 0.3s;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.5s;
 }
 
 .hero_text {
