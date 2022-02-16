@@ -156,6 +156,7 @@
       <modal
         :adaptive="true"
         :minHeight="1400"
+        :minWidth="800"
         height="auto"
         :scrollable="true"
         name="synopsis-modal"
