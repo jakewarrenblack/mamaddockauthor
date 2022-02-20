@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "axios": "^0.26.0",
     "convertkit-vue": "^0.1.6",
     "core-js": "^3.6.5",
     "flipbook-vue": "^0.10.4",

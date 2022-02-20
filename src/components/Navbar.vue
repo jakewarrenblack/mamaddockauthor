@@ -31,7 +31,7 @@ header {
   padding: 46px 0 90px;
 }
 #container {
-  font-family: "Oswald";
+  font-family: "STIXTwo";
   font-size: 2rem;
   max-width: 1575px;
   margin: auto;

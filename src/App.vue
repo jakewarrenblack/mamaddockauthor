@@ -31,36 +31,31 @@ canvas {
   color: var(--white);
   /* margin-top: 60px; */
 }
-@font-face {
-  font-family: "Oswald";
-  src: url("./assets/fonts/Oswald.ttf");
-}
+
+
 @font-face {
   font-family: "STIXTwo Italic";
   src: url("./assets/fonts/STIXTwo_Italic.ttf");
 }
+
 @font-face {
   font-family: "STIXTwo";
   src: url("./assets/fonts/STIXTwo.ttf");
 }
 
 @font-face {
-  font-family: "Prociono";
-  src: url("./assets/fonts/Prociono.otf");
+  font-family: "Dorovar";
+  src: url("./assets/fonts/Dorovar.ttf");
 }
 
 @font-face {
-  font-family: "Cloister";
-  src: url("./assets/fonts/CloisterOpti.otf");
+  font-family: "Dorovar-Italic";
+  src: url("./assets/fonts/Dorovar-Italic.ttf");
 }
 
 @font-face {
-  font-family: "Frederick";
-  src: url("./assets/fonts/Frederick.TTF");
+  font-family: "altcaps";
+  src: url("./assets/fonts/altcaps.ttf");
 }
 
-@font-face {
-  font-family: "GotischA";
-  src: url("./assets/fonts/GotischA.otf");
-}
 </style>

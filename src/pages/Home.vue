@@ -31,10 +31,10 @@
               class="overlay-content"
             >
               <h4 id="video_title" class="two-rem STIXTwo" @click="playVideo()">
-                Latest Release
+                The Latest Release
               </h4>
               <h2 id="video_subtitle" class="four-rem STIXTwo">
-                Title of book to be re-released
+                The Sixth Amulet
               </h2>
               <button id="video_button" @click="toggleVideo">
                 Play trailer
@@ -61,41 +61,10 @@
           data-aos="fade-right"
           class="author_image miriam_image bg_size_cover clip_towards_left"
         ></div>
-        <div data-aos="fade-left" class="author_bio_text">
-          <h2 class="author_bio_title">About the Author</h2>
+        <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
+          <h2 class="author_bio_title">{{this.data.bio.title}}</h2>
           <h5 class="author_bio_body">
-            Asking an Irish person to write a ‘few’ words about themselves is,
-            putting it mildly, almost impossible! But, here goes. I was born and
-            raised in Dublin, Ireland. Having dabbled in other ‘interests’ over
-            the years (I won’t bore you), in the background, however, I was
-            always an avid reader, with words constantly floating around in my
-            mind yet doing nothing about them, in a literary sense. I used to
-            always say, ‘One day, I’ll write that book,’ but never seemed to get
-            around to doing it. I think the mere thought of putting those
-            words—along with my imagination—to literary use was daunting,
-            therefore, always putting it off. That is, until 2011 when I finally
-            took the plunge and picked up that pen and notebook (still have
-            them, too). I began to string those words into sentences, then
-            paragraphs, then pages, eventually joining them together to create
-            my first novel—The Sixth Amulet - Book One. Then my imagination had
-            other plans; it didn’t want to stop at just one. Why would it? And
-            so, one novel turned into two, then three, then … Who knows where it
-            will end?
-            <br /><br />
-            I believe everyone has a story to tell, a potential book tucked away
-            inside them, dying to get out. And all that’s needed to create it,
-            is a simple recipe: a pen and a notebook. So, open your mind and let
-            your imagination roam through the endless possibilities it has to
-            offer … then simply write!
-            <br /><br />
-            Many people have asked me, “Why Scotland? And why Balloch?” Well, it
-            was while on my first trip there (around 2005), visiting good
-            friends in Balloch, that I fell in love with the place. Always the
-            perfect hosts each time I visit, Billy, Ciara and Megan are so lucky
-            to live a stone’s throw from Balloch Castle, on the stunning shores
-            of Loch Lomond (well worth a visit if you happen to be passing
-            through). Anyway, it just seemed right to set The Sixth Amulet in
-            this location. And who knows? Maybe I’ll retire there … one day.
+            {{this.data.bio.content}}
           </h5>
         </div>
         <button id="readMore" @click="readMore()" class="swiper">
@@ -112,14 +81,14 @@
     <!-- <hr style="max-width: 500px; margin: 2rem auto; color:var(--white)"/> -->
     <div class="diamond" style="margin: 2rem auto; font-size: 2vh">♦</div>
     <h4 style="font-family: 'STIXTwo">
-      Stay up to date on all things Beyond the Darkness.
+      Stay up to date on all things The Sixth Amulet.
     </h4>
     <br /><br />
     <section id="newsletter">
       <ConvertKitForm v-bind="convertKitConfig" />
     </section>
     <Divider />
-    <section id="full_bio" ref="bookSection">
+    <section v-if="this.data" id="full_bio" ref="bookSection">
       <div
         class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
       >
@@ -128,24 +97,15 @@
           class="author_image bg-size-cover bg-position-center book-image clip_towards_right_pointed_bottom"
         ></div>
         <div data-aos="fade-right" class="author_bio_text">
-          <h2 class="author_bio_title">Beyond the Darkness</h2>
+          <h2 class="author_bio_title">{{this.data.synopsis.title}}</h2>
           <h5 class="author_bio_body">
-            <q>In the realm of my soul, I believe him to be a great Ruler. </q>
-            <br /><cite>Lothian</cite>
+            <q>{{this.data.synopsis.quote}}</q>
+            <br /><cite>{{this.data.synopsis.quote_credit}}</cite>
             <br />
             <br />
 
-            <strong>Scotland: 1564</strong><br />
-            Deep within the bowels of Elboru, it waits—an immense force—locked
-            inside a sacred stone, destined to give its bearer the power to be a
-            formidable Ruler. It belongs to just one—the Magus—Lord of all
-            Warlocks—and he belongs to it. But the world of mortals has been
-            overshadowed by a menace: an evil entity that would have it to
-            dominate and destroy all that is good. And yet, all is not lost.
-            From within this stone, a light is about to re-ignite by innocence,
-            instilling hope into the hearts of those who would risk everything,
-            to see it placed in the hands of the chosen one—to see it shine
-            beyond the darkness.
+            <strong>{{this.data.synopsis.paragraph_context}}</strong><br />
+            {{this.data.synopsis.preview}}
           </h5>
           <button class="swiper" @click="show()">
             <span class="swiper_text">View synopsis</span>
@@ -162,7 +122,7 @@
         name="synopsis-modal"
         classes="modal-mobile"
       >
-        <article class="synopsis_contain">
+        <article v-if="this.data" class="synopsis_contain">
           <div slot="top-right">
             <button @click="$modal.hide('synopsis-modal')">❌</button>
           </div>
@@ -170,65 +130,23 @@
           <br />
 
           <p>
-            <strong>Scotland 1564:</strong>
-            Oran Shaw is no ordinary man: a Warlock, determined to leave his
-            lengthy past behind, he disregards his elders, choosing to live a
-            normal life among mortals … until he crosses paths with Kristene—a
-            young, innocent woman, wrongfully accused of witchcraft. He feels
-            compelled to rescue her from her death sentence. It is an act he
-            would later regret.
+            <strong>{{this.data.synopsis.paragraph_context}}</strong>
+            {{this.data.synopsis.full_part_1}}
           </p>
 
           <p>
-            Together, they flee to a new life, settling in Triora—Italy. But
-            life alters when a sinister rival from Oran’s past—Magia Nera, a
-            dark Warlock—discovers them. He secretly manipulates Kristene,
-            luring her away from Oran, bitterly ending their relationship.
-            However, his interference eventually forces the three to go their
-            separate ways.
-          </p>
-
-          <p>
-            <strong>Four decades later:</strong>
-            Oran has returned to Scotland, where he meets Rosalyn, a young widow
-            with a baby. They marry and settle in the small village of Balloch,
-            near the shores of Lac Lomond. At last, Oran feels content, living a
-            normal and peaceful life with his new family. But when Rosalyn bears
-            him a son, Gillis, life changes utterly for the reluctant Warlock.
-          </p>
-
-          <p>
-            Oran’s past creeps up on him in the form of a Sorceress, named
-            L’Ordana. He recognises her as Kristene, and there is an element of
-            evil inside her. She is not alone and wants something from him: the
-            location of a powerful amulet—the Shenn. Aware his son is destined
-            to rule over the precious item, Oran vows to protect him … no matter
-            what! Bound by duty, he is forced by his “council”—the Elliyan—to
-            seek out the Sorceress and destroy her. Oran, however, is torn
-            between their past and the present. But, when they come face to
-            face, the Warlock unexpectedly finds himself as her prisoner.
-          </p>
-
-          <p>
-            Over time, he allies with three unlikely characters, to help him
-            escape; they are not what they seem. Half-human—half Vampire, the
-            three Dhampir, Reece (a Soldier), Asai (a Samurai), and Tam (a
-            Highlander), are also L’Ordana’s prisoners—through no fault of their
-            own. They, too, want freedom and their mortality restored.
-            Therefore, Oran makes a bargain with them: in exchange for their
-            freedom, they find and protect his son. With many lives at stake,
-            and time running out, a twist of fate then turns the table on them
-            all, when Reece makes a shocking discovery …
+            <strong>{{this.data.synopsis.later}}</strong>
+            {{this.data.synopsis.full_part_2}}
           </p>
         </article>
       </modal>
     </section>
     <br /><br />
     <Divider />
-    <h2 data-aos="fade-up" class="author_bio_title">Concept Art</h2>
+    <h2 data-aos="fade-up" class="author_bio_title">Gallery</h2>
     <br /><br />
     <Divider />
-    <section data-aos="fade-up" id="book_images">
+    <section v-if="this.data" data-aos="fade-up" id="book_images">
       <div id="example">
         <carousel-3d
           :startIndex="6"
@@ -237,7 +155,7 @@
           :inverse-scaling="1500"
           :space="800"
         >
-          <slide v-for="slide in slides" :index="slide.img" :key="slide.img">
+          <slide v-for="slide in this.data.slides" :index="slide.img" :key="slide.img">
             <img
               class="carousel_img"
               :src="require(`@/assets/review_images/${slide.img}.jpg`)"
@@ -253,10 +171,10 @@
     <h2 data-aos="fade-up" class="author_bio_title">Acclaims</h2>
     <br /><br />
     <Divider />
-    <section data-aos="fade-up" id="reviews">
+    <section v-if="this.data" data-aos="fade-up" id="reviews">
       <div class="quotation_container"></div>
       <swiper class="review_swiper" ref="mySwiper" :options="swiperOptions">
-        <swiper-slide v-for="review in reviews" :key="review.body">
+        <swiper-slide v-for="review in this.data.reviews" :key="review.body">
           <div class="review_quote_contain">
             <q class="quote_body">{{ review.body }}</q>
             <br />
@@ -346,6 +264,7 @@ import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
 import Flipbook from "flipbook-vue";
 import ConvertKitForm from "convertkit-vue";
+import axios from 'axios';
 
 // Flipbook pages
 import page1 from "@/assets/balloch_castle/1.jpg";
@@ -387,65 +306,6 @@ export default {
 
       // reviewSwipeCount: 1,
       pages: [null, page1, page2, page3, page4],
-      slides: [
-        {
-          img: 0,
-          caption: "The lotus flower - engraved on Asai Nara’s Katana sword.",
-        },
-        { img: 1, caption: "The Kelpie – a Scottish mythical creature." },
-        {
-          img: 2,
-          caption:
-            "fictional map of the lower Highlands - circa late 1500’s early 1600’s – by Lewis Hickson - Instagram    fantasy_map_cartographer",
-        },
-        { img: 3, caption: "The Kelpie – a Scottish mythical creature." },
-        {
-          img: 4,
-          caption: "Scottish dirk (dagger) belonging to Eleanor Shaw.",
-        },
-        {
-          img: 5,
-          caption:
-            "Oran Shaw’s coffer (chest) - contains hidden secrets from his past.",
-        },
-        {
-          img: 6,
-          caption:
-            "The Shaw crest (broach) – made from solid silver. Oran had this made especially for himself, to give him a sense of ‘belonging’, linking him to his ancestors who were of Pictish origin.",
-        },
-        {
-          img: 7,
-          caption: "The Arezzo Mirror",
-        },
-        {
-          img: 8,
-          caption: "The Window",
-        },
-      ],
-      reviews: [
-        {
-          body: "A tapestry of familiar mythology - and wholly original creations - weaved through a world you'll happily get lost in. A story that truly sings.",
-          credit: "Gavin Gardiner",
-          credential:
-            "Author of For Rye and The Last Testament of Crighton Smythe",
-        },
-        {
-          body: "A sumptuous slow burn of a book, in the grand style of epic fantasy, that consumes its reader and transports them to another place and time.",
-          credit: "Julia Blake",
-          credential:
-            "Author of Erinsmore and The Forest ~ a tale of old magic ~",
-        },
-        {
-          body: "An epic historical fantasy read, enriched with unique and wonderful characters whose journey will keep you hooked from beginning to end. Maddock has an eye for detail through her incredible imagination. So glad this is a series; one book is not enough!",
-          credit: "Sarah O’Neill",
-          credential: "Author of Deadly Obsession and Fatal Beliefs",
-        },
-        {
-          body: "Masterfully weaved together, with such great flair, you can’t help but immerse yourself in the fantastical world M. A. Maddock has created. The diverse locations along with her motley cast of misfits will hold your attention from the start. The Sixth Amulet is an epic fantasy (historical) fiction read that packs a punch.",
-          credit: "Emma Moohan",
-          credential: "Actor/Writer",
-        },
-      ],
 
       convertKitConfig: {
         formId: 2986098,
@@ -453,6 +313,8 @@ export default {
         hideName: true,
         stack: false,
       },
+
+      data: null,
     };
   },
   methods: {
@@ -504,7 +366,9 @@ export default {
       }
     },
   },
-  mounted() {
+  async mounted() {
+    await axios.get('./data.json').then((res) => this.data = res.data);
+
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
       THREE,
@@ -631,7 +495,7 @@ export default {
   z-index: 1;
   max-width: 1575px;
   margin: auto;
-  font-family: "Prociono";
+  font-family: "STIXTwo";
   font-size: 5rem;
 }
 #short_bio h6 {
@@ -729,14 +593,14 @@ export default {
   font-weight: 300;
   line-height: 2.4rem;
   color: var(--white);
-  font-family: "Prociono";
+  font-family: "STIXTwo";
   margin-top: 0.5rem;
 }
 
 .author_bio_title {
   font-size: 4rem;
   color: var(--crimson);
-  font-family: "GotischA";
+  font-family: "altcaps";
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -844,7 +708,7 @@ export default {
 
   font-size: 1.25rem;
   text-transform: uppercase;
-  font-family: "Oswald";
+  font-family: "STIXTwo";
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -899,7 +763,7 @@ export default {
 
 .synopsis_contain h1,
 .synopsis_contain strong {
-  font-family: "GotischA";
+  font-family: "altcaps";
 }
 
 .synopsis_contain h1 {
@@ -919,7 +783,7 @@ export default {
 
 .quote_credit {
   font-weight: lighter;
-  font-family: "GotischA";
+  font-family: "altcaps";
 }
 
 .quote_body {
@@ -990,7 +854,7 @@ textarea {
   padding: 1rem;
   font-size: 1rem;
   text-transform: uppercase;
-  font-family: "Oswald";
+  font-family: "STIXTwo";
   background: transparent;
   /* border: 2px solid var(--white); */
   border: none;
@@ -1023,7 +887,7 @@ textarea:focus-visible {
   z-index: 10;
   position: relative;
   padding: 5rem 0 2rem 0;
-  font-family: "GotischA";
+  font-family: "altcaps";
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
@@ -1069,6 +933,11 @@ textarea:focus-visible {
 
 .miriam_image {
   filter: saturate(0);
+}
+
+/* Break on \r\r from json */
+.synopsis_contain, .author_bio_body{
+  white-space:pre-wrap;
 }
 
 /* laptops */
