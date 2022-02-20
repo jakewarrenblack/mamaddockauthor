@@ -227,7 +227,7 @@
       <br />
       <div class="contact_form_contain" id="vanta_form">
         <form
-          action="https://formsubmit.co/jakewarrenblack01@gmail.com"
+          action="https://formsubmit.co/mamaddock1@gmail.com"
           method="POST"
           class="contact"
         >
