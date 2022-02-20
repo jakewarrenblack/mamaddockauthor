@@ -1,9 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./pages/Home.vue";
-import Bio from "./pages/Bio.vue";
-import Novels from "./pages/Novels.vue";
 import BallochCastle from "./pages/BallochCastle.vue";
+import Thanks from "./pages/Thanks.vue";
 
 Vue.use(Router);
 
@@ -17,14 +16,9 @@ export default new Router({
       component: Home,
     },
     {
-      path: "/bio",
-      name: "bio",
-      component: Bio,
-    },
-    {
-      path: "/novels",
-      name: "novels",
-      component: Novels,
+      path: "/thanks",
+      name: "thanks",
+      component: Thanks,
     },
     {
       path: "/balloch-castle",

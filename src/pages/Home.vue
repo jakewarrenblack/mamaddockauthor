@@ -62,9 +62,9 @@
           class="author_image miriam_image bg_size_cover clip_towards_left"
         ></div>
         <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
-          <h2 class="author_bio_title">{{this.data.bio.title}}</h2>
+          <h2 class="author_bio_title">{{ this.data.bio.title }}</h2>
           <h5 class="author_bio_body">
-            {{this.data.bio.content}}
+            {{ this.data.bio.content }}
           </h5>
         </div>
         <button id="readMore" @click="readMore()" class="swiper">
@@ -97,15 +97,16 @@
           class="author_image bg-size-cover bg-position-center book-image clip_towards_right_pointed_bottom"
         ></div>
         <div data-aos="fade-right" class="author_bio_text">
-          <h2 class="author_bio_title">{{this.data.synopsis.title}}</h2>
+          <h2 class="author_bio_title">{{ this.data.synopsis.title }}</h2>
           <h5 class="author_bio_body">
-            <q>{{this.data.synopsis.quote}}</q>
-            <br /><cite>{{this.data.synopsis.quote_credit}}</cite>
+            <q>{{ this.data.synopsis.quote }}</q>
+            <br /><cite>{{ this.data.synopsis.quote_credit }}</cite>
             <br />
             <br />
 
-            <strong>{{this.data.synopsis.paragraph_context}}</strong><br />
-            {{this.data.synopsis.preview}}
+            <strong>{{ this.data.synopsis.paragraph_context }}</strong
+            ><br />
+            {{ this.data.synopsis.preview }}
           </h5>
           <button class="swiper" @click="show()">
             <span class="swiper_text">View synopsis</span>
@@ -130,13 +131,13 @@
           <br />
 
           <p>
-            <strong>{{this.data.synopsis.paragraph_context}}</strong>
-            {{this.data.synopsis.full_part_1}}
+            <strong>{{ this.data.synopsis.paragraph_context }}</strong>
+            {{ this.data.synopsis.full_part_1 }}
           </p>
 
           <p>
-            <strong>{{this.data.synopsis.later}}</strong>
-            {{this.data.synopsis.full_part_2}}
+            <strong>{{ this.data.synopsis.later }}</strong>
+            {{ this.data.synopsis.full_part_2 }}
           </p>
         </article>
       </modal>
@@ -155,7 +156,11 @@
           :inverse-scaling="1500"
           :space="800"
         >
-          <slide v-for="slide in this.data.slides" :index="slide.img" :key="slide.img">
+          <slide
+            v-for="slide in this.data.slides"
+            :index="slide.img"
+            :key="slide.img"
+          >
             <img
               class="carousel_img"
               :src="require(`@/assets/review_images/${slide.img}.jpg`)"
@@ -221,9 +226,15 @@
       <h1 class="contact_title">Contact</h1>
       <br />
       <div class="contact_form_contain" id="vanta_form">
-        <form action="" class="contact">
+        <form
+          action="https://formsubmit.co/jakewarrenblack01@gmail.com"
+          method="POST"
+          class="contact"
+        >
           <div class="form_input_contain">
             <input
+              required
+              v-model="form.subject"
               type="text"
               name="subject"
               id="subject"
@@ -232,14 +243,32 @@
           </div>
 
           <div class="form_input_contain">
-            <input type="email" placeholder="name@example.com" />
+            <input
+              required
+              v-model="form.email"
+              type="email"
+              name="email"
+              placeholder="name@example.com"
+            />
           </div>
 
           <div class="form_input_contain">
-            <textarea placeholder="Your message here" />
+            <textarea
+              required
+              v-model="form.message"
+              name="message"
+              placeholder="Your message here"
+            />
           </div>
 
-          <button class="swiper contact_button" type="submit" value="Submit">
+          <input type="text" name="_honey" style="display: none" />
+
+          <button
+            @submit="handleSubmit()"
+            class="swiper contact_button"
+            type="submit"
+            value="Submit"
+          >
             Submit
           </button>
         </form>
@@ -264,7 +293,7 @@ import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
 import Flipbook from "flipbook-vue";
 import ConvertKitForm from "convertkit-vue";
-import axios from 'axios';
+import axios from "axios";
 
 // Flipbook pages
 import page1 from "@/assets/balloch_castle/1.jpg";
@@ -312,6 +341,11 @@ export default {
         template: "clare",
         hideName: true,
         stack: false,
+      },
+      form: {
+        email: "",
+        subject: "",
+        message: "",
       },
 
       data: null,
@@ -365,9 +399,15 @@ export default {
         this.$refs["header-background-video"].pauseVideo();
       }
     },
+    handleSubmit(e) {
+      e.preventDefault();
+      if (!this.form.email || !this.form.subject || this.form.message) return;
+
+      this.router.push("/thanks");
+    },
   },
   async mounted() {
-    await axios.get('./data.json').then((res) => this.data = res.data);
+    await axios.get("./data.json").then((res) => (this.data = res.data));
 
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
@@ -377,7 +417,7 @@ export default {
       gyroControls: false,
       minHeight: 200.0,
       minWidth: 200.0,
-      highlightColor: 0x460303,
+      highlightColor: 0x462403,
       midtoneColor: 0x780e04,
       lowlightColor: 0x70707,
       baseColor: 0x20202,
@@ -393,7 +433,7 @@ export default {
       gyroControls: false,
       minHeight: 1200.0,
       minWidth: 200.0,
-      highlightColor: 0x460303,
+      highlightColor: 0x462403,
       midtoneColor: 0x780e04,
       lowlightColor: 0x70707,
       baseColor: 0x20202,
@@ -459,6 +499,10 @@ export default {
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
 
 .formkit-powered-by-convertkit {
+  display: none;
+}
+
+.formkit-submit {
   display: none;
 }
 
@@ -561,7 +605,7 @@ export default {
 }
 
 .book-image {
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.LKTfC2I1I_e094f0yXKRKgAAAA%26pid%3DApi&f=1");
+  background-image: url("~@/assets/sixth_amulet.jpg");
 }
 
 .full_bio_container {
@@ -936,8 +980,9 @@ textarea:focus-visible {
 }
 
 /* Break on \r\r from json */
-.synopsis_contain, .author_bio_body{
-  white-space:pre-wrap;
+.synopsis_contain,
+.author_bio_body {
+  white-space: pre-wrap;
 }
 
 /* laptops */
