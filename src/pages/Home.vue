@@ -14,8 +14,8 @@
             class="img_contain"
             :elementId="'header-background-video'"
             :ref="'header-background-video'"
-            :mp4Source="require('@/assets/sample.mp4')"
-            :posterSource="require('@/assets/sample.jpg')"
+            :mp4Source="require('@/assets/trailer.mp4')"
+            :posterSource="require('@/assets/trailer_placeholder.jpg')"
             :mobileBreakpoint="762"
             :desktopHeight="750"
             :mobileHeight="450"
@@ -34,9 +34,9 @@
                 The Latest Release
               </h4>
               <h2 id="video_subtitle" class="four-rem STIXTwo">
-                The Sixth Amulet
+                The Sixth Amulet: Book One
               </h2>
-              <button id="video_button" @click="toggleVideo">
+              <button id="video_button" class="swiper" style="padding:1rem" @click="toggleVideo">
                 Play trailer
               </button>
             </div>
@@ -377,26 +377,42 @@ export default {
     toggleVideo() {
       this.playButtonClicks++;
 
+      var btn = document.getElementById("video_button");
       var container = document.getElementById("overlay-content");
       var video_title = document.getElementById("video_title");
       var video_subtitle = document.getElementById("video_subtitle");
 
       if (this.playButtonClicks % 2 != 0) {
         video_title.style.opacity = "0";
-        video_subtitle.style.opacity = "0";
+        video_subtitle.style.opacity = "0";        
+
+        // Remove darkened background
+        document.getElementsByClassName("vue-video-section__overlay-content-wrapper__background")[0].classList.add("video_bg_none");
 
         if (window.innerWidth >= 768) {
           container.style.transform = "translateY(50%)";
         }
 
+
+
+        document.getElementById("header-background-video").style.filter = "none";
         this.$refs["header-background-video"].playVideo();
+        btn.innerHTML = "Pause trailer";
+        btn.style.opacity = "0.2"
       } else {
         video_title.style.opacity = "1";
         video_subtitle.style.opacity = "1";
         if (window.innerWidth >= 768) {
           container.style.transform = "translateY(0%)";
         }
+        
+        document.getElementsByClassName("vue-video-section__overlay-content-wrapper__background")[0].classList.remove("video_bg_none");
+
+        document.getElementById("header-background-video").style.filter = "blur(0.25rem)";
+
         this.$refs["header-background-video"].pauseVideo();
+        btn.innerHTML = "Play trailer";
+        btn.style.opacity = "1"
       }
     },
     handleSubmit(e) {
@@ -490,6 +506,12 @@ export default {
     /* height: 100% !important; */
   }
 }
+
+.video_bg_none{
+    background:none!important;    
+}
+
+
 </style>
 
 <style scoped>
@@ -497,7 +519,6 @@ export default {
 @import "../assets/helpers.css";
 
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
-
 .formkit-powered-by-convertkit {
   display: none;
 }
