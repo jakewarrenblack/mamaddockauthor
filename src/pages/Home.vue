@@ -15,7 +15,7 @@
             :elementId="'header-background-video'"
             :ref="'header-background-video'"
             :mp4Source="require('@/assets/trailer_web.mp4')"
-            :posterSource="require('@/assets/trailer_placeholder.jpg')"
+            :posterSource="require('@/assets/trailer_placeholder.webp')"
             :mobileBreakpoint="762"
             :desktopHeight="750"
             :mobileHeight="450"
@@ -573,7 +573,7 @@ export default {
 .img_contain {
   margin-top: -5%;
   height: 50rem;
-  background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"); */
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -622,11 +622,11 @@ export default {
 
 /* Author full bio section */
 .author_image {
-  background-image: url("~@/assets/bio_photo.jpg");
+  background-image: url("~@/assets/bio_photo.webp");
 }
 
 .book-image {
-  background-image: url("~@/assets/sixth_amulet.jpg");
+  background-image: url("~@/assets/sixth_amulet.webp");
 }
 
 .full_bio_container {
