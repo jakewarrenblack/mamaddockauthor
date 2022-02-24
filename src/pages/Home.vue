@@ -429,7 +429,9 @@ export default {
     },
   },
   async mounted() {
-    await axios.get("./data.json").then((res) => (this.data = res.data));
+    document.title = "M.A Maddock"
+    
+    await axios.get("./data.json").then((res) => (this.data = res.data));    
 
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
