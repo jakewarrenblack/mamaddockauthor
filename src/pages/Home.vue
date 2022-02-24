@@ -36,7 +36,12 @@
               <h2 id="video_subtitle" class="four-rem STIXTwo">
                 The Sixth Amulet
               </h2>
-              <button id="video_button" @click="toggleVideo">
+              <button
+                id="video_button"
+                class="swiper"
+                style="padding: 1rem"
+                @click="toggleVideo"
+              >
                 Play trailer
               </button>
             </div>
@@ -377,6 +382,7 @@ export default {
     toggleVideo() {
       this.playButtonClicks++;
 
+      var btn = document.getElementById("video_button");
       var container = document.getElementById("overlay-content");
       var video_title = document.getElementById("video_title");
       var video_subtitle = document.getElementById("video_subtitle");
@@ -389,14 +395,30 @@ export default {
           container.style.transform = "translateY(50%)";
         }
 
+        // Remove darkened background
+        document.getElementsByClassName("vue-video-section__overlay-content-wrapper__background")[0].classList.add("video_bg_none");
+
+        document.getElementById("header-background-video").style.filter = "none";
+
+        btn.innerHTML = "Pause trailer";
+        btn.style.opacity = "0.2";
         this.$refs["header-background-video"].playVideo();
+
       } else {
         video_title.style.opacity = "1";
         video_subtitle.style.opacity = "1";
+
         if (window.innerWidth >= 768) {
           container.style.transform = "translateY(0%)";
         }
-        this.$refs["header-background-video"].pauseVideo();
+        document.getElementsByClassName("vue-video-section__overlay-content-wrapper__background")[0].classList.remove("video_bg_none");
+
+        document.getElementById("header-background-video").style.filter = "blur(0.25rem)";
+
+        btn.innerHTML = "Play trailer";
+        btn.style.opacity = "1";
+
+        this.$refs["header-background-video"].pauseVideo();        
       }
     },
     handleSubmit(e) {
@@ -488,6 +510,10 @@ export default {
     margin-left: 0 !important;
     height: unset !important;
     /* height: 100% !important; */
+  }
+
+  .video_bg_none{
+    background:none!important;    
   }
 }
 </style>
