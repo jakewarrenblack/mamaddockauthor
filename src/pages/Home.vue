@@ -14,7 +14,7 @@
             class="img_contain"
             :elementId="'header-background-video'"
             :ref="'header-background-video'"
-            :mp4Source="require('@/assets/trailer.mp4')"
+            :mp4Source="require('@/assets/trailer_web.mp4')"
             :posterSource="require('@/assets/trailer_placeholder.jpg')"
             :mobileBreakpoint="762"
             :desktopHeight="750"
@@ -23,7 +23,7 @@
             :loop="true"
             :autoplay="false"
             :autobuffer="true"
-            :muted="true"
+            :muted="false"
           >
             <div
               slot="overlay-content"
@@ -163,7 +163,7 @@
           >
             <img
               class="carousel_img"
-              :src="require(`@/assets/review_images/${slide.img}.jpg`)"
+              :src="require(`@/assets/review_images/${slide.img}.webp`)"
             />
             <span class="carousel_img_caption">{{ slide.caption }}</span>
           </slide>
@@ -296,10 +296,10 @@ import ConvertKitForm from "convertkit-vue";
 import axios from "axios";
 
 // Flipbook pages
-import page1 from "@/assets/balloch_castle/1.jpg";
-import page2 from "@/assets/balloch_castle/2.jpg";
-import page3 from "@/assets/balloch_castle/3.jpg";
-import page4 from "@/assets/balloch_castle/4.jpg";
+import page1 from "@/assets/balloch_castle/1.webp";
+import page2 from "@/assets/balloch_castle/2.webp";
+import page3 from "@/assets/balloch_castle/3.webp";
+import page4 from "@/assets/balloch_castle/4.webp";
 
 export default {
   name: "Home",
