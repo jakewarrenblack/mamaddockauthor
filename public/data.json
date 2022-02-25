@@ -1,83 +1,77 @@
-{   
+{
+  "bio": {
+    "title": "About the author",
+    "content": "Asking an Irish person to write a 'few' words about themselves is, putting it mildly, almost impossible! But, here goes. I was born and raised in Dublin, Ireland. Having dabbled in other 'interests' over the years (I won't bore you), in the background, however, I was always an avid reader, with words constantly floating around in my mind yet doing nothing about them, in a literary sense. I used to always say, 'One day, I'll write that book,' but never seemed to get around to doing it. I think the mere thought of putting those words—along with my imagination—to literary use was daunting, therefore, always putting it off. That is, until 2011 when I finally took the plunge and picked up that pen and notebook (still have them, too). I began to string those words into sentences, then paragraphs, then pages, eventually joining them together to create my first novel—The Sixth Amulet - Book One. Then my imagination had other plans; it didn't want to stop at just one. Why would it? And so, one novel turned into two, then three, then … Who knows where it will end?\n\nI believe everyone has a story to tell, a potential book tucked away inside them, dying to get out. And all that's needed to create it, is a simple recipe: a pen and a notebook. So, open your mind and let your imagination roam through the endless possibilities it has to offer … then simply write!\n\nMany people have asked me, “Why Scotland? And why Balloch?” Well, it was while on my first trip there (around 2005), visiting good friends in Balloch, that I fell in love with the place. Always the perfect hosts each time I visit, Billy, Ciara and Megan are so lucky to live a stone's throw from Balloch Castle, on the stunning shores of Loch Lomond (well worth a visit if you happen to be passing through). Anyway, it just seemed right to set The Sixth Amulet in this location. And who knows? Maybe I'll retire there … one day."
+  },
 
+  "synopsis": {
+    "title": "The Sixth Amulet",
+    "quote_credit": "Lothian",
+    "quote": "In the realm of my soul, I believe him to be a great Ruler.",
+    "paragraph_context": "Scotland: 1564",
+    "preview": "Deep within the bowels of Elboru, it waits—an immense force—locked inside a sacred stone, destined to give its bearer the power to be a formidable Ruler. It belongs to just one—the Magus—Lord of all Warlocks—and he belongs to it. But the world of mortals has been overshadowed by a menace: an evil entity that would have it to dominate and destroy all that is good. And yet, all is not lost. From within this stone, a light is about to re-ignite by innocence, instilling hope into the hearts of those who would risk everything, to see it placed in the hands of the chosen one—to see it shine beyond the darkness.",
+    "full_part_1": "Oran Shaw is no ordinary man: a Warlock, determined to leave his lengthy past behind, he disregards his elders, choosing to live a normal life among mortals … until he crosses paths with Kristene—a young, innocent woman, wrongfully accused of witchcraft. He feels compelled to rescue her from her death sentence. It is an act he would later regret.\n\nTogether, they flee to a new life, settling in Triora—Italy. But life alters when a sinister rival from Oran's past—Magia Nera, a dark Warlock—discovers them. He secretly manipulates Kristene, luring her away from Oran, bitterly ending their relationship. However, his interference eventually forces the three to go their separate ways.",
+    "later": "Four decades later:",
+    "full_part_2": "Oran has returned to Scotland, where he meets Rosalyn, a young widow with a baby. They marry and settle in the small village of Balloch, near the shores of Lac Lomond. At last, Oran feels content, living a normal and peaceful life with his new family. But when Rosalyn bears him a son, Gillis, life changes utterly for the reluctant Warlock.\n\nOran's past creeps up on him in the form of a Sorceress, named L'Ordana. He recognises her as Kristene, and there is an element of evil inside her. She is not alone and wants something from him: the location of a powerful amulet—the Shenn. Aware his son is destined to rule over the precious item, Oran vows to protect him … no matter what! Bound by duty, he is forced by his “council”—the Elliyan—to seek out the Sorceress and destroy her. Oran, however, is torn between their past and the present. But, when they come face to face, the Warlock unexpectedly finds himself as her prisoner.\n\nOver time, he allies with three unlikely characters, to help him escape; they are not what they seem. Half-human—half Vampire, the three Dhampir, Reece (a Soldier), Asai (a Samurai), and Tam (a Highlander), are also L'Ordana's prisoners—through no fault of their own. They, too, want freedom and their mortality restored. Therefore, Oran makes a bargain with them: in exchange for their freedom, they find and protect his son. With many lives at stake, and time running out, a twist of fate then turns the table on them all, when Reece makes a shocking discovery …"
+  },
 
-    "bio" : {
-        "title": "About the author",
-        "content": "Asking an Irish person to write a 'few' words about themselves is, putting it mildly, almost impossible! But, here goes. I was born and raised in Dublin, Ireland. Having dabbled in other 'interests' over the years (I won't bore you), in the background, however, I was always an avid reader, with words constantly floating around in my mind yet doing nothing about them, in a literary sense. I used to always say, 'One day, I'll write that book,' but never seemed to get around to doing it. I think the mere thought of putting those words—along with my imagination—to literary use was daunting, therefore, always putting it off. That is, until 2011 when I finally took the plunge and picked up that pen and notebook (still have them, too). I began to string those words into sentences, then paragraphs, then pages, eventually joining them together to create my first novel—The Sixth Amulet - Book One. Then my imagination had other plans; it didn't want to stop at just one. Why would it? And so, one novel turned into two, then three, then … Who knows where it will end?\n\nI believe everyone has a story to tell, a potential book tucked away inside them, dying to get out. And all that's needed to create it, is a simple recipe: a pen and a notebook. So, open your mind and let your imagination roam through the endless possibilities it has to offer … then simply write!\n\nMany people have asked me, “Why Scotland? And why Balloch?” Well, it was while on my first trip there (around 2005), visiting good friends in Balloch, that I fell in love with the place. Always the perfect hosts each time I visit, Billy, Ciara and Megan are so lucky to live a stone's throw from Balloch Castle, on the stunning shores of Loch Lomond (well worth a visit if you happen to be passing through). Anyway, it just seemed right to set The Sixth Amulet in this location. And who knows? Maybe I'll retire there … one day."                
+  "reviews": [
+    {
+      "body": "A tapestry of familiar mythology - and wholly original creations - weaved through a world you'll happily get lost in. A story that truly sings.",
+      "credit": "Gavin Gardiner",
+      "credential": "Author of For Rye and The Last Testament of Crighton Smythe"
     },
-    
-    "synopsis": {
-        "title": "The Sixth Amulet",
-        "quote_credit": "Lothian",        
-        "quote": "In the realm of my soul, I believe him to be a great Ruler.",        
-        "paragraph_context": "Scotland: 1564",    
-        "preview": "Deep within the bowels of Elboru, it waits—an immense force—locked inside a sacred stone, destined to give its bearer the power to be a formidable Ruler. It belongs to just one—the Magus—Lord of all Warlocks—and he belongs to it. But the world of mortals has been overshadowed by a menace: an evil entity that would have it to dominate and destroy all that is good. And yet, all is not lost. From within this stone, a light is about to re-ignite by innocence, instilling hope into the hearts of those who would risk everything, to see it placed in the hands of the chosen one—to see it shine beyond the darkness.",
-        "full_part_1": "Oran Shaw is no ordinary man: a Warlock, determined to leave his lengthy past behind, he disregards his elders, choosing to live a normal life among mortals … until he crosses paths with Kristene—a young, innocent woman, wrongfully accused of witchcraft. He feels compelled to rescue her from her death sentence. It is an act he would later regret.\n\nTogether, they flee to a new life, settling in Triora—Italy. But life alters when a sinister rival from Oran's past—Magia Nera, a dark Warlock—discovers them. He secretly manipulates Kristene, luring her away from Oran, bitterly ending their relationship. However, his interference eventually forces the three to go their separate ways.",
-        "later": "Four decades later:",
-        "full_part_2": "Oran has returned to Scotland, where he meets Rosalyn, a young widow with a baby. They marry and settle in the small village of Balloch, near the shores of Lac Lomond. At last, Oran feels content, living a normal and peaceful life with his new family. But when Rosalyn bears him a son, Gillis, life changes utterly for the reluctant Warlock.\n\nOran's past creeps up on him in the form of a Sorceress, named L'Ordana. He recognises her as Kristene, and there is an element of evil inside her. She is not alone and wants something from him: the location of a powerful amulet—the Shenn. Aware his son is destined to rule over the precious item, Oran vows to protect him … no matter what! Bound by duty, he is forced by his “council”—the Elliyan—to seek out the Sorceress and destroy her. Oran, however, is torn between their past and the present. But, when they come face to face, the Warlock unexpectedly finds himself as her prisoner.\n\nOver time, he allies with three unlikely characters, to help him escape; they are not what they seem. Half-human—half Vampire, the three Dhampir, Reece (a Soldier), Asai (a Samurai), and Tam (a Highlander), are also L'Ordana's prisoners—through no fault of their own. They, too, want freedom and their mortality restored. Therefore, Oran makes a bargain with them: in exchange for their freedom, they find and protect his son. With many lives at stake, and time running out, a twist of fate then turns the table on them all, when Reece makes a shocking discovery …"
+    {
+      "body": "A sumptuous slow burn of a book, in the grand style of epic fantasy, that consumes its reader and transports them to another place and time.",
+      "credit": "Julia Blake",
+      "credential": "Author of Erinsmore and The Forest ~ a tale of old magic ~"
     },
-    
-    "reviews" : [
-        {
-          "body": "A tapestry of familiar mythology - and wholly original creations - weaved through a world you'll happily get lost in. A story that truly sings.",
-          "credit": "Gavin Gardiner",
-          "credential": "Author of For Rye and The Last Testament of Crighton Smythe"
-        },
-        {
-          "body": "A sumptuous slow burn of a book, in the grand style of epic fantasy, that consumes its reader and transports them to another place and time.",
-          "credit": "Julia Blake",
-          "credential": "Author of Erinsmore and The Forest ~ a tale of old magic ~"
-        },
-        {
-          "body": "An epic historical fantasy read, enriched with unique and wonderful characters whose journey will keep you hooked from beginning to end. Maddock has an eye for detail through her incredible imagination. So glad this is a series; one book is not enough!",
-          "credit": "Sarah O'Neill",
-          "credential": "Author of Deadly Obsession and Fatal Beliefs"
-        },
-        {
-          "body": "Masterfully weaved together, with such great flair, you can't help but immerse yourself in the fantastical world M. A. Maddock has created. The diverse locations along with her motley cast of misfits will hold your attention from the start. The Sixth Amulet is an epic fantasy (historical) fiction read that packs a punch.",
-          "credit": "Emma Moohan",
-          "credential": "Actor/Writer"
-        }
-      ],
+    {
+      "body": "An epic historical fantasy read, enriched with unique and wonderful characters whose journey will keep you hooked from beginning to end. Maddock has an eye for detail through her incredible imagination. So glad this is a series; one book is not enough!",
+      "credit": "Sarah O'Neill",
+      "credential": "Author of Deadly Obsession and Fatal Beliefs"
+    },
+    {
+      "body": "Masterfully weaved together, with such great flair, you can't help but immerse yourself in the fantastical world M. A. Maddock has created. The diverse locations along with her motley cast of misfits will hold your attention from the start. The Sixth Amulet is an epic fantasy (historical) fiction read that packs a punch.",
+      "credit": "Emma Moohan",
+      "credential": "Actor/Writer"
+    }
+  ],
 
-      "slides" : [
-        {
-          "img": 0,
-          "caption": "The lotus flower - engraved on Asai Nara's Katana sword."
-        },
-        { "img": 1, "caption": "The Kelpie - a Scottish mythical creature." },
-        {
-          "img": 2,
-          "caption":
-            "fictional map of the lower Highlands - circa late 1500's early 1600's - by Lewis Hickson - Instagram    fantasy_map_cartographer"
-        },
-        { "img": 3, "caption": "The Kelpie - a Scottish mythical creature." },
-        {
-          "img": 4,
-          "caption": "Scottish dirk (dagger) belonging to Eleanor Shaw."
-        },
-        {
-          "img": 5,
-          "caption":
-            "Oran Shaw's coffer (chest) - contains hidden secrets from his past."
-        },
-        {
-          "img": 6,
-          "caption":
-            "The Shaw crest (broach) - made from solid silver. Oran had this made especially for himself, to give him a sense of 'belonging', linking him to his ancestors who were of Pictish origin."
-        },
-        {
-          "img": 7,
-          "caption": "The Arezzo Mirror."
-        },
-        {
-          "img": 8,
-          "caption": "The Window."
-        },
-        {
-          "img": 9,
-          "caption": "Sherlock - always by my side."
-        }
-      ]
+  "slides": [
+    {
+      "img": 0,
+      "caption": "The lotus flower - engraved on Asai Nara's Katana sword."
+    },
+    { "img": 1, "caption": "The Kelpie - a Scottish mythical creature." },
+    {
+      "img": 2,
+      "caption": "fictional map of the lower Highlands - circa late 1500's early 1600's - by Lewis Hickson - Instagram    fantasy_map_cartographer"
+    },
+    { "img": 3, "caption": "The Kelpie - a Scottish mythical creature." },
+    {
+      "img": 4,
+      "caption": "Scottish dirk (dagger) belonging to Eleanor Shaw."
+    },
+    {
+      "img": 5,
+      "caption": "Oran Shaw's coffer (chest) - contains hidden secrets from his past."
+    },
+    {
+      "img": 6,
+      "caption": "The Shaw crest (broach) - made from solid silver. Oran had this made especially for himself, to give him a sense of 'belonging', linking him to his ancestors who were of Pictish origin."
+    },
+    {
+      "img": 7,
+      "caption": "The Arezzo Mirror."
+    },
+    {
+      "img": 8,
+      "caption": "The Window."
+    },
+    {
+      "img": 9,
+      "caption": "Sherlock - always by my side."
+    }
+  ]
 }
-  

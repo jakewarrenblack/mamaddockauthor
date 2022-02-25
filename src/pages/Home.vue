@@ -396,14 +396,18 @@ export default {
         }
 
         // Remove darkened background
-        document.getElementsByClassName("vue-video-section__overlay-content-wrapper__background")[0].classList.add("video_bg_none");
+        document
+          .getElementsByClassName(
+            "vue-video-section__overlay-content-wrapper__background"
+          )[0]
+          .classList.add("video_bg_none");
 
-        document.getElementById("header-background-video").style.filter = "none";
+        document.getElementById("header-background-video").style.filter =
+          "none";
 
         btn.innerHTML = "Pause trailer";
         btn.style.opacity = "0.2";
         this.$refs["header-background-video"].playVideo();
-
       } else {
         video_title.style.opacity = "1";
         video_subtitle.style.opacity = "1";
@@ -411,14 +415,19 @@ export default {
         if (window.innerWidth >= 768) {
           container.style.transform = "translateY(0%)";
         }
-        document.getElementsByClassName("vue-video-section__overlay-content-wrapper__background")[0].classList.remove("video_bg_none");
+        document
+          .getElementsByClassName(
+            "vue-video-section__overlay-content-wrapper__background"
+          )[0]
+          .classList.remove("video_bg_none");
 
-        document.getElementById("header-background-video").style.filter = "blur(0.25rem)";
+        document.getElementById("header-background-video").style.filter =
+          "blur(0.25rem)";
 
         btn.innerHTML = "Play trailer";
         btn.style.opacity = "1";
 
-        this.$refs["header-background-video"].pauseVideo();        
+        this.$refs["header-background-video"].pauseVideo();
       }
     },
     handleSubmit(e) {
@@ -429,9 +438,9 @@ export default {
     },
   },
   async mounted() {
-    document.title = "M.A Maddock"
-    
-    await axios.get("./data.json").then((res) => (this.data = res.data));    
+    document.title = "M.A Maddock";
+
+    await axios.get("./data.json").then((res) => (this.data = res.data));
 
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
@@ -514,8 +523,8 @@ export default {
     /* height: 100% !important; */
   }
 
-  .video_bg_none{
-    background:none!important;    
+  .video_bg_none {
+    background: none !important;
   }
 }
 </style>
@@ -629,11 +638,11 @@ export default {
 
 /* Author full bio section */
 .author_image {
-  background-image: url("~@/assets/bio_photo.webp");
+  background-image: url("~@/assets/bio_photo.jpg");
 }
 
 .book-image {
-  background-image: url("~@/assets/sixth_amulet.webp");
+  background-image: url("~@/assets/sixth_amulet.jpg");
 }
 
 .full_bio_container {
