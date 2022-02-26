@@ -16,7 +16,17 @@
             </a>
           </ul>
         </div>
-        <button @click="openCurtain()" class="nav_toggle">X</button>
+        <button
+          @click="
+            openCurtain();
+            animate();
+          "
+          class="nav_toggle"
+        >
+          <div id="border1" class="border" />
+          <div id="border2" class="border" />
+          <div id="border3" class="border" />
+        </button>
       </nav>
     </div>
   </header>
@@ -33,6 +43,9 @@ export default {
       clicks: 0,
       open: false,
       curtain_contain: null,
+      border1: null,
+      border2: null,
+      border3: null,
     };
   },
   methods: {
@@ -63,9 +76,17 @@ export default {
         this.open = false;
       }
     },
+    animate() {
+      this.border1.classList.toggle("rotatePositive");
+      this.border2.classList.toggle("opacity0");
+      this.border3.classList.toggle("rotateNegative");
+    },
   },
   mounted() {
     this.curtain_contain = document.getElementById("curtain_contain");
+    this.border1 = document.getElementById("border1");
+    this.border2 = document.getElementById("border2");
+    this.border3 = document.getElementById("border3");
   },
 };
 </script>
@@ -76,6 +97,18 @@ header {
   /* background: var(--crimson); */
   padding: 46px 0 90px;
 }
+
+.opacity0 {
+  opacity: 0;
+}
+
+.rotatePositive {
+  transform: rotate(45deg) translateX(12px);
+}
+.rotateNegative {
+  transform: rotate(-45deg) translateX(12px);
+}
+
 #container {
   font-family: "STIXTwo";
   font-size: 2rem;
@@ -87,7 +120,7 @@ header {
 .curtainVisible {
   display: block !important;
   position: absolute;
-  top: 0l;
+  top: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -203,8 +236,6 @@ h2:hover {
   }
 
   .curtain_contain {
-    /* display: none; */
-
     width: 100vw;
     position: absolute;
     z-index: 99999999999999999;
@@ -212,6 +243,26 @@ h2:hover {
     /* top: 15%; */
     transform: translateY(-100%);
     transition: all ease-in-out 0.2s;
+  }
+
+  .nav_toggle {
+    display: flex;
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+  }
+
+  .nav_toggle:hover {
+    cursor: pointer;
+  }
+
+  .border {
+    border-bottom: 1px solid var(--white);
+    width: 100%;
+    transition: all ease-in-out 0.3s;
   }
 
   nav {
@@ -223,9 +274,6 @@ h2:hover {
   h2 {
     font-size: 1.5rem;
     width: 75%;
-  }
-  .nav_toggle {
-    display: block;
   }
 }
 
