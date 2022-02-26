@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/colors.css";
+@import "../assets/css/colors.css";
 
 .container {
   /* width: 100vw; */

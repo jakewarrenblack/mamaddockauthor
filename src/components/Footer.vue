@@ -45,8 +45,8 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/helpers.css";
-@import "../assets/colors.css";
+@import "../assets/css/helpers.css";
+@import "../assets/css/colors.css";
 
 .footer_contain {
   display: flex;

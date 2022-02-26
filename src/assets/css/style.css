@@ -234,6 +234,11 @@
   margin: auto;
 }
 
+.flipbook {
+  width: 90vw;
+  height: 90vh;
+}
+
 .flip_control {
   padding: 0.75rem;
   margin: 0.5rem;

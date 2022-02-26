@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-@import "assets/colors.css";
+@import "assets/css/colors.css";
 
 html {
   background: var(--silver);
@@ -31,7 +31,6 @@ canvas {
   color: var(--white);
   /* margin-top: 60px; */
 }
-
 
 @font-face {
   font-family: "STIXTwo Italic";
@@ -57,5 +56,4 @@ canvas {
   font-family: "altcaps";
   src: url("./assets/fonts/altcaps.ttf");
 }
-
 </style>

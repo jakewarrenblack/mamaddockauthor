@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/colors.css";
+@import "../assets/css/colors.css";
 header {
   /* background: var(--crimson); */
   padding: 46px 0 90px;

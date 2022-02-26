@@ -212,6 +212,8 @@
     <Divider />
     <br />
 
+    <!------------------------------------------------------------------------------------------>
+
     <section class="balloch_castle">
       <div>
         <Flipbook class="flipbook" :pages="pages" v-slot="flipbook">
@@ -229,6 +231,8 @@
         </Flipbook>
       </div>
     </section>
+
+    <!------------------------------------------------------------------------------------------>
 
     <div class="slant">&nbsp;</div>
 
@@ -566,10 +570,10 @@ export default {
 </style>
 
 <style scoped>
-@import "../assets/colors.css";
-@import "../assets/helpers.css";
+@import "../assets/css/colors.css";
+@import "../assets/css/helpers.css";
 
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
 
-@import "../assets/style.css";
+@import "../assets/css/style.css";
 </style>
