@@ -31,6 +31,8 @@ export default {
   data() {
     return {
       clicks: 0,
+      open: false,
+      curtain_contain: null,
     };
   },
   methods: {
@@ -38,23 +40,33 @@ export default {
       this.$router.push("/");
     },
     checkRouter(link) {
+      if (this.open) {
+        // close the menu if we click a link
+        this.curtain_contain.classList.remove("curtainVisible");
+        document.getElementById("header").style.zIndex = "1";
+        // prevent need for double click
+        this.clicks = 0;
+      }
+
       link.router ? this.router.push(link.href) : "";
     },
     openCurtain() {
       this.clicks++;
 
-      const curtain_contain = document.getElementById("curtain_contain");
-
       if (this.clicks % 2 != 0) {
-        curtain_contain.classList.add("curtainVisible");
+        this.curtain_contain.classList.add("curtainVisible");
         document.getElementById("header").style.zIndex = "-1";
+        this.open = true;
       } else {
-        curtain_contain.classList.remove("curtainVisible");
+        this.curtain_contain.classList.remove("curtainVisible");
         document.getElementById("header").style.zIndex = "1";
+        this.open = false;
       }
     },
   },
-  mounted() {},
+  mounted() {
+    this.curtain_contain = document.getElementById("curtain_contain");
+  },
 };
 </script>
 
