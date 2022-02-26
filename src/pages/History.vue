@@ -1,0 +1,735 @@
+<template>
+  <div id="container">
+    <section id="short_bio">
+      <div class="short_bio_container">
+        <h6>
+          M. A. Maddock is an Irish author, currently living in Dublin, Ireland.
+        </h6>
+      </div>
+    </section>
+    <Divider />
+    <section id="full_bio">
+      <div
+        class="full_bio_container d-flex justify-space-between align-items-center"
+      >
+        <img
+          src="~@/assets/bio_photo.jpg"
+          data-aos="fade-right"
+          class="author_image miriam_image bg_size_cover clip_towards_left"
+        />
+
+        <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
+          <h2 class="author_bio_title">{{ this.data.bio.title }}</h2>
+          <h5 class="author_bio_body">
+            {{ this.data.bio.content }}
+          </h5>
+        </div>
+        <button id="readMore" @click="readMore()" class="swiper">
+          Read more
+        </button>
+      </div>
+    </section>
+
+    <br /><br />
+    <Divider />
+  </div>
+</template>
+
+<script>
+import Navbar from "@/components/Navbar";
+import Divider from "@/components/Divider";
+import Footer from "@/components/Footer";
+
+import * as THREE from "three";
+import Vanta from "vanta/dist/vanta.fog.min";
+
+import axios from "axios";
+
+export default {
+  name: "History",
+
+  components: {
+    Footer,
+    Navbar,
+    Divider,
+  },
+  directives: {
+    swiper: directive,
+  },
+  data() {
+    return {
+      links: [
+        {
+          title: "BIO",
+          href: "#full_bio",
+        },
+        {
+          title: "NOVEL",
+          href: "#synopsis",
+        },
+        {
+          title: "CONTACT",
+          href: "#contact",
+        },
+      ],
+    };
+  },
+  methods: {},
+  async mounted() {
+    document.title = "M.A Maddock";
+
+    await axios.get("./data.json").then((res) => (this.data = res.data));
+  },
+};
+</script>
+
+<!-- Can't be scoped -->
+<style>
+@media only screen and (max-width: 767px) {
+  /* Allow scroll on mobile */
+  .modal-mobile {
+    left: 0 !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    margin-left: 0 !important;
+    height: unset !important;
+    /* height: 100% !important; */
+  }
+
+  .video_bg_none {
+    background: none !important;
+  }
+}
+</style>
+
+<style scoped>
+@import "../assets/colors.css";
+@import "../assets/helpers.css";
+
+@import "../../node_modules/vue-video-section/dist/vue-video-section.css";
+
+.anchor {
+  display: contents;
+}
+
+.formkit-powered-by-convertkit {
+  display: none;
+}
+
+#newsletter form {
+}
+
+#newsletter form input {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-family: "STIXTwo";
+  text-transform: uppercase;
+  border: 2px solid var(--crimson);
+}
+
+#newsletter form button {
+  width: 100%;
+  background-color: var(--crimson);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-family: "STIXTwo";
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 0;
+  border-radius: 0.2rem;
+  transition: all ease 0.3s;
+}
+
+#newsletter form button:hover {
+  cursor: pointer;
+  transform: scaleX(1.05);
+}
+
+#container {
+  background: var(--silver);
+}
+#header {
+  /* background: var(--crimson); */
+  position: relative;
+}
+.header_container {
+  position: relative;
+  z-index: 1;
+  max-width: 1575px;
+  margin: auto;
+}
+#header:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--silver);
+  z-index: 0;
+}
+#short_bio {
+  background: var(--silver);
+  position: relative;
+}
+.short_bio_container {
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+  max-width: 1575px;
+  margin: auto;
+  font-family: "STIXTwo";
+  font-size: 5rem;
+}
+#short_bio h6 {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1040px;
+  padding: 120px 0;
+}
+
+.img_contain {
+  margin-top: -5%;
+  height: 50rem;
+  /* background-image: url("https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"); */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: brightness(0.5); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+
+  z-index: -1;
+}
+
+#video_title,
+#video_subtitle {
+  transition: all ease-in-out 0.3s;
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.5s;
+}
+
+.hero_text {
+  text-align: center;
+  color: var(--white);
+}
+.author_short_desc {
+  font-family: "STIXTwo Italic";
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+.author_name {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-size: 10rem;
+  font-family: "STIXTwo";
+  letter-spacing: 2rem;
+  text-transform: uppercase;
+}
+
+/* Author full bio section */
+/* .author_image {
+  background-image: url("~@/assets/bio_photo.jpg");
+  background-size: contain;
+  clip-path: none;
+} */
+
+/* .book-image {
+  background-image: url("~@/assets/sixth_amulet.jpg");
+  background-size: contain;
+  clip-path: none;
+} */
+
+.full_bio_container {
+  max-width: 1800px;
+  margin: auto;
+}
+
+.author_image {
+  object-fit: cover;
+  height: 55rem;
+  width: 75%;
+  margin: 4rem 4rem 0 0;
+  /* filter: blur(5px); */
+}
+
+.author_bio_text {
+  width: 75%;
+  margin: 4rem 3rem 3rem 4rem;
+  text-align: left;
+}
+
+#full_bio {
+  background: var(--silver);
+}
+
+.author_bio_body {
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  color: var(--white);
+  font-family: "STIXTwo";
+  margin-top: 0.5rem;
+}
+
+.author_bio_title {
+  font-size: 4rem;
+  color: var(--crimson);
+  font-family: "altcaps";
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Book gallery */
+.carousel_img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#book_images {
+  background: var(--silver);
+  padding: 5rem 0;
+}
+
+.carousel_img {
+  position: relative;
+}
+
+.carousel_img_caption {
+  color: transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+.carousel_img_caption:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+/* Balloch Castle */
+
+.balloch_castle {
+  overflow: hidden;
+}
+
+.flipbook {
+  margin: auto;
+}
+
+.flip_control {
+  padding: 0.75rem;
+  margin: 0.5rem;
+  font-family: "STIXTwo";
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  /* border: 2px solid var(--crimson); */
+  color: var(--white);
+}
+
+.flip_control:hover {
+  cursor: pointer;
+}
+
+/* Reviews */
+
+.review_swiper {
+  min-height: 20rem;
+}
+
+.quotation {
+  width: 100%;
+  height: 100%;
+  /* filter: invert(100%); */
+  filter: saturate(20);
+}
+
+.quotation_container {
+  width: 10rem;
+  height: 10rem;
+  background: url("~@/assets/quotation_vantabg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 10rem; */
+  padding: 5rem 0;
+}
+
+/* button */
+.swiper {
+  padding-left: 0;
+  background: transparent;
+  color: var(--crimson);
+  /* border: 2px solid var(--crimson); */
+
+  padding: 1rem 0;
+
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-family: "STIXTwo";
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  border: none;
+
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: all;
+  box-shadow: inset 0 0 0 4px var(--silver), 0 0 1px rgba(0, 0, 0, 0);
+}
+
+/* contact button */
+
+.contact_button {
+  padding: 1rem 2rem;
+  justify-content: center;
+}
+
+.swiper:hover {
+  cursor: pointer;
+}
+
+.swiper:hover {
+  padding: 1rem 2rem;
+  justify-content: center;
+  box-shadow: inset 0 0 0 4px var(--crimson), 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.swiper-container {
+  /* margin-top: 8rem; */
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.synopsis_contain {
+  color: var(--black);
+  padding: 2rem;
+  font-family: "STIXTwo";
+  /* background: var(--white); */
+  text-align: left;
+  font-size: 1.15rem;
+}
+
+.synopsis_contain h1,
+.synopsis_contain strong {
+  font-family: "altcaps";
+}
+
+.synopsis_contain h1 {
+  color: var(--crimson);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.synopsis-modal {
+  color: var(--black);
+}
+
+.quote_credit {
+  color: var(--crimson);
+  font-weight: 700;
+}
+
+.quote_credit {
+  font-weight: lighter;
+  font-family: "altcaps";
+}
+
+.quote_body {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: 300;
+  font-family: "STIXTwo";
+}
+
+.review_quote_contain {
+  width: 75%;
+  margin: auto;
+}
+
+.quote_credit_credential {
+  font-weight: 300;
+  font-family: "STIXTwo";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--crimson);
+}
+
+/* Contact section */
+
+canvas.vanta-canvas:nth-child(4) {
+  height: 1200px;
+  margin-top: -15%;
+  z-index: 0;
+}
+
+.balloch_castle {
+  z-index: 1;
+  padding: revert;
+  position: relative;
+  z-index: 10;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.contact_form_contain {
+  width: 50%;
+  margin: auto;
+  height: 25rem;
+  padding: 5rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 0.25rem;
+}
+
+.form_input_contain {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form_input_contain input,
+textarea {
+  /* background: rgba(255, 255, 255, 0.4); */
+  color: var(--white);
+  padding: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "STIXTwo";
+  background: transparent;
+  /* border: 2px solid var(--white); */
+  border: none;
+  box-shadow: inset 0 0 0 4px var(--silver), 0 0 1px rgba(0, 0, 0, 0);
+
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: all;
+  text-align: center;
+}
+
+.form_input_contain input:focus-visible,
+textarea:focus-visible {
+  box-shadow: inset 0 0 0 4px var(--crimson), 0 0 1px rgba(0, 0, 0, 0);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+}
+
+.swiper:nth-of-type(1) {
+  color: var(--white);
+  /* box-shadow: inset 0 0 0 4px var(--white), 0 0 1px rgba(0, 0, 0, 0); */
+}
+
+.contact_title {
+  z-index: 10;
+  position: relative;
+  padding: 5rem 0 2rem 0;
+  font-family: "altcaps";
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#contact {
+  margin-top: -5%;
+  padding-top: 10rem;
+}
+
+/* Newsletter */
+#newsletter {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+#mc_embed_signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mc_embed_signup_scroll {
+  display: flex;
+  align-items: baseline;
+}
+
+#mc-embedded-subscribe-form {
+  border-bottom: 2px solid var(--crimson);
+  width: 75%;
+}
+
+.newsletter_button:hover {
+  box-shadow: none;
+  color: var(--crimson);
+}
+
+#readMore {
+  display: none;
+}
+
+.miriam_image {
+  filter: saturate(0);
+}
+
+/* Break on \r\r from json */
+.synopsis_contain,
+.author_bio_body {
+  white-space: pre-wrap;
+}
+
+/* laptops */
+@media only screen and (max-width: 1224px) {
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    font-size: 3rem;
+  }
+
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    letter-spacing: 0.5rem;
+  }
+  .four-rem {
+    font-size: 3rem;
+  }
+  .short_bio_container {
+    font-size: 4rem;
+  }
+  .author_image {
+    margin: 0;
+    background-size: cover;
+    height: 30rem;
+    background-position: center;
+  }
+  .author_bio_text {
+    margin: 0;
+    text-align: center;
+  }
+  .full_bio_container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .hero_text {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 18vh;
+  }
+  .swiper {
+    margin: auto;
+  }
+
+  .contact_form_contain {
+    width: auto;
+    margin: 0 1.5rem;
+    padding: 1rem;
+  }
+
+  .contact_button {
+    margin: 0;
+  }
+
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    font-size: 3rem;
+  }
+
+  .author_short_desc {
+    font-size: 1.5rem;
+  }
+  .author_name {
+    letter-spacing: 0.5rem;
+  }
+  .four-rem {
+    font-size: 3rem;
+  }
+  .short_bio_container {
+    font-size: 4rem;
+  }
+  .author_image {
+    margin: 0;
+    background-size: cover;
+    height: 30rem;
+    background-position: center;
+  }
+  .author_bio_text {
+    margin: 0;
+    text-align: center;
+  }
+  .full_bio_container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .synopsis_contain {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+</style>

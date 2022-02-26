@@ -4,10 +4,16 @@
       <nav>
         <h2>MA MADDOCK</h2>
         <ul>
-          <li class="navlink">BIO</li>
-          <li class="navlink">NOVEL</li>
-          <li class="navlink">CONTACT</li>
+          <a
+            :href="link.href"
+            v-for="link in this.links"
+            :key="link"
+            class="anchor"
+          >
+            <li>{{ link.title }}</li>
+          </a>
         </ul>
+        <!-- <li v-for="link in props.links" :key="link">test</li> -->
       </nav>
     </div>
   </header>
@@ -15,12 +21,17 @@
 
 <script>
 export default {
-  name: "Bio",
+  name: "Navbar",
+  props: {
+    links: Array,
+  },
   data() {
     return {};
   },
   methods: {},
-  mounted() {},
+  mounted() {
+    console.log(this.props.links);
+  },
 };
 </script>
 
@@ -35,6 +46,7 @@ header {
   font-size: 2rem;
   max-width: 1575px;
   margin: auto;
+  background: transparent;
 }
 nav {
   display: flex;
@@ -46,6 +58,12 @@ ul {
   list-style: none;
   align-items: center;
 }
+
+.anchor {
+  display: contents;
+  color: var(--white);
+}
+
 li {
   position: relative;
   transition: all 0.3s ease-in-out;
