@@ -62,10 +62,12 @@
       <div
         class="full_bio_container d-flex justify-space-between align-items-center"
       >
-        <div
+        <img
+          src="~@/assets/bio_photo.jpg"
           data-aos="fade-right"
           class="author_image miriam_image bg_size_cover clip_towards_left"
-        ></div>
+        />
+
         <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
           <h2 class="author_bio_title">{{ this.data.bio.title }}</h2>
           <h5 class="author_bio_body">
@@ -97,11 +99,14 @@
       <div
         class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
       >
-        <div
+        <img
+          src="~@/assets/sixth_amulet.jpg"
           data-aos="fade-left"
-          class="author_image bg-size-cover bg-position-center book-image clip_towards_right_pointed_bottom"
-        ></div>
-        <div data-aos="fade-right" class="author_bio_text">
+          style="width: auto"
+          class="author_image"
+        />
+
+        <div data-aos="fade-right" style="width: 85%" class="author_bio_text">
           <h2 class="author_bio_title">{{ this.data.synopsis.title }}</h2>
           <h5 class="author_bio_body">
             <q>{{ this.data.synopsis.quote }}</q>
@@ -637,13 +642,17 @@ export default {
 }
 
 /* Author full bio section */
-.author_image {
+/* .author_image {
   background-image: url("~@/assets/bio_photo.jpg");
-}
+  background-size: contain;
+  clip-path: none;
+} */
 
-.book-image {
+/* .book-image {
   background-image: url("~@/assets/sixth_amulet.jpg");
-}
+  background-size: contain;
+  clip-path: none;
+} */
 
 .full_bio_container {
   max-width: 1800px;
