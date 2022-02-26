@@ -575,6 +575,24 @@ export default {
     background: none !important;
   }
 }
+
+.vue-video-section video {
+  object-fit: contain !important;
+}
+
+.vue-video-section__video-element {
+  width: 100% !important;
+}
+
+.vue-video-section-wrapper {
+  background: none !important;
+}
+
+.vue-video-section__overlay-content-wrapper__content-wrapper__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 
 <style scoped>
