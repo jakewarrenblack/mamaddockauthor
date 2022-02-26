@@ -1,10 +1,11 @@
 <template>
   <div id="container">
+    <div id="nav_header_contain">
+      <Navbar :links="this.links" />
+    </div>
     <section id="short_bio">
       <div class="short_bio_container">
-        <h6>
-          M. A. Maddock is an Irish author, currently living in Dublin, Ireland.
-        </h6>
+        <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
       </div>
     </section>
     <Divider />
@@ -32,6 +33,8 @@
 
     <br /><br />
     <Divider />
+
+    <Footer />
   </div>
 </template>
 
@@ -40,10 +43,10 @@ import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 
-import * as THREE from "three";
-import Vanta from "vanta/dist/vanta.fog.min";
-
 import axios from "axios";
+
+// import * as THREE from "three";
+// import Vanta from "vanta/dist/vanta.fog.min";
 
 export default {
   name: "History",
@@ -52,9 +55,6 @@ export default {
     Footer,
     Navbar,
     Divider,
-  },
-  directives: {
-    swiper: directive,
   },
   data() {
     return {
@@ -79,6 +79,23 @@ export default {
     document.title = "M.A Maddock";
 
     await axios.get("./data.json").then((res) => (this.data = res.data));
+
+    // this.vantaEffect = Vanta({
+    //   el: "#nav_header_contain",
+    //   THREE,
+    //   mouseControls: true,
+    //   touchControls: true,
+    //   gyroControls: false,
+    //   minHeight: 200.0,
+    //   minWidth: 200.0,
+    //   highlightColor: 0x462403,
+    //   midtoneColor: 0x780e04,
+    //   lowlightColor: 0x70707,
+    //   baseColor: 0x20202,
+    //   blurFactor: 0.41,
+    //   speed: 0.4,
+    //   zoom: 1,
+    // });
   },
 };
 </script>

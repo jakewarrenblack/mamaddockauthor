@@ -17,6 +17,7 @@ export default {
 html {
   background: var(--silver);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 canvas {

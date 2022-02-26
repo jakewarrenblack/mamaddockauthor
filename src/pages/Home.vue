@@ -369,14 +369,22 @@ export default {
         {
           title: "BIO",
           href: "#full_bio",
+          router: false,
         },
         {
           title: "NOVEL",
           href: "#synopsis",
+          router: false,
+        },
+        {
+          title: "HISTORY",
+          href: "/history",
+          router: true,
         },
         {
           title: "CONTACT",
           href: "#contact",
+          router: false,
         },
       ],
     };

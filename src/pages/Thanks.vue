@@ -48,12 +48,15 @@ export default {
 </script>
 
 <style scoped>
+@import "../assets/css/style.css";
+
 #container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: transparent;
 }
 
 .swiper {

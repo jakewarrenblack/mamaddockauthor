@@ -2,9 +2,10 @@
   <header>
     <div id="container">
       <nav>
-        <h2>MA MADDOCK</h2>
+        <h2 @click="home()">MA MADDOCK</h2>
         <ul>
           <a
+            @click="checkRouter(link)"
             :href="link.href"
             v-for="link in this.links"
             :key="link"
@@ -28,7 +29,14 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    home() {
+      this.$router.push("/");
+    },
+    checkRouter(link) {
+      link.router ? this.router.push(link.href) : "";
+    },
+  },
   mounted() {
     console.log(this.props.links);
   },
@@ -86,6 +94,10 @@ li:hover {
 
 li:hover::after {
   opacity: 1;
+}
+
+h2:hover {
+  cursor: pointer;
 }
 
 /* Tablet size and down */
