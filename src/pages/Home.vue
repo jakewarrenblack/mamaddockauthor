@@ -17,7 +17,7 @@
             :mp4Source="require('@/assets/trailer_web.mp4')"
             :posterSource="require('@/assets/trailer_placeholder.webp')"
             :mobileBreakpoint="762"
-            :desktopHeight="750"
+            :desktopHeight="850"
             :mobileHeight="450"
             :playsinline="true"
             :loop="true"
@@ -348,7 +348,7 @@ export default {
 
       convertKitConfig: {
         formId: 2986098,
-        template: "clare",
+        template: "minimal",
         hideName: true,
         stack: false,
       },
@@ -506,6 +506,21 @@ export default {
       document.getElementById("readMore").style.display = "block";
       author_bio_body[0].innerHTML = bio_shortened;
     }
+
+    document.getElementById("ck-email").required = true;
+  },
+  created() {
+    var htmlVideo = document.querySelectorAll("vue-video-section-wrapper")[0];
+
+    htmlVideo.style.background = "unset!important";
+
+    var video_wrapper = document.querySelectorAll(
+      "vue-video-section__video-element"
+    )[0];
+
+    video_wrapper.style.width = "width:unset!important";
+    video_wrapper.style.minWidth = "unset!important";
+    video_wrapper.style.minHeight = "unset!important";
   },
   beforeDestroy() {
     if (this.vantaEffect) {
@@ -544,8 +559,39 @@ export default {
   display: none;
 }
 
-.formkit-submit {
-  display: none;
+#newsletter form {
+}
+
+#newsletter form input {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-family: "STIXTwo";
+  text-transform: uppercase;
+  border: 2px solid var(--crimson);
+}
+
+#newsletter form button {
+  width: 100%;
+  background-color: var(--crimson);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-family: "STIXTwo";
+  text-transform: uppercase;
+  border: none;
+  padding: 1rem 0;
+  border-radius: 0.2rem;
+  transition: all ease 0.3s;
+}
+
+#newsletter form button:hover {
+  cursor: pointer;
+  transform: scaleX(1.05);
 }
 
 #container {
@@ -660,8 +706,7 @@ export default {
 }
 
 .author_image {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  object-fit: cover;
   height: 55rem;
   width: 75%;
   margin: 4rem 4rem 0 0;
@@ -937,7 +982,7 @@ canvas.vanta-canvas:nth-child(4) {
   width: 100%;
 }
 
-input,
+.form_input_contain input,
 textarea {
   /* background: rgba(255, 255, 255, 0.4); */
   color: var(--white);
@@ -958,7 +1003,7 @@ textarea {
   text-align: center;
 }
 
-input:focus-visible,
+.form_input_contain input:focus-visible,
 textarea:focus-visible {
   box-shadow: inset 0 0 0 4px var(--crimson), 0 0 1px rgba(0, 0, 0, 0);
 }
