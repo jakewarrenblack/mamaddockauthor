@@ -626,4 +626,12 @@ textarea:focus-visible {
     margin-left: 0 !important;
     padding-left: 0 !important;
   }
+
+  .author_bio_title {
+    font-size: 2rem;
+  }
+
+  #newsletter {
+    max-width: 90%;
+  }
 }

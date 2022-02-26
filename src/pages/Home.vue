@@ -408,7 +408,7 @@ export default {
         : (currentValue.innerHTML = fullBio);
 
       var readMore = document.getElementById("readMore");
-      readMore.innerHTML.toLowerCase() == "read more"
+      readMore.innerHTML.toLowerCase() != "read more"
         ? (readMore.innerHTML = "read less")
         : (readMore.innerHTML = "read more");
     },
