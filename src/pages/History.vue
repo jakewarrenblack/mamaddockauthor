@@ -5,34 +5,45 @@
     </div>
     <section id="short_bio">
       <div class="short_bio_container">
-        <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
+        <h6>The story behind the latest release</h6>
       </div>
     </section>
     <Divider />
     <section id="full_bio">
-      <div
-        class="full_bio_container d-flex justify-space-between align-items-center"
-      >
-        <img
-          src="~@/assets/bio_photo.jpg"
-          data-aos="fade-right"
-          class="author_image miriam_image bg_size_cover clip_towards_left"
-        />
-
-        <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
-          <h2 class="author_bio_title">{{ this.data.bio.title }}</h2>
-          <h5 class="author_bio_body">
-            {{ this.data.bio.content }}
-          </h5>
-        </div>
-        <button id="readMore" @click="readMore()" class="swiper">
-          Read more
-        </button>
-      </div>
+      <img
+        src="~@/assets/book_cover_full_width.jpg"
+        data-aos="fade-right"
+        class="author_image history_author_image bg_size_cover"
+      />
     </section>
 
     <br /><br />
     <Divider />
+
+    <section id="synopsis" ref="bookSection">
+      <div
+        class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
+      >
+        <img
+          src="~@/assets/cover_mockup.jpg"
+          data-aos="fade-left"
+          style="width: auto"
+          class="author_image"
+        />
+
+        <div data-aos="fade-right" style="width: 85%" class="author_bio_text">
+          <h2 class="author_bio_title">Lorem ipsum</h2>
+          <h5 class="author_bio_body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            voluptatum accusantium labore id minus, dicta et molestias quia
+            magni? Saepe recusandae cumque modi consequatur repellendus
+            asperiores quam? Earum, doloribus dolorum!
+          </h5>
+        </div>
+      </div>
+    </section>
+
+    <Divider style="margin-top: 10rem" />
 
     <Footer />
   </div>
@@ -125,4 +136,8 @@ export default {
 @import "../assets/css/style.css";
 
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
+
+.history_author_image {
+  margin: 4rem 0;
+}
 </style>
