@@ -67,10 +67,12 @@ export default {
       this.clicks++;
 
       if (this.clicks % 2 != 0) {
+        document.querySelectorAll("html")[0].style.overflow = "hidden";
         this.curtain_contain.classList.add("curtainVisible");
         document.getElementById("header").style.zIndex = "-1";
         this.open = true;
       } else {
+        document.querySelectorAll("html")[0].style.overflow = "unset";
         this.curtain_contain.classList.remove("curtainVisible");
         document.getElementById("header").style.zIndex = "1";
         this.open = false;
