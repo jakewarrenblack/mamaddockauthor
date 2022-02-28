@@ -253,6 +253,8 @@ h2:hover {
     flex-direction: column;
     height: 20px;
     justify-content: space-between;
+    position: static;
+    z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999;
   }
 
   .nav_toggle:hover {

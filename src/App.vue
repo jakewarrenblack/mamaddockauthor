@@ -20,8 +20,15 @@ html {
   scroll-behavior: smooth;
 }
 
-canvas {
+body canvas {
   width: 100% !important;
+}
+
+/* Put this in the media query because it seems to break the review slider otherwise */
+@media only screen and (max-width: 767px) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 #app {
