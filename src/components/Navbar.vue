@@ -221,7 +221,7 @@ h2:hover {
   position: static;
   width: 10%;
   margin-right: auto;
-  z-index: 99999999999999999999999999999999999999999999;
+  z-index: 9999999999;
 }
 
 @media only screen and (max-width: 767px) {
