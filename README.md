@@ -1,4 +1,6 @@
-# mamaddockauthor
+# M.A Maddock Author
+
+![mamaddockauthor](https://user-images.githubusercontent.com/47800618/157560397-5ce863b4-dc9d-40ae-a5d2-b6669c186dd4.png)
 
 ## Project setup
 ```
