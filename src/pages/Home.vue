@@ -6,7 +6,7 @@
         <div class="header_container">
           <div class="hero_text">
             <h3 data-aos="fade-down" class="author_short_desc">
-              Lorem ipsum Ipsum Dolor Sit Amet
+              <!-- Lorem ipsum Ipsum Dolor Sit Amet -->
             </h3>
             <h1 data-aos="fade-up" class="author_name">M.A Maddock</h1>
           </div>
