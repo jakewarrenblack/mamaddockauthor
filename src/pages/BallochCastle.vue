@@ -39,9 +39,9 @@
       </div>
     </section>
 
-    <Divider style="margin-top: 10rem" />
+    <Divider />
 
-    <Footer />
+    <Footer style="margin-top:0;" />
   </div>
 </template>
 
@@ -147,6 +147,10 @@ export default {
 
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
 
+.author_image{
+  width:50%;
+}
+
   .history_author_image {
     margin: 4rem 0;
   }
@@ -155,8 +159,15 @@ export default {
     width: 55%;
   }
 
+  a{
+    color:white;
+  }
+
   @media only screen and (max-width: 767px) {
     .balloch_article_paragraph{
+      width:90%;
+    }
+    .author_image{
       width:100%;
     }
   }
