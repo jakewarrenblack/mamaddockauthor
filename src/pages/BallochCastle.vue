@@ -3,41 +3,37 @@
     <div id="nav_header_contain">
       <Navbar :links="this.links" />
     </div>
-    <section id="short_bio">
-      <div class="short_bio_container">
-        <h6>The story behind the latest release</h6>
-      </div>
-    </section>
-    <Divider />
+
     <section id="full_bio">
+    <fig>
       <img
-        src="~@/assets/book_cover_full_width.jpg"
+        src="~@/assets/balloch_castle/1.webp"
         data-aos="fade-right"
         class="author_image history_author_image bg_size_cover"
       />
+      <figcaption>Photograph courtesy of Billy Aitken</figcaption>
+      </fig>
+      
     </section>
 
     <br /><br />
+    <h2 class="author_bio_title">{{this.data.balloch.heading1}}</h2>
     <Divider />
 
     <section id="synopsis" ref="bookSection">
-      <div
-        class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
-      >
-        <img
-          src="~@/assets/cover_mockup.jpg"
-          data-aos="fade-left"
-          style="width: auto"
-          class="author_image"
-        />
-
-        <div data-aos="fade-right" style="width: 85%" class="author_bio_text">
-          <h2 class="author_bio_title">Lorem ipsum</h2>
+      <div class="full_bio_container d-flex flex-column justify-content-center align-items-center">
+        <div data-aos="fade-up"  class="author_bio_text margin-auto balloch_article_paragraph">          
           <h5 class="author_bio_body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            voluptatum accusantium labore id minus, dicta et molestias quia
-            magni? Saepe recusandae cumque modi consequatur repellendus
-            asperiores quam? Earum, doloribus dolorum!
+            {{this.data.balloch.p1}}
+          </h5>
+        </div>        
+
+      <h2 class="author_bio_title">{{this.data.balloch.heading2}}</h2>
+      <Divider/>
+      <div data-aos="fade-up" class="author_bio_text margin-auto balloch_article_paragraph">          
+          <h5 class="author_bio_body">
+            {{this.data.balloch.p2}}<br/>
+            <a target="_blank" :href="`${this.data.balloch.link}`">{{this.data.balloch.link}}</a>
           </h5>
         </div>
       </div>
@@ -60,7 +56,7 @@ import axios from "axios";
 // import Vanta from "vanta/dist/vanta.fog.min";
 
 export default {
-  name: "History",
+  name: "BallochCastle",
 
   components: {
     Footer,
@@ -96,6 +92,7 @@ export default {
           router: false,
         },
       ],
+      data: null,
     };
   },
   methods: {},
@@ -150,7 +147,17 @@ export default {
 
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
 
-.history_author_image {
-  margin: 4rem 0;
-}
+  .history_author_image {
+    margin: 4rem 0;
+  }
+
+  .balloch_article_paragraph{
+    width: 55%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .balloch_article_paragraph{
+      width:100%;
+    }
+  }
 </style>

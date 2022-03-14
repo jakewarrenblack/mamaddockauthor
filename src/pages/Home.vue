@@ -232,6 +232,8 @@
       </div>
     </section>
 
+
+    
     <!------------------------------------------------------------------------------------------>
 
     <div class="slant">&nbsp;</div>
@@ -379,6 +381,11 @@ export default {
         {
           title: "HISTORY",
           href: "/history",
+          router: true,
+        },
+        {
+          title: "BALLOCH CASTLE",
+          href: "/balloch_castle",
           router: true,
         },
         {

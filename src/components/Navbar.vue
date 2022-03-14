@@ -10,6 +10,7 @@
               :href="link.href"
               v-for="link in this.links"
               :key="link"
+              :id="link.href"
               class="anchor"
             >
               <li>{{ link.title }}</li>
@@ -61,8 +62,17 @@ export default {
         this.clicks = 0;
       }
 
-      link.router ? this.router.push(link.href) : "";
+      if(link.router){
+         this.router.push(link.href)
+      }
+      else{
+        if(this.$router.currentRoute.path != "/" ){          
+          this.$router.push('/');
+          document.getElementById(link.href).click();
+        }            
+      }
     },
+    
     openCurtain() {
       this.clicks++;
 
@@ -137,7 +147,9 @@ header {
 }
 
 nav {
-  display: flex;
+  display: flex;  
+  flex-direction: column;
+  border-bottom: 2px solid var(--white);
 }
 ul {
   display: flex;

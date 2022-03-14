@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./pages/Home.vue";
 import Thanks from "./pages/Thanks.vue";
 import History from "./pages/History.vue";
+import BallochCastle from "./pages/BallochCastle.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -23,6 +24,11 @@ export default new Router({
       path: "/history",
       name: "history",
       component: History,
+    },
+    {
+      path: "/balloch_castle",
+      name: "balloch_castle",
+      component: BallochCastle,
     },
   ],
 });
