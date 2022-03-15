@@ -436,6 +436,7 @@ canvas.vanta-canvas:nth-child(4) {
 
 .form_input_contain input,
 textarea {
+  resize:none;
   /* background: rgba(255, 255, 255, 0.4); */
   color: var(--white);
   padding: 1rem;

@@ -57,9 +57,11 @@ export default {
       if (this.open) {
         // close the menu if we click a link
         this.curtain_contain.classList.remove("curtainVisible");
+        document.querySelectorAll("html")[0].style.overflowY = "unset";
         document.getElementById("header").style.zIndex = "1";
         // prevent need for double click
         this.clicks = 0;
+        this.animate();
       }
 
       if(link.router){
