@@ -7,24 +7,30 @@
         <h3>MA MADDOCK</h3>
       </div>
       <div class="socials d-flex justify-space-around">
-        <div class="icon_contain">
-          <img
-            class="social_icon"
-            :src="require('@/assets/social_icons/icons_twitter.svg')"
-          />
-        </div>
-        <div class="icon_contain">
-          <img
-            class="social_icon"
-            :src="require('@/assets/social_icons/icons_instagram.svg')"
-          />
-        </div>
-        <div class="icon_contain">
-          <img
-            class="social_icon"
-            :src="require('@/assets/social_icons/icons_goodreads.svg')"
-          />
-        </div>
+        <a target="_blank" href="https://twitter.com/mamaddock1_a">
+          <div class="icon_contain">        
+            <img
+              class="social_icon"
+              :src="require('@/assets/social_icons/icons_twitter.svg')"
+            />
+          </div>
+        </a>
+        <a target="_blank" href="https://www.instagram.com/m.a_maddock1">
+          <div class="icon_contain">
+            <img
+              class="social_icon"
+              :src="require('@/assets/social_icons/icons_instagram.svg')"
+            />
+          </div>
+        </a>
+        <a target="_blank" href="https://fb.me/thesixthamuletseries">
+          <div class="icon_contain">
+            <img
+              class="social_icon"
+              :src="require('@/assets/social_icons/icons_facebook.svg')"
+            />
+          </div>
+        </a>
       </div>
       <!-- copyright notice -->
       &copy; Copyright M.A Maddock 2022
@@ -47,6 +53,10 @@ export default {
 <style scoped>
 @import "../assets/css/helpers.css";
 @import "../assets/css/colors.css";
+
+a{
+  display:contents;
+}
 
 .footer_contain {
   display: flex;
