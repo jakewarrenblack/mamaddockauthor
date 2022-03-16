@@ -66,11 +66,13 @@ export default {
 
       if(link.router){
          this.router.push(link.href)
+         document.querySelectorAll("html")[0].style.overflowY = "unset";
       }
       else{
-        if(this.$router.currentRoute.path != "/" ){          
+        if(this.$router.currentRoute.path != "/" ){                    
           this.$router.push('/');
           document.getElementById(link.href).click();
+          document.querySelectorAll("html")[0].style.overflowY = "unset";
         }            
       }
     },
