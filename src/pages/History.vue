@@ -1,45 +1,68 @@
 <template>
-  <div id="container">
+  <div v-if="this.data" id="container">
     <div id="nav_header_contain">
       <Navbar :links="this.links" />
     </div>
     <section id="short_bio">
       <div class="short_bio_container">
-        <h6>The story behind the latest release</h6>
+        <h6>{{ this.data.history.title }}</h6>
       </div>
     </section>
     <Divider />
     <section id="full_bio">
       <img
-        src="~@/assets/book_cover_full_width.jpg"
+        :src="doublecover"
         data-aos="fade-right"
         class="author_image history_author_image bg_size_cover"
       />
     </section>
 
-    <br /><br />
-    <Divider />
-
     <section id="synopsis" ref="bookSection">
       <div
-        class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
+        data-aos="fade-up"
+        style="width: 85%"
+        class="author_bio_text d-flex justify-content-center margin-auto flex-column"
       >
-        <img
-          src="~@/assets/cover_mockup.jpg"
-          data-aos="fade-left"
-          style="width: auto"
-          class="author_image"
-        />
+        <h5 class="author_bio_body">
+          {{ this.data.history.p1 }}
+        </h5>
+        <b>{{ this.data.history.please_note }}</b>
+        <h5 class="author_bio_body">
+          {{ this.data.history.p2 }}
+        </h5>
 
-        <div data-aos="fade-right" style="width: 85%" class="author_bio_text">
-          <h2 class="author_bio_title">Lorem ipsum</h2>
-          <h5 class="author_bio_body">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            voluptatum accusantium labore id minus, dicta et molestias quia
-            magni? Saepe recusandae cumque modi consequatur repellendus
-            asperiores quam? Earum, doloribus dolorum!
-          </h5>
-        </div>
+        <!-- kelpie gallery -->
+        <swiper class="review_swiper" ref="mySwiper" :options="swiperOptions">
+          <swiper-slide v-for="image in swiperimages" :key="image">
+            <div class="swiper-image-contain">
+              <img :src="image" />
+            </div>
+          </swiper-slide>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
+          <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+        </swiper>
+
+        <h5 class="author_bio_body">
+          {{ this.data.history.p3 }}
+        </h5>
+
+        <b>{{ this.data.history.p3_bold_after }}</b>
+
+        <blockquote>{{ this.data.history.quote }}</blockquote>
+        <cite>{{ this.data.history.quote_credit }}</cite>
+
+        <h5 class="author_bio_body">
+          {{ this.data.history.p4 }}
+        </h5>
+
+        <h5 class="author_bio_body">
+          {{ this.data.history.learn_more }}
+        </h5>
+
+        <h5 class="author_bio_body">
+          <a :href="this.data.history.link">{{ this.data.history.link }}</a>
+        </h5>
       </div>
     </section>
 
@@ -56,6 +79,14 @@ import Footer from "@/components/Footer";
 
 import axios from "axios";
 
+import kelpie1 from "@/assets/history/kelpie-1.jpg";
+import kelpie2 from "@/assets/history/kelpie-2.jpg";
+import kelpie3 from "@/assets/history/kelpie-3.jpg";
+
+import doublecover from "@/assets/history/double-cover.jpg";
+
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+
 // import * as THREE from "three";
 // import Vanta from "vanta/dist/vanta.fog.min";
 
@@ -66,9 +97,17 @@ export default {
     Footer,
     Navbar,
     Divider,
+    Swiper,
+    SwiperSlide,
   },
   data() {
     return {
+      doublecover: doublecover,
+      swiperimages: [kelpie1, kelpie2, kelpie3],
+      data: null,
+      directives: {
+        swiper: directive,
+      },
       links: [
         {
           title: "BIO",
@@ -103,23 +142,6 @@ export default {
     document.title = "M.A Maddock";
 
     await axios.get("./data.json").then((res) => (this.data = res.data));
-
-    // this.vantaEffect = Vanta({
-    //   el: "#nav_header_contain",
-    //   THREE,
-    //   mouseControls: true,
-    //   touchControls: true,
-    //   gyroControls: false,
-    //   minHeight: 200.0,
-    //   minWidth: 200.0,
-    //   highlightColor: 0x462403,
-    //   midtoneColor: 0x780e04,
-    //   lowlightColor: 0x70707,
-    //   baseColor: 0x20202,
-    //   blurFactor: 0.41,
-    //   speed: 0.4,
-    //   zoom: 1,
-    // });
   },
 };
 </script>
