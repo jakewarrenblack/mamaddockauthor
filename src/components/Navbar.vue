@@ -2,7 +2,7 @@
   <header>
     <div id="container">
       <nav>
-        <h2 @click="home()">MA MADDOCK</h2>
+        <h2 @click="home()">M.A MADDOCK</h2>
         <div id="curtain_contain" class="curtain_contain">
           <ul id="linklist">
             <a
@@ -64,19 +64,18 @@ export default {
         this.animate();
       }
 
-      if(link.router){
-         this.router.push(link.href)
-         document.querySelectorAll("html")[0].style.overflowY = "unset";
-      }
-      else{
-        if(this.$router.currentRoute.path != "/" ){                    
-          this.$router.push('/');
+      if (link.router) {
+        this.router.push(link.href);
+        document.querySelectorAll("html")[0].style.overflowY = "unset";
+      } else {
+        if (this.$router.currentRoute.path != "/") {
+          this.$router.push("/");
           document.getElementById(link.href).click();
           document.querySelectorAll("html")[0].style.overflowY = "unset";
-        }            
+        }
       }
     },
-    
+
     openCurtain() {
       this.clicks++;
 
@@ -151,7 +150,7 @@ header {
 }
 
 nav {
-  display: flex;  
+  display: flex;
   flex-direction: column;
   border-bottom: 2px solid var(--white);
 }
