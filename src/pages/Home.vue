@@ -31,7 +31,7 @@
               class="overlay-content"
             >
               <h4 id="video_title" class="two-rem STIXTwo" @click="playVideo()">
-                The Latest Release
+                The new revised edition
               </h4>
               <h2 id="video_subtitle" class="four-rem STIXTwo">
                 The Sixth Amulet
@@ -232,8 +232,6 @@
       </div>
     </section>
 
-
-    
     <!------------------------------------------------------------------------------------------>
 
     <div class="slant">&nbsp;</div>
