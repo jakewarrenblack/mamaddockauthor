@@ -13,14 +13,18 @@
       <img
         :src="doublecover"
         data-aos="fade-right"
-        class="author_image history_author_image bg_size_cover"
+        class="object-fit-contain author_image history_author_image bg_size_cover"
       />
     </section>
 
-    <section id="synopsis" ref="bookSection">
+    <section
+      class="d-flex justify-content-center"
+      id="synopsis"
+      ref="bookSection"
+    >
       <div
         data-aos="fade-up"
-        style="width: 85%"
+        style="width: 75%"
         class="author_bio_text d-flex justify-content-center margin-auto flex-column"
       >
         <h5 class="author_bio_body">
@@ -32,10 +36,15 @@
         </h5>
 
         <!-- kelpie gallery -->
-        <swiper class="review_swiper" ref="mySwiper" :options="swiperOptions">
+        <swiper
+          style="margin: 4rem auto"
+          class="review_swiper"
+          ref="mySwiper"
+          :options="swiperOptions"
+        >
           <swiper-slide v-for="image in swiperimages" :key="image">
             <div class="swiper-image-contain">
-              <img :src="image" />
+              <img class="object-fit-contain" :src="image" />
             </div>
           </swiper-slide>
           <div class="swiper-button-prev" slot="button-prev"></div>
