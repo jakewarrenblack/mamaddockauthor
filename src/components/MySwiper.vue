@@ -1,5 +1,10 @@
 <template>
-  <Swiper class="review_swiper" ref="mySwiper" :options="swiperOptions">
+  <Swiper
+    v-if="this.slides"
+    class="review_swiper"
+    ref="mySwiper"
+    :options="swiperOptions"
+  >
     <SwiperSlide v-for="slide in this.slides" :key="slide.id">
       <div class="review_quote_contain">
         <q class="quote_body">{{ slide.body }}</q>
@@ -8,6 +13,22 @@
         <h4 class="quote_credit_credential">
           {{ slide.credential }}
         </h4>
+      </div>
+    </SwiperSlide>
+    <div class="swiper-button-prev" slot="button-prev"></div>
+    <div class="swiper-button-next" slot="button-next"></div>
+    <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+  </Swiper>
+  <Swiper
+    v-else-if="this.kelpieImages"
+    style="margin: 4rem auto"
+    class="review_swiper"
+    ref="mySwiper"
+    :options="swiperOptions"
+  >
+    <SwiperSlide v-for="image in kelpieImages" :key="image">
+      <div class="swiper-image-contain">
+        <img class="object-fit-contain" :src="image" />
       </div>
     </SwiperSlide>
     <div class="swiper-button-prev" slot="button-prev"></div>
@@ -24,6 +45,7 @@ export default {
   name: "MySwiper",
   props: {
     slides: Array,
+    kelpieImages: Array,
   },
   directives: {
     swiper: directive,

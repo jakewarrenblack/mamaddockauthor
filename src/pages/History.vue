@@ -36,21 +36,7 @@
         </h5>
 
         <!-- kelpie gallery -->
-        <swiper
-          style="margin: 4rem auto"
-          class="review_swiper"
-          ref="mySwiper"
-          :options="swiperOptions"
-        >
-          <swiper-slide v-for="image in swiperimages" :key="image">
-            <div class="swiper-image-contain">
-              <img class="object-fit-contain" :src="image" />
-            </div>
-          </swiper-slide>
-          <div class="swiper-button-prev" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div>
-          <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-        </swiper>
+        <MySwiper :kelpieImages="this.kelpieImages" />
 
         <h5 class="author_bio_body">
           {{ this.data.history.p3 }}
@@ -85,6 +71,7 @@
 import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
+import MySwiper from "@/components/MySwiper";
 
 import axios from "axios";
 
@@ -93,8 +80,6 @@ import kelpie2 from "@/assets/history/kelpie-2.jpg";
 import kelpie3 from "@/assets/history/kelpie-3.jpg";
 
 import doublecover from "@/assets/history/double-cover.jpg";
-
-import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 
 // import * as THREE from "three";
 // import Vanta from "vanta/dist/vanta.fog.min";
@@ -106,17 +91,13 @@ export default {
     Footer,
     Navbar,
     Divider,
-    Swiper,
-    SwiperSlide,
+    MySwiper,
   },
   data() {
     return {
       doublecover: doublecover,
-      swiperimages: [kelpie1, kelpie2, kelpie3],
+      kelpieImages: [kelpie1, kelpie2, kelpie3],
       data: null,
-      directives: {
-        swiper: directive,
-      },
       links: [
         {
           title: "BIO",
