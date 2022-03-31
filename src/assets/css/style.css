@@ -583,6 +583,14 @@ textarea:focus-visible {
   object-fit: cover;
 }
 
+/* .vue-video-section__overlay-content-wrapper__background {
+  background: unset !important;
+} */
+
+.video_bg_none {
+  background: unset !important;
+}
+
 @media only screen and (max-width: 767px) {
   .hero_text {
     height: 100vh;

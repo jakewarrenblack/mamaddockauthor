@@ -25,21 +25,25 @@
 
   "reviews": [
     {
+      "id": 1,
       "body": "A tapestry of familiar mythology - and wholly original creations - weaved through a world you'll happily get lost in. A story that truly sings.",
       "credit": "Gavin Gardiner",
       "credential": "Author of For Rye and The Last Testament of Crighton Smythe"
     },
     {
+      "id": 2,
       "body": "A sumptuous slow burn of a book, in the grand style of epic fantasy, that consumes its reader and transports them to another place and time.",
       "credit": "Julia Blake",
       "credential": "Author of Erinsmore and The Forest ~ a tale of old magic ~"
     },
     {
+      "id": 3,
       "body": "An epic historical fantasy read, enriched with unique and wonderful characters whose journey will keep you hooked from beginning to end. Maddock has an eye for detail through her incredible imagination. So glad this is a series; one book is not enough!",
       "credit": "Sarah O'Neill",
       "credential": "Author of Deadly Obsession and Fatal Beliefs"
     },
     {
+      "id": 4,
       "body": "Masterfully weaved together, with such great flair, you can't help but immerse yourself in the fantastical world M. A. Maddock has created. The diverse locations along with her motley cast of misfits will hold your attention from the start. The Sixth Amulet is an epic fantasy (historical) fiction read that packs a punch.",
       "credit": "Emma Moohan",
       "credential": "Actor/Writer"

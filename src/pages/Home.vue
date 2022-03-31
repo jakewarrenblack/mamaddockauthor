@@ -10,42 +10,7 @@
             </h3>
             <h1 data-aos="fade-up" class="author_name">M.A Maddock</h1>
           </div>
-          <vue-video-section
-            class="img_contain"
-            :elementId="'header-background-video'"
-            :ref="'header-background-video'"
-            :mp4Source="require('@/assets/trailer_web.mp4')"
-            :posterSource="require('@/assets/trailer_placeholder.webp')"
-            :mobileBreakpoint="762"
-            :desktopHeight="850"
-            :mobileHeight="450"
-            :playsinline="true"
-            :loop="true"
-            :autoplay="false"
-            :autobuffer="true"
-            :muted="false"
-          >
-            <div
-              slot="overlay-content"
-              id="overlay-content"
-              class="overlay-content"
-            >
-              <h4 id="video_title" class="two-rem STIXTwo" @click="playVideo()">
-                The new revised edition
-              </h4>
-              <h2 id="video_subtitle" class="four-rem STIXTwo">
-                The Sixth Amulet
-              </h2>
-              <button
-                id="video_button"
-                class="swiper"
-                style="padding: 1rem"
-                @click="toggleVideo"
-              >
-                Play trailer
-              </button>
-            </div>
-          </vue-video-section>
+          <Video />
         </div>
       </section>
     </div>
@@ -188,21 +153,7 @@
     <Divider />
     <section v-if="this.data" data-aos="fade-up" id="reviews">
       <div class="quotation_container"></div>
-      <swiper class="review_swiper" ref="mySwiper" :options="swiperOptions">
-        <swiper-slide v-for="review in this.data.reviews" :key="review.body">
-          <div class="review_quote_contain">
-            <q class="quote_body">{{ review.body }}</q>
-            <br />
-            <h2 class="quote_credit">{{ review.credit }}</h2>
-            <h4 class="quote_credit_credential">
-              {{ review.credential }}
-            </h4>
-          </div>
-        </swiper-slide>
-        <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
-        <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-      </swiper>
+      <MySwiper :slides="this.data.reviews" />
     </section>
 
     <br /><br />
@@ -294,16 +245,13 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
-import "swiper/css/swiper.css";
-
-import VueVideoSection from "vue-video-section";
-
 import { Carousel3d, Slide } from "vue-carousel-3d";
 
 import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
+import Video from "@/components/Video";
+import MySwiper from "@/components/MySwiper";
 
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
@@ -321,10 +269,9 @@ export default {
   name: "Home",
 
   components: {
-    VueVideoSection,
+    MySwiper,
+    Video,
     ConvertKitForm,
-    Swiper,
-    SwiperSlide,
     Flipbook,
     Footer,
     Navbar,
@@ -332,23 +279,8 @@ export default {
     Carousel3d,
     Slide,
   },
-  directives: {
-    swiper: directive,
-  },
   data() {
     return {
-      playButtonClicks: 0,
-      swiperOptions: {
-        centeredSlides: true,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      },
-
       // reviewSwipeCount: 1,
       pages: [null, page1, page2, page3, page4],
 
@@ -417,57 +349,7 @@ export default {
         ? (readMore.innerHTML = "read less")
         : (readMore.innerHTML = "read more");
     },
-    toggleVideo() {
-      this.playButtonClicks++;
 
-      var btn = document.getElementById("video_button");
-      var container = document.getElementById("overlay-content");
-      var video_title = document.getElementById("video_title");
-      var video_subtitle = document.getElementById("video_subtitle");
-
-      if (this.playButtonClicks % 2 != 0) {
-        video_title.style.opacity = "0";
-        video_subtitle.style.opacity = "0";
-
-        if (window.innerWidth >= 768) {
-          container.style.transform = "translateY(50%)";
-        }
-
-        // Remove darkened background
-        document
-          .getElementsByClassName(
-            "vue-video-section__overlay-content-wrapper__background"
-          )[0]
-          .classList.add("video_bg_none");
-
-        document.getElementById("header-background-video").style.filter =
-          "none";
-
-        btn.innerHTML = "Pause trailer";
-        btn.style.opacity = "0.2";
-        this.$refs["header-background-video"].playVideo();
-      } else {
-        video_title.style.opacity = "1";
-        video_subtitle.style.opacity = "1";
-
-        if (window.innerWidth >= 768) {
-          container.style.transform = "translateY(0%)";
-        }
-        document
-          .getElementsByClassName(
-            "vue-video-section__overlay-content-wrapper__background"
-          )[0]
-          .classList.remove("video_bg_none");
-
-        document.getElementById("header-background-video").style.filter =
-          "blur(0.25rem)";
-
-        btn.innerHTML = "Play trailer";
-        btn.style.opacity = "1";
-
-        this.$refs["header-background-video"].pauseVideo();
-      }
-    },
     handleSubmit(e) {
       e.preventDefault();
       if (!this.form.email || !this.form.subject || this.form.message) return;
@@ -513,19 +395,6 @@ export default {
       zoom: 1,
     });
 
-    var video = document.getElementsByClassName(
-      "vue-video-section__overlay-content-wrapper__content-wrapper__content"
-    )[0];
-
-    video.style.display = "flex";
-    video.style.justifyContent = "center";
-    video.style.alignItems = "center";
-
-    var swiper_wrapper = document.getElementsByClassName("swiper-wrapper");
-
-    swiper_wrapper[0].style.display = "flex";
-    swiper_wrapper[0].style.alignItems = "center";
-
     // Shorten the very long bio
     var author_bio_body = document.getElementsByClassName("author_bio_body");
     localStorage.setItem("bio", author_bio_body[0].innerHTML);
@@ -541,19 +410,6 @@ export default {
     }
 
     document.getElementById("ck-email").required = true;
-  },
-  created() {
-    var htmlVideo = document.querySelectorAll("vue-video-section-wrapper")[0];
-
-    htmlVideo.style.background = "unset!important";
-
-    var video_wrapper = document.querySelectorAll(
-      "vue-video-section__video-element"
-    )[0];
-
-    video_wrapper.style.width = "width:unset!important";
-    video_wrapper.style.minWidth = "unset!important";
-    video_wrapper.style.minHeight = "unset!important";
   },
   beforeDestroy() {
     if (this.vantaEffect) {
