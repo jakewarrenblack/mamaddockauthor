@@ -9,7 +9,7 @@
               @click="checkRouter(link)"
               :href="link.href"
               v-for="link in this.links"
-              :key="link"
+              :key="link.id"
               :id="link.href"
               class="anchor"
             >

@@ -16,26 +16,31 @@ export default {
     return {
       links: [
         {
+          id: 0,
           title: "BIO",
           href: "#full_bio",
           router: false,
         },
         {
+          id: 1,
           title: "NOVEL",
           href: "#synopsis",
           router: false,
         },
         {
+          id: 2,
           title: "HISTORY",
           href: "/history",
           router: true,
         },
         {
+          id: 3,
           title: "BALLOCH CASTLE",
           href: "/balloch_castle",
           router: true,
         },
         {
+          id: 4,
           title: "CONTACT",
           href: "#contact",
           router: false,

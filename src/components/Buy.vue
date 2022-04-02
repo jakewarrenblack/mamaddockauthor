@@ -65,6 +65,22 @@ export default {
   padding: 0.5rem 1rem;
 }
 
+.buy-button {
+  background: var(--crimson);
+  border: none;
+  color: var(--white);
+}
+
+.buy-buttons button {
+  color: var(--white);
+  border: 2px solid var(--crimson);
+  background: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 767px) {
   .container {
     flex-direction: column;
