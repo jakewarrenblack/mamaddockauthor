@@ -111,6 +111,8 @@ export default {
 header {
   /* background: var(--crimson); */
   padding: 46px 0 90px;
+  position: relative;
+  z-index: 2;
 }
 
 .opacity0 {

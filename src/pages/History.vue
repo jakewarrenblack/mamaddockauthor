@@ -1,8 +1,5 @@
 <template>
   <div v-if="this.data" id="container">
-    <div id="nav_header_contain">
-      <Navbar :links="this.links" />
-    </div>
     <section id="short_bio">
       <div class="short_bio_container">
         <h6>{{ this.data.history.title }}</h6>
@@ -68,7 +65,6 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import MySwiper from "@/components/MySwiper";
@@ -89,7 +85,6 @@ export default {
 
   components: {
     Footer,
-    Navbar,
     Divider,
     MySwiper,
   },
@@ -98,33 +93,6 @@ export default {
       doublecover: doublecover,
       kelpieImages: [kelpie1, kelpie2, kelpie3],
       data: null,
-      links: [
-        {
-          title: "BIO",
-          href: "#full_bio",
-          router: false,
-        },
-        {
-          title: "NOVEL",
-          href: "#synopsis",
-          router: false,
-        },
-        {
-          title: "HISTORY",
-          href: "/history",
-          router: true,
-        },
-        {
-          title: "BALLOCH CASTLE",
-          href: "/balloch_castle",
-          router: true,
-        },
-        {
-          title: "CONTACT",
-          href: "#contact",
-          router: false,
-        },
-      ],
     };
   },
   methods: {},
@@ -133,6 +101,9 @@ export default {
 
     await axios.get("./data.json").then((res) => (this.data = res.data));
   },
+  // beforeCreate() {
+  //   document.getElementById("container").opacity = "0";
+  // },
 };
 </script>
 

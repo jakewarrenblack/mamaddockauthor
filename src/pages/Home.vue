@@ -1,7 +1,6 @@
 <template>
   <div id="container">
     <div id="nav_header_contain">
-      <Navbar :links="this.links" />
       <section id="header">
         <div class="header_container">
           <div class="hero_text">
@@ -247,7 +246,6 @@
 <script>
 import { Carousel3d, Slide } from "vue-carousel-3d";
 
-import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Video from "@/components/Video";
@@ -274,7 +272,6 @@ export default {
     ConvertKitForm,
     Flipbook,
     Footer,
-    Navbar,
     Divider,
     Carousel3d,
     Slide,
@@ -296,34 +293,6 @@ export default {
         message: "",
       },
       data: null,
-
-      links: [
-        {
-          title: "BIO",
-          href: "#full_bio",
-          router: false,
-        },
-        {
-          title: "NOVEL",
-          href: "#synopsis",
-          router: false,
-        },
-        {
-          title: "HISTORY",
-          href: "/history",
-          router: true,
-        },
-        {
-          title: "BALLOCH CASTLE",
-          href: "/balloch_castle",
-          router: true,
-        },
-        {
-          title: "CONTACT",
-          href: "#contact",
-          router: false,
-        },
-      ],
     };
   },
   methods: {
@@ -368,7 +337,7 @@ export default {
       mouseControls: true,
       touchControls: true,
       gyroControls: false,
-      minHeight: 200.0,
+      minHeight: 300.0,
       minWidth: 200.0,
       highlightColor: 0x462403,
       midtoneColor: 0x780e04,
@@ -378,6 +347,8 @@ export default {
       speed: 0.4,
       zoom: 1,
     });
+
+    document.getElementsByClassName("vanta-canvas")[0].style.top = "-450px";
     this.vantaEffect = Vanta({
       el: "#contact",
       THREE,

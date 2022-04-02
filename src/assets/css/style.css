@@ -48,6 +48,7 @@
   /* background: var(--crimson); */
   position: relative;
 }
+
 .header_container {
   position: relative;
   z-index: 1;

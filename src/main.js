@@ -14,7 +14,7 @@ Vue.use(router);
 Vue.config.productionTip = false;
 
 new Vue({
-  created() {
+  async created() {
     AOS.init();
   },
   router,

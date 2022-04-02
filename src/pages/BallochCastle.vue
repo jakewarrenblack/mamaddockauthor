@@ -1,39 +1,44 @@
 <template>
   <div id="container">
-    <div id="nav_header_contain">
-      <Navbar :links="this.links" />
-    </div>
-
     <section id="full_bio">
-    <fig>
-      <img
-        src="~@/assets/balloch_castle/1.webp"
-        data-aos="fade-right"
-        class="author_image history_author_image bg_size_cover"
-      />
-      <figcaption>Photograph courtesy of Billy Aitken</figcaption>
+      <fig>
+        <img
+          src="~@/assets/balloch_castle/1.webp"
+          data-aos="fade-right"
+          class="author_image history_author_image bg_size_cover"
+        />
+        <figcaption>Photograph courtesy of Billy Aitken</figcaption>
       </fig>
-      
     </section>
 
     <br /><br />
-    <h2 class="author_bio_title">{{this.data.balloch.heading1}}</h2>
+    <h2 class="author_bio_title">{{ this.data.balloch.heading1 }}</h2>
     <Divider />
 
     <section id="synopsis" ref="bookSection">
-      <div class="full_bio_container d-flex flex-column justify-content-center align-items-center">
-        <div data-aos="fade-up"  class="author_bio_text margin-auto balloch_article_paragraph">          
+      <div
+        class="full_bio_container d-flex flex-column justify-content-center align-items-center"
+      >
+        <div
+          data-aos="fade-up"
+          class="author_bio_text margin-auto balloch_article_paragraph"
+        >
           <h5 class="author_bio_body">
-            {{this.data.balloch.p1}}
+            {{ this.data.balloch.p1 }}
           </h5>
-        </div>        
+        </div>
 
-      <h2 class="author_bio_title">{{this.data.balloch.heading2}}</h2>
-      <Divider/>
-      <div data-aos="fade-up" class="author_bio_text margin-auto balloch_article_paragraph">          
+        <h2 class="author_bio_title">{{ this.data.balloch.heading2 }}</h2>
+        <Divider />
+        <div
+          data-aos="fade-up"
+          class="author_bio_text margin-auto balloch_article_paragraph"
+        >
           <h5 class="author_bio_body">
-            {{this.data.balloch.p2}}<br/>
-            <a target="_blank" :href="`${this.data.balloch.link}`">{{this.data.balloch.link}}</a>
+            {{ this.data.balloch.p2 }}<br />
+            <a target="_blank" :href="`${this.data.balloch.link}`">{{
+              this.data.balloch.link
+            }}</a>
           </h5>
         </div>
       </div>
@@ -41,26 +46,20 @@
 
     <Divider />
 
-    <Footer style="margin-top:0;" />
+    <Footer style="margin-top: 0" />
   </div>
 </template>
 
 <script>
-import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
-
 import axios from "axios";
-
-// import * as THREE from "three";
-// import Vanta from "vanta/dist/vanta.fog.min";
 
 export default {
   name: "BallochCastle",
 
   components: {
     Footer,
-    Navbar,
     Divider,
   },
   data() {
@@ -147,28 +146,28 @@ export default {
 
 @import "../../node_modules/vue-video-section/dist/vue-video-section.css";
 
-.author_image{
-  width:50%;
+.author_image {
+  width: 50%;
 }
 
-  .history_author_image {
-    margin: 4rem 0;
-  }
+.history_author_image {
+  margin: 4rem 0;
+}
 
-  .balloch_article_paragraph{
-    width: 55%;
-  }
+.balloch_article_paragraph {
+  width: 55%;
+}
 
-  a{
-    color:white;
-  }
+a {
+  color: white;
+}
 
-  @media only screen and (max-width: 767px) {
-    .balloch_article_paragraph{
-      width:90%;
-    }
-    .author_image{
-      width:100%;
-    }
+@media only screen and (max-width: 767px) {
+  .balloch_article_paragraph {
+    width: 90%;
   }
+  .author_image {
+    width: 100%;
+  }
+}
 </style>

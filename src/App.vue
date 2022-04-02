@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navbar :links="this.links" />
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
@@ -7,9 +8,41 @@
 </template>
 
 <script>
+import Navbar from "@/components/Navbar";
 export default {
   name: "App",
-  components: {},
+  components: { Navbar },
+  data() {
+    return {
+      links: [
+        {
+          title: "BIO",
+          href: "#full_bio",
+          router: false,
+        },
+        {
+          title: "NOVEL",
+          href: "#synopsis",
+          router: false,
+        },
+        {
+          title: "HISTORY",
+          href: "/history",
+          router: true,
+        },
+        {
+          title: "BALLOCH CASTLE",
+          href: "/balloch_castle",
+          router: true,
+        },
+        {
+          title: "CONTACT",
+          href: "#contact",
+          router: false,
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -26,14 +59,18 @@ body canvas {
   width: 100% !important;
 }
 
+router-view {
+  background: transparent;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition-property: opacity;
-  transition-duration: 0.25s;
+  transition-duration: 0.5s;
 }
 
 .fade-enter-active {
-  transition-delay: 0.25s;
+  transition-delay: 0.5s;
 }
 
 .fade-enter,
