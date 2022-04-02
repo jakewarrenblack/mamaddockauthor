@@ -2,10 +2,10 @@
   <div v-if="this.data" id="container">
     <section id="short_bio">
       <div class="short_bio_container">
-        <h6>{{ this.data.history.title }}</h6>
+        <h6 class="title">{{ this.data.history.title }}</h6>
       </div>
     </section>
-    <Divider />
+
     <section id="full_bio">
       <img
         :src="doublecover"
@@ -21,7 +21,6 @@
     >
       <div
         data-aos="fade-up"
-        style="width: 75%"
         class="author_bio_text d-flex justify-content-center margin-auto flex-column"
       >
         <h5 class="author_bio_body">
@@ -41,8 +40,10 @@
 
         <b>{{ this.data.history.p3_bold_after }}</b>
 
-        <blockquote>{{ this.data.history.quote }}</blockquote>
-        <cite>{{ this.data.history.quote_credit }}</cite>
+        <div class="quote">
+          <blockquote>{{ this.data.history.quote }}</blockquote>
+          <cite>{{ this.data.history.quote_credit }}</cite>
+        </div>
 
         <h5 class="author_bio_body">
           {{ this.data.history.p4 }}
@@ -109,6 +110,29 @@ export default {
 
 <!-- Can't be scoped -->
 <style>
+.title {
+  font-size: 4rem;
+  color: var(--crimson);
+  font-family: "altcaps";
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+a {
+  color: white;
+}
+
+.quote {
+  margin: 4rem auto;
+  border-left: 2px solid var(--crimson);
+  padding-left: 2rem;
+}
+
+blockquote {
+  margin-left: 0;
+  margin-top: 0;
+}
+
 @media only screen and (max-width: 767px) {
   /* Allow scroll on mobile */
   .modal-mobile {
@@ -135,5 +159,16 @@ export default {
 
 .history_author_image {
   margin: 4rem 0;
+}
+
+@media only screen and (min-width: 767px) {
+  #synopsis {
+    margin: auto;
+    max-width: 1800px;
+  }
+
+  .author_bio_text {
+    width: 55%;
+  }
 }
 </style>
