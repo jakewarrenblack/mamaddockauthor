@@ -85,6 +85,7 @@
           <button class="swiper" @click="show()">
             <span class="swiper_text">View synopsis</span>
           </button>
+          <Buy />
         </div>
       </div>
 
@@ -250,6 +251,7 @@ import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Video from "@/components/Video";
 import MySwiper from "@/components/MySwiper";
+import Buy from "@/components/Buy";
 
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
@@ -267,6 +269,7 @@ export default {
   name: "Home",
 
   components: {
+    Buy,
     MySwiper,
     Video,
     ConvertKitForm,
