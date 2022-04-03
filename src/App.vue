@@ -20,7 +20,10 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "og:title", content: "yeehaw" },
+      { name: "og:description", content: "The official website of M.A Maddock, author of The Sixth Amulet series."},
       { name: "og:image", content: "https://picsum.photos/200/300" },
+      { name: "theme-color", content: "#cb0101"},
+      { name: "twitter:card", content="summary_large_image"},
       {
         name: "description",
         content:
