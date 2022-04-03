@@ -58,6 +58,11 @@ import axios from "axios";
 export default {
   name: "BallochCastle",
 
+  metaInfo: {
+    title: "Balloch Castle",
+    meta: [],
+  },
+
   components: {
     Footer,
     Divider,

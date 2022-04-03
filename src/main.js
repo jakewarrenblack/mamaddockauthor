@@ -7,8 +7,10 @@ import "aos/dist/aos.css";
 
 import VModal from "vue-js-modal";
 
-Vue.use(VModal);
+import Meta from "vue-meta";
 
+Vue.use(Meta);
+Vue.use(VModal);
 Vue.use(router);
 
 Vue.config.productionTip = false;

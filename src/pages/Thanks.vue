@@ -15,6 +15,12 @@ import Vanta from "vanta/dist/vanta.fog.min";
 
 export default {
   name: "Thanks",
+
+  metaInfo: {
+    title: "Thanks",
+    meta: [],
+  },
+
   data() {
     return {};
   },

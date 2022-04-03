@@ -11,6 +11,24 @@
 import Navbar from "@/components/Navbar";
 export default {
   name: "App",
+  metaInfo: {
+    title: "M.A MADDOCK",
+    titleTemplate: "%s | M.A MADDOCK",
+    htmlAttrs: {
+      lang: "en-US",
+    },
+    meta: [
+      { charset: "utf-8" },
+      { name: "og:title", content: "yeehaw" },
+      { name: "og:image", content: "https://picsum.photos/200/300" },
+      {
+        name: "description",
+        content:
+          "Official website of M.A Maddock, author of The Sixth Amulet series.",
+      },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+    ],
+  },
   components: { Navbar },
   data() {
     return {

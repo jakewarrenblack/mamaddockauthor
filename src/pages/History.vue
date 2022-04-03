@@ -84,6 +84,11 @@ import doublecover from "@/assets/history/double-cover.jpg";
 export default {
   name: "History",
 
+  metaInfo: {
+    title: "History",
+    meta: [],
+  },
+
   components: {
     Footer,
     Divider,

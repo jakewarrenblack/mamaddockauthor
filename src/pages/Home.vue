@@ -268,6 +268,10 @@ import page4 from "@/assets/balloch_castle/4.webp";
 export default {
   name: "Home",
 
+  metaInfo: {
+    title: "Home",
+    meta: [],
+  },
   components: {
     Buy,
     MySwiper,
@@ -330,7 +334,7 @@ export default {
     },
   },
   async mounted() {
-    document.title = "M.A Maddock";
+    // document.title = "M.A Maddock";
 
     await axios.get("./data.json").then((res) => (this.data = res.data));
 
