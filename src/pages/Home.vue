@@ -132,6 +132,7 @@
           :space="800"
         >
           <slide
+            style="width: max-content"
             v-for="slide in this.data.slides"
             :index="slide.img"
             :key="slide.img"
