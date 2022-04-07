@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header id="nav_header">
     <div id="container">
       <nav>
         <h2 @click="home()">M.A MADDOCK</h2>
@@ -17,13 +17,7 @@
             </a>
           </ul>
         </div>
-        <button
-          @click="
-            openCurtain();
-            animate();
-          "
-          class="nav_toggle"
-        >
+        <button @click="openCurtain()" class="nav_toggle">
           <div id="border1" class="border" />
           <div id="border2" class="border" />
           <div id="border3" class="border" />
@@ -42,11 +36,13 @@ export default {
   data() {
     return {
       clicks: 0,
-      open: false,
+      //open: false,
       curtain_contain: null,
       border1: null,
       border2: null,
       border3: null,
+      app: null,
+      header_main: null,
     };
   },
   methods: {
@@ -54,44 +50,68 @@ export default {
       this.$router.push("/");
     },
     checkRouter(link) {
-      if (this.open) {
-        // close the menu if we click a link
-        this.curtain_contain.classList.remove("curtainVisible");
-        document.querySelectorAll("html")[0].style.overflowY = "unset";
-        document.getElementById("header").style.zIndex = "1";
-        // prevent need for double click
-        this.clicks = 0;
-        this.animate();
+      this.border1.classList.remove("rotatePositive");
+      this.border2.classList.remove("opacity0");
+      this.border3.classList.remove("rotateNegative");
+
+      // close the menu if we click a link
+      this.curtain_contain.classList.remove("curtainVisible");
+      document.querySelectorAll("html")[0].style.overflowY = "unset";
+      document.getElementById("app").style.overflow = "unset";
+
+      if (this.header_main) {
+        this.header_main.style.zIndex = "1";
       }
 
+      // if it's an actual router path
       if (link.router) {
-        this.router.push(link.href);
-        document.querySelectorAll("html")[0].style.overflowY = "unset";
+        this.$router.push(link.href);
+        document.querySelector("html").style.overflowY = "unset";
+        document.getElementById("app").style.overflow = "unset";
       } else {
+        // if it's an anchor tag
         if (this.$router.currentRoute.path != "/") {
           this.$router.push("/");
-          document.getElementById(link.href).click();
-          document.querySelectorAll("html")[0].style.overflowY = "unset";
+
+          // FIXING SCROLL HERE //
+          // this.$nextTick(() => link.href.showCurrent(link.href));
+          //////////////////////////////////////
+
+          // this.$nextTick(() => this.$refs["full_bio"].scrollIntoView());
+
+          // var top = link.href.offsetTop;
+
+          // window.scrollTo(0, top);
+
+          // document.getElementById(link.href).scrollIntoView
+
+          document.querySelector("html").style.overflowY = "unset";
+          document.getElementById("app").style.overflow = "unset";
+          this.header_main ? (this.header_main.style.zIndex = "1") : "";
         }
       }
     },
+    showCurrent(index) {
+      document.getElementById(index).scrollIntoView();
+    },
 
     openCurtain() {
-      this.clicks++;
+      document.querySelector("html").style.overflow === "hidden"
+        ? (document.querySelector("html").style.overflow = "unset")
+        : (document.querySelector("html").style.overflow = "hidden");
 
-      if (this.clicks % 2 != 0) {
-        document.querySelectorAll("html")[0].style.overflow = "hidden";
-        this.curtain_contain.classList.add("curtainVisible");
-        document.getElementById("header").style.zIndex = "-1";
-        this.open = true;
-      } else {
-        document.querySelectorAll("html")[0].style.overflow = "unset";
-        this.curtain_contain.classList.remove("curtainVisible");
-        document.getElementById("header").style.zIndex = "1";
-        this.open = false;
+      document.getElementById("app").style.overflow === "hidden"
+        ? (document.getElementById("app").style.overflow = "unset")
+        : (document.getElementById("app").style.overflow = "hidden");
+
+      this.curtain_contain.classList.toggle("curtainVisible");
+
+      if (this.header_main) {
+        this.header_main.style.zIndex === "-1"
+          ? (this.header_main.style.zIndex = "1")
+          : (this.header_main.style.zIndex = "-1");
       }
-    },
-    animate() {
+
       this.border1.classList.toggle("rotatePositive");
       this.border2.classList.toggle("opacity0");
       this.border3.classList.toggle("rotateNegative");
@@ -102,6 +122,8 @@ export default {
     this.border1 = document.getElementById("border1");
     this.border2 = document.getElementById("border2");
     this.border3 = document.getElementById("border3");
+    this.app = document.querySelector("body");
+    this.header_main = document.getElementById("header_main");
   },
 };
 </script>

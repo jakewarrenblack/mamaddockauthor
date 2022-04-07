@@ -36,13 +36,13 @@ export default {
         {
           id: 0,
           title: "BIO",
-          href: "#full_bio",
+          href: this.$refs.full_bio,
           router: false,
         },
         {
           id: 1,
           title: "NOVEL",
-          href: "#synopsis",
+          href: this.$refs.bookSection,
           router: false,
         },
         {
@@ -60,7 +60,7 @@ export default {
         {
           id: 4,
           title: "CONTACT",
-          href: "#contact",
+          href: this.$refs.contact,
           router: false,
         },
       ],

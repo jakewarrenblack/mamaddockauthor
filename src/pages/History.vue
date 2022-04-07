@@ -1,16 +1,15 @@
 <template>
   <div v-if="this.data" id="container">
     <section id="short_bio">
-      <div class="short_bio_container">
-        <h6 class="title">{{ this.data.history.title }}</h6>
-      </div>
+      <h2 class="author_bio_title">{{ this.data.history.title }}</h2>
     </section>
+    <Divider />
 
     <section id="full_bio">
       <img
         :src="doublecover"
         data-aos="fade-right"
-        class="object-fit-contain author_image history_author_image bg_size_cover"
+        class="object-fit-contain author_image history_author_image bg_size_cover history_image"
       />
     </section>
 
@@ -20,7 +19,6 @@
       ref="bookSection"
     >
       <div
-        data-aos="fade-up"
         class="author_bio_text d-flex justify-content-center margin-auto flex-column"
       >
         <h5 class="author_bio_body">
@@ -59,7 +57,7 @@
       </div>
     </section>
 
-    <Divider style="margin-top: 10rem" />
+    <Divider class="history_divider" />
 
     <Footer />
   </div>
@@ -164,6 +162,16 @@ blockquote {
 
 .history_author_image {
   margin: 4rem 0;
+}
+
+.history_divider {
+  margin-top: 10rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .history_divider {
+    margin-top: 0;
+  }
 }
 
 @media only screen and (min-width: 767px) {

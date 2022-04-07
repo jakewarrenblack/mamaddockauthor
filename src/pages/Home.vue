@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="nav_header_contain">
-      <section id="header">
+      <section id="header_main">
         <div class="header_container">
           <div class="hero_text">
             <h3 data-aos="fade-down" class="author_short_desc">
@@ -22,7 +22,7 @@
       </div>
     </section>
     <Divider />
-    <section id="full_bio">
+    <section ref="full_bio" id="full_bio">
       <div
         class="full_bio_container d-flex justify-space-between align-items-center"
       >
@@ -192,7 +192,7 @@
 
     <div class="slant">&nbsp;</div>
 
-    <section id="contact" class="contact_section">
+    <section ref="contact" id="contact" class="contact_section">
       <h1 class="contact_title">Contact</h1>
       <br />
       <div class="contact_form_contain" id="vanta_form">

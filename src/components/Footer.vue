@@ -8,7 +8,7 @@
       </div>
       <div class="socials d-flex justify-space-around">
         <a target="_blank" href="https://twitter.com/mamaddock1_a">
-          <div class="icon_contain">        
+          <div class="icon_contain">
             <img
               class="social_icon"
               :src="require('@/assets/social_icons/icons_twitter.svg')"
@@ -54,8 +54,8 @@ export default {
 @import "../assets/css/helpers.css";
 @import "../assets/css/colors.css";
 
-a{
-  display:contents;
+a {
+  display: contents;
 }
 
 .footer_contain {
@@ -85,5 +85,11 @@ footer {
   filter: invert(100%);
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer_contain {
+    margin-top: 0rem;
+  }
 }
 </style>
