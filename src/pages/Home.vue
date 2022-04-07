@@ -86,10 +86,20 @@
             ><br />
             {{ this.data.synopsis.preview }}
           </h5>
-          <button class="swiper" @click="show()">
+          <button
+            style="border-bottom: 4px solid var(--white)"
+            class="swiper"
+            @click="show()"
+          >
             <span class="swiper_text">View synopsis</span>
           </button>
-          <Buy />
+          <!-- <Buy /> -->
+          <h5
+            style="font-weight: bold; color: var(--crimson)"
+            class="author_bio_body"
+          >
+            OFFICIAL RELEASE MAY 31<sup>st</sup>
+          </h5>
         </div>
       </div>
 
@@ -256,7 +266,7 @@ import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Video from "@/components/Video";
 import MySwiper from "@/components/MySwiper";
-import Buy from "@/components/Buy";
+// import Buy from "@/components/Buy";
 
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
@@ -279,7 +289,7 @@ export default {
     meta: [],
   },
   components: {
-    Buy,
+    // Buy,
     MySwiper,
     Video,
     ConvertKitForm,
