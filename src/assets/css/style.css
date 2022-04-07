@@ -198,9 +198,13 @@
 
 /* Book gallery */
 .carousel_img {
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
+  object-fit: contain !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.carousel-3d-slide {
+  width: max-content !important;
 }
 
 #book_images {
