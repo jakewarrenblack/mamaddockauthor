@@ -205,6 +205,9 @@
 
 .carousel-3d-slide {
   width: max-content !important;
+  max-width: 90vw !important;
+  background: none !important;
+  border: none !important;
 }
 
 #book_images {
