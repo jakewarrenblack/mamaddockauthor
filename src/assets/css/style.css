@@ -6,6 +6,12 @@
   display: none;
 }
 
+.carousel-3d-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #newsletter form input {
   margin-bottom: 2rem;
   padding: 1rem 0;
