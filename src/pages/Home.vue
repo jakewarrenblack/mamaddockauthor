@@ -34,9 +34,13 @@
 
         <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
           <h2 class="author_bio_title">{{ this.data.bio.title }}</h2>
-          <h5 class="author_bio_body">
-            {{ this.data.bio.content }}
-          </h5>
+
+          <p class="author_bio_body">
+            <span>
+              {{ this.data.bio.content1 }}
+            </span>
+            <span id="contentMore">{{ this.data.bio.content2 }}</span>
+          </p>
         </div>
         <button id="readMore" @click="readMore()" class="swiper">
           Read more
@@ -312,19 +316,17 @@ export default {
     },
     readMore() {
       // the full text
-      var fullBio = localStorage.getItem("bio");
-      var shortBio = localStorage.getItem("bio_shortened");
+      var contentMore = document.getElementById("contentMore");
+      var btn = document.getElementById("readMore");
 
-      var currentValue = document.getElementsByClassName("author_bio_body")[0];
-
-      currentValue.innerHTML == fullBio
-        ? (currentValue.innerHTML = shortBio)
-        : (currentValue.innerHTML = fullBio);
-
-      var readMore = document.getElementById("readMore");
-      readMore.innerHTML.toLowerCase() != "read more"
-        ? (readMore.innerHTML = "read less")
-        : (readMore.innerHTML = "read more");
+      if (contentMore.style.display === "inline") {
+        contentMore.style.display = "none";
+        btn.innerHTML = "Read more";
+        contentMore.scrollIntoView();
+      } else {
+        contentMore.style.display = "inline";
+        btn.innerHTML = "Read less";
+      }
     },
 
     handleSubmit(e) {
@@ -374,18 +376,8 @@ export default {
       zoom: 1,
     });
 
-    // Shorten the very long bio
-    var author_bio_body = document.getElementsByClassName("author_bio_body");
-    localStorage.setItem("bio", author_bio_body[0].innerHTML);
-
-    // Split the text by its spaces, get first 29 words, join array into a string again separated by spaces
-    var bio_shortened =
-      author_bio_body[0].innerHTML.split(" ").splice(0, 29).join(" ") + "...";
-    localStorage.setItem("bio_shortened", bio_shortened);
-
     if (window.innerWidth <= 767) {
       document.getElementById("readMore").style.display = "block";
-      author_bio_body[0].innerHTML = bio_shortened;
     }
 
     document.getElementById("ck-email").required = true;

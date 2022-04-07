@@ -6,7 +6,8 @@
   display: none;
 }
 
-#newsletter form {
+#contentMore {
+  display: none;
 }
 
 #newsletter form input {
@@ -195,7 +196,7 @@
 
 /* Book gallery */
 .carousel_img {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
 }
