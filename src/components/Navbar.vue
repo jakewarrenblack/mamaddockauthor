@@ -7,11 +7,10 @@
           <ul id="linklist">
             <a
               @click="checkRouter(link)"
-              :href="link.href"
               v-for="link in this.links"
               :key="link.id"
-              :id="link.href"
               class="anchor"
+              :href="`#${link.href}`"
             >
               <li>{{ link.title }}</li>
             </a>
@@ -64,35 +63,30 @@ export default {
       }
 
       // if it's an actual router path
-      if (link.router) {
+      if (link.router === true) {
         this.$router.push(link.href);
         document.querySelector("html").style.overflowY = "unset";
         document.getElementById("app").style.overflow = "unset";
       } else {
         // if it's an anchor tag
         if (this.$router.currentRoute.path != "/") {
+          //location.reload(true);
+
+          // this.$router.push(`/`);
+
           this.$router.push("/");
 
-          // FIXING SCROLL HERE //
-          // this.$nextTick(() => link.href.showCurrent(link.href));
-          //////////////////////////////////////
+          this.$store.dispatch("scroll", {
+            element: link.href,
+          });
 
-          // this.$nextTick(() => this.$refs["full_bio"].scrollIntoView());
-
-          // var top = link.href.offsetTop;
-
-          // window.scrollTo(0, top);
-
-          // document.getElementById(link.href).scrollIntoView
+          // VueScrollTo.scrollTo(this.$refs.full_bio, 1000, { easing: "linear" });
 
           document.querySelector("html").style.overflowY = "unset";
           document.getElementById("app").style.overflow = "unset";
           this.header_main ? (this.header_main.style.zIndex = "1") : "";
         }
       }
-    },
-    showCurrent(index) {
-      document.getElementById(index).scrollIntoView();
     },
 
     openCurtain() {

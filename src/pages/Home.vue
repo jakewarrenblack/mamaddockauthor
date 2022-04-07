@@ -270,6 +270,7 @@ import page2 from "@/assets/balloch_castle/2.webp";
 import page3 from "@/assets/balloch_castle/3.webp";
 import page4 from "@/assets/balloch_castle/4.webp";
 
+import { mapState } from "vuex";
 export default {
   name: "Home",
 
@@ -287,6 +288,9 @@ export default {
     Divider,
     Carousel3d,
     Slide,
+  },
+  computed: {
+    ...mapState(["scrolledElement"]),
   },
   data() {
     return {
@@ -335,6 +339,14 @@ export default {
 
       this.router.push("/thanks");
     },
+  },
+  created() {
+    setTimeout(() => {
+      if (this.scrolledElement) {
+        var top = document.getElementById(this.scrolledElement).offsetTop;
+        if (top) window.scrollTo(0, top);
+      }
+    }, 500);
   },
   async mounted() {
     // document.title = "M.A Maddock";
