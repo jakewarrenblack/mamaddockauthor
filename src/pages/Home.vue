@@ -7,7 +7,7 @@
             <h3 data-aos="fade-down" class="author_short_desc">
               <!-- Lorem ipsum Ipsum Dolor Sit Amet -->
             </h3>
-            <h1 data-aos="fade-up" class="author_name">M.A Maddock</h1>
+            <h1 data-aos="fade-up" class="author_name">M.A. Maddock</h1>
           </div>
           <Video />
         </div>

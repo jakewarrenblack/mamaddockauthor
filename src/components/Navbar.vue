@@ -2,7 +2,7 @@
   <header id="nav_header">
     <div id="container">
       <nav>
-        <h2 @click="home()">M.A MADDOCK</h2>
+        <h2 @click="home()">M.A. MADDOCK</h2>
         <div id="curtain_contain" class="curtain_contain">
           <ul id="linklist">
             <a
