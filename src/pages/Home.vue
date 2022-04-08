@@ -310,7 +310,7 @@ export default {
       convertKitConfig: {
         formId: 2986098,
         template: "minimal",
-        hideName: true,
+        hideName: false,
         stack: false,
       },
       form: {
