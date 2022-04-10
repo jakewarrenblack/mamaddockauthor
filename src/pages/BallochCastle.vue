@@ -103,24 +103,9 @@ export default {
   async mounted() {
     document.title = "M.A Maddock";
 
-    await axios.get("./data.json").then((res) => (this.data = res.data));
-
-    // this.vantaEffect = Vanta({
-    //   el: "#nav_header_contain",
-    //   THREE,
-    //   mouseControls: true,
-    //   touchControls: true,
-    //   gyroControls: false,
-    //   minHeight: 200.0,
-    //   minWidth: 200.0,
-    //   highlightColor: 0x462403,
-    //   midtoneColor: 0x780e04,
-    //   lowlightColor: 0x70707,
-    //   baseColor: 0x20202,
-    //   blurFactor: 0.41,
-    //   speed: 0.4,
-    //   zoom: 1,
-    // });
+    await axios
+      .get("https://maddock-backend.herokuapp.com/api")
+      .then((res) => (this.data = res.data[0]));
   },
 };
 </script>
