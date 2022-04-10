@@ -7,7 +7,9 @@
             <h3 data-aos="fade-down" class="author_short_desc">
               <!-- Lorem ipsum Ipsum Dolor Sit Amet -->
             </h3>
-            <h1 data-aos="fade-up" class="author_name">M.A. Maddock</h1>
+            <h1 v-if="this.data" data-aos="fade-up" class="author_name">
+              {{ this.data.authorInfo.title }}
+            </h1>
           </div>
           <Video />
         </div>
@@ -16,8 +18,8 @@
 
     <section id="short_bio">
       <div class="short_bio_container">
-        <h6>
-          M. A. Maddock is an Irish author, currently living in Dublin, Ireland.
+        <h6 v-if="this.data">
+          {{ this.data.authorInfo.authorDesc }}
         </h6>
       </div>
     </section>
@@ -50,13 +52,18 @@
 
     <br /><br />
     <Divider />
-    <h2 data-aos="fade-up" style="margin-top: 8rem" class="author_bio_title">
-      Join My Mailing List
+    <h2
+      v-if="this.data"
+      data-aos="fade-up"
+      style="margin-top: 8rem"
+      class="author_bio_title"
+    >
+      {{ this.data.mail.title }}
     </h2>
     <!-- <hr style="max-width: 500px; margin: 2rem auto; color:var(--white)"/> -->
     <div class="diamond" style="margin: 2rem auto; font-size: 2vh">♦</div>
-    <h4 style="font-family: 'STIXTwo">
-      Stay up to date on all things The Sixth Amulet.
+    <h4 v-if="this.data" style="font-family: 'STIXTwo">
+      {{ this.data.mail.desc }}
     </h4>
     <br /><br />
     <section id="newsletter">
@@ -361,7 +368,9 @@ export default {
   async mounted() {
     // document.title = "M.A Maddock";
 
-    await axios.get("./data.json").then((res) => (this.data = res.data));
+    await axios
+      .get("https://maddock-backend.herokuapp.com/api")
+      .then((res) => (this.data = res.data[0]));
 
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
