@@ -332,18 +332,22 @@ export default {
   },
   methods: {
     convertBio() {
-      this.bioPreview = this.data.bio.content
-        .split(" ")
-        .slice(0, parseInt(this.data.bio.splitAfter))
-        .join(" ");
+      if (document.innerWidth <= 767) {
+        this.bioPreview = this.data.bio.content
+          .split(" ")
+          .slice(0, parseInt(this.data.bio.splitAfter))
+          .join(" ");
 
-      this.bioFull = this.data.bio.content
-        .split(" ")
-        .slice(
-          parseInt(this.data.bio.splitAfter),
-          this.data.bio.content.length - 1
-        )
-        .join(" ");
+        this.bioFull = this.data.bio.content
+          .split(" ")
+          .slice(
+            parseInt(this.data.bio.splitAfter),
+            this.data.bio.content.length - 1
+          )
+          .join(" ");
+      } else {
+        this.bioPreview = this.data.bio.content;
+      }
     },
     show() {
       this.$modal.show("synopsis-modal");
