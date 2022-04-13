@@ -332,7 +332,7 @@ export default {
   },
   methods: {
     convertBio() {
-      if (document.innerWidth <= 767) {
+      if (window.innerWidth <= 767) {
         this.bioPreview = this.data.bio.content
           .split(" ")
           .slice(0, parseInt(this.data.bio.splitAfter))
