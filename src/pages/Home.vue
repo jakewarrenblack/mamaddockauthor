@@ -39,9 +39,9 @@
 
           <p class="author_bio_body">
             <span>
-              {{ this.data.bio.content1 }}
+              {{ this.bioPreview }}
             </span>
-            <span id="contentMore">{{ this.data.bio.content2 }}</span>
+            <span id="contentMore">{{ this.bioFull }}</span>
           </p>
         </div>
         <button id="readMore" @click="readMore()" class="swiper">
@@ -326,9 +326,25 @@ export default {
         message: "",
       },
       data: null,
+      bioPreview: "",
+      bioFull: "",
     };
   },
   methods: {
+    convertBio() {
+      this.bioPreview = this.data.bio.content
+        .split(" ")
+        .slice(0, parseInt(this.data.bio.splitAfter))
+        .join(" ");
+
+      this.bioFull = this.data.bio.content
+        .split(" ")
+        .slice(
+          parseInt(this.data.bio.splitAfter),
+          this.data.bio.content.length - 1
+        )
+        .join(" ");
+    },
     show() {
       this.$modal.show("synopsis-modal");
     },
@@ -388,6 +404,8 @@ export default {
       speed: 0.4,
       zoom: 1,
     });
+
+    this.convertBio();
 
     document.getElementsByClassName("vanta-canvas")[0].style.top = "-450px";
     this.vantaEffect = Vanta({
