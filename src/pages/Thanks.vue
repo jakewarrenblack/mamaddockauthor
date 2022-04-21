@@ -27,7 +27,7 @@ export default {
   methods: {
     home() {
       console.log("click");
-      this.$router.back();
+      this.$router.push("/");
     },
   },
   mounted() {
