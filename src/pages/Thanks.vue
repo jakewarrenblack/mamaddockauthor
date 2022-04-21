@@ -2,7 +2,7 @@
   <div id="background">
     <div id="container">
       <h1>Thank you!</h1>
-      <h2>I'll get back to you as soon as possible</h2>
+      <h2>Thanks for your form submission</h2>
       <br />
       <button class="swiper" @click="home()">Go home</button>
     </div>
