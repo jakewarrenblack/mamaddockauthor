@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <Navbar :links="this.links" />
+    <Navbar
+      v-if="this.$router.currentRoute.path !== '/thanks'"
+      :links="this.links"
+    />
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>

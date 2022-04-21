@@ -39,7 +39,7 @@ export default {
       gyroControls: false,
       minHeight: 1200.0,
       minWidth: 200.0,
-      highlightColor: 0x460303,
+      highlightColor: 0x462403,
       midtoneColor: 0x780e04,
       lowlightColor: 0x70707,
       baseColor: 0x20202,
@@ -55,6 +55,10 @@ export default {
 
 <style scoped>
 @import "../assets/css/style.css";
+
+#background {
+  overflow: hidden;
+}
 
 #container {
   height: 100vh;
