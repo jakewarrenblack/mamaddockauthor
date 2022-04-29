@@ -313,7 +313,7 @@ export default {
     return {
       // reviewSwipeCount: 1,
       pages: [null, page1, page2, page3, page4],
-
+      loading: true,
       convertKitConfig: {
         formId: 2986098,
         template: "minimal",
@@ -434,6 +434,14 @@ export default {
     }
 
     document.getElementById("ck-email").required = true;
+
+    this.$nextTick(function () {
+      // Code that will run only after the
+      // entire view has been rendered
+      this.$store.dispatch("setLoading", {
+        isLoading: false,
+      });
+    });
   },
   beforeDestroy() {
     if (this.vantaEffect) {

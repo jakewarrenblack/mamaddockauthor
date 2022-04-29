@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <div v-if="this.loading" class="cover">
+      <Loader />
+    </div>
     <Navbar
       v-if="this.$router.currentRoute.path !== '/thanks'"
       :links="this.links"
@@ -12,6 +15,8 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import Loader from "@/components/Loader";
+import { mapState } from "vuex";
 export default {
   name: "App",
   metaInfo: {
@@ -32,7 +37,10 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
   },
-  components: { Navbar },
+  computed: {
+    ...mapState(["loading"]),
+  },
+  components: { Navbar, Loader },
   data() {
     return {
       links: [
@@ -72,6 +80,24 @@ export default {
 };
 </script>
 
+<style scoped>
+@import "assets/css/colors.css";
+
+.cover {
+  background: var(--silver);
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+
 <style>
 @import "assets/css/colors.css";
 
@@ -79,6 +105,7 @@ html {
   background: var(--silver);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 
 body canvas {
