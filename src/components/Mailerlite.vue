@@ -10,7 +10,7 @@
         <form
           @submit.prevent="submit()"
           className="ml-block-form"
-          action="https://assets.mailerlite.com/jsonp/36718/forms/53733104166111057/subscribe"
+          action="https://assets.mailerlite.com/jsonp/37343/forms/53825848642373021/subscribe"
           data-id="CODE"
           data-code="CODE"
           method="POST"
@@ -69,7 +69,7 @@ export default {
     submit() {
       axios
         .post(
-          `https://assets.mailerlite.com/jsonp/36718/forms/53733104166111057/subscribe`,
+          `https://assets.mailerlite.com/jsonp/37343/forms/53825848642373021/subscribe`,
           {
             fields: {
               email: this.email,

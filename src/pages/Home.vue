@@ -67,7 +67,8 @@
     </h4>
     <br /><br />
     <section id="newsletter">
-      <ConvertKitForm v-bind="convertKitConfig" />
+      <!-- <ConvertKitForm v-bind="convertKitConfig" /> -->
+      <Mailerlite />
     </section>
     <Divider />
     <section v-if="this.data" id="synopsis" ref="bookSection">
@@ -278,7 +279,7 @@ import MySwiper from "@/components/MySwiper";
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
 import Flipbook from "flipbook-vue";
-import ConvertKitForm from "convertkit-vue";
+import Mailerlite from "@/components/Mailerlite";
 import axios from "axios";
 
 // Flipbook pages
@@ -299,7 +300,7 @@ export default {
     // Buy,
     MySwiper,
     Video,
-    ConvertKitForm,
+    Mailerlite,
     Flipbook,
     Footer,
     Divider,
@@ -433,7 +434,7 @@ export default {
       document.getElementById("readMore").style.display = "block";
     }
 
-    document.getElementById("ck-email").required = true;
+    // document.getElementById("ck-email").required = true;
 
     this.$nextTick(function () {
       // Code that will run only after the
