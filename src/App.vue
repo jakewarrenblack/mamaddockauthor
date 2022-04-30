@@ -83,6 +83,10 @@ export default {
 <style scoped>
 @import "assets/css/colors.css";
 
+body canvas {
+  width: 100% !important;
+}
+
 .cover {
   background: var(--silver);
   width: 100vw;
@@ -92,6 +96,14 @@ export default {
   left: 0;
   z-index: 99;
 
+  @media only screen and (max-width: 767px) {
+    #app,
+    html,
+    body {
+      overflow-y: scroll;
+      height: 100% !important;
+    }
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,6 +112,15 @@ export default {
 
 <style>
 @import "assets/css/colors.css";
+
+@media only screen and (max-width: 767px) {
+  #app,
+  html,
+  body {
+    overflow-y: scroll;
+    height: 100% !important;
+  }
+}
 
 html {
   background: var(--silver);
