@@ -3,6 +3,7 @@
     <div id="container">
       <h1>Thank you!</h1>
       <h2>Thanks for your form submission</h2>
+      <h3>Remember to check your spam and 'promotions' folder!</h3>
       <br />
       <button class="swiper" @click="home()">Go home</button>
     </div>
