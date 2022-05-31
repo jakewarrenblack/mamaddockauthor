@@ -106,7 +106,7 @@
             style="font-weight: bold; color: var(--crimson)"
             class="author_bio_body"
           >
-            OFFICIAL RELEASE MAY 31<sup>st</sup>
+            OFFICIAL RELEASE LATE SUMMER
           </h5>
         </div>
       </div>
