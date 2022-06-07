@@ -391,7 +391,11 @@ export default {
 
     await axios
       .get("https://maddock-backend.herokuapp.com/api")
-      .then((res) => (this.data = res.data[0]));
+      .then((res) => (this.data = res.data[0]))
+      .catch(async (e) => {
+        console.log(e);
+        await axios.get("./data.json").then((res) => (this.data = res.data));
+      });
 
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
