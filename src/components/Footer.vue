@@ -15,7 +15,7 @@
             />
           </div>
         </a>
-        <a target="_blank" href="https://www.instagram.com/m.a_maddock1">
+        <a target="_blank" href="https://www.instagram.com/ma.maddock_author">
           <div class="icon_contain">
             <img
               class="social_icon"
