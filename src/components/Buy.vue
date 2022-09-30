@@ -2,9 +2,18 @@
   <div class="container">
     <button class="buy-button" @click="expand()">Buy Now</button>
     <div ref="buyButton" class="buy-buttons">
-      <button class="buy-button">Amazon</button>
-      <button class="buy-button">Goodreads</button>
-      <button class="buy-button">Easons</button>
+      <a
+        href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy-ebook/dp/B0BG8T8ZCN/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
+        ><button class="buy-button">Kindle</button></a
+      >
+      <a
+        href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy/dp/1739744926/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
+        ><button class="buy-button">Hardback</button></a
+      >
+      <a
+        href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy/dp/173974490X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
+        ><button class="buy-button">Softback</button></a
+      >
     </div>
   </div>
 </template>
@@ -19,7 +28,6 @@ export default {
   mounted() {},
   methods: {
     expand() {
-      console.log("yeehaw");
       if (this.counter % 2 == 0) {
         this.$refs.buyButton.classList.remove("fadeSlideB");
         this.$refs.buyButton.classList.add("fadeSlideF");
@@ -58,11 +66,13 @@ export default {
 
 .buy-buttons button {
   margin: auto 2rem;
+  font-family: "STIXTwo";
 }
 
 .buy-button {
   font-size: 1.4rem;
   padding: 0.5rem 1rem;
+  font-family: "STIXTwo";
 }
 
 .buy-button {
