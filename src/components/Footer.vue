@@ -33,7 +33,7 @@
         </a>
       </div>
       <!-- copyright notice -->
-      &copy; Copyright M.A Maddock 2022
+      &copy; Copyright M.A. Maddock 2022
     </footer>
   </div>
 </template>

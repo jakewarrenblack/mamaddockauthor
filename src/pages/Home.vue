@@ -147,7 +147,7 @@
     <section v-if="this.data" data-aos="fade-up" id="book_images">
       <div id="example">
         <carousel-3d
-          :startIndex="6"
+          :startIndex="11"
           :width="400"
           :height="400"
           :inverse-scaling="1500"
@@ -389,13 +389,16 @@ export default {
   async mounted() {
     // document.title = "M.A Maddock";
 
-    await axios
-      .get("https://maddock-backend.herokuapp.com/api")
-      .then((res) => (this.data = res.data[0]))
-      .catch(async (e) => {
-        console.log(e);
-        await axios.get("./data.json").then((res) => (this.data = res.data));
-      });
+    // await axios
+    //   .get("https://maddock-backend.herokuapp.com/api")
+    //   .then((res) => (this.data = res.data[0]))
+    //   .catch(async (e) => {
+    //     console.log(e);
+    //     await axios.get("./data.json").then((res) => (this.data = res.data));
+    //   });
+
+    // Removed above, heroku removing their free tier
+    await axios.get("./data.json").then((res) => (this.data = res.data));
 
     this.vantaEffect = Vanta({
       el: "#nav_header_contain",
