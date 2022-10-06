@@ -14,6 +14,14 @@
         href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy/dp/173974490X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
         ><button class="buy-button">Softback</button></a
       >
+      <a
+        href="https://www.bookdepository.com/The-Sixth-Amulet-Miriam-Maddock/9781739744908"
+        ><button class="buy-button">Book Depository</button></a
+      >
+      <a
+        href="https://www.goodreads.com/book/show/62695806-the-sixth-amulet?ac=1&from_search=true&qid=XYsCzR4I31&rank=1"
+        ><button class="buy-button">Goodreads</button></a
+      >
     </div>
   </div>
 </template>
@@ -73,6 +81,8 @@ export default {
   font-size: 1.4rem;
   padding: 0.5rem 1rem;
   font-family: "STIXTwo";
+  min-width: 8rem;
+  min-height: 5rem;
 }
 
 .buy-button {
@@ -85,6 +95,7 @@ export default {
   color: var(--white);
   border: 2px solid var(--crimson);
   background: transparent;
+  height: 100%;
 }
 
 button:hover {
@@ -109,6 +120,7 @@ button:hover {
 
   .buy-buttons button {
     margin: 1rem 0;
+    width: 100%;
   }
 
   .fadeSlideF {
