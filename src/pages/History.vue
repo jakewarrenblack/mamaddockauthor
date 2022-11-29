@@ -103,9 +103,11 @@ export default {
   async mounted() {
     document.title = "M.A Maddock";
 
-    await axios
-      .get("https://maddock-backend.herokuapp.com/api")
-      .then((res) => (this.data = res.data[0]));
+    // await axios
+    //   .get("https://maddock-backend.herokuapp.com/api")
+    //   .then((res) => (this.data = res.data[0]));
+
+    await axios.get("./data.json").then((res) => (this.data = res.data));
   },
   // beforeCreate() {
   //   document.getElementById("container").opacity = "0";

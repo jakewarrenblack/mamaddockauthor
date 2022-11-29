@@ -4,7 +4,7 @@
       <!-- logo -->
       <div class="logo">
         <!-- socials -->
-        <h3>MA MADDOCK</h3>
+        <h3>M.A. MADDOCK</h3>
       </div>
       <div class="socials d-flex justify-space-around">
         <a target="_blank" href="https://twitter.com/mamaddock1_a">
