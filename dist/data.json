@@ -16,7 +16,7 @@
   "books": [
     {
       "title": "The Sixth Amulet",
-      "img": "sixth_amulet",
+      "img": "covers/sixth_amulet",
       "quote_credit": "Lothian",
       "quote": "In the realm of my soul, I believe him to be a great Ruler.",
       "paragraph_context": "Scotland: 1564",
@@ -58,7 +58,7 @@
     },
     {
       "title": "The Moon Chasers",
-      "img": "moon_chasers",
+      "img": "covers/moon_chasers",
       "quote_credit": "Eilidh Stiúbhar - Seanchaidh á Peairt",
       "quote": "She awakens beneath the inky depths, stirred by the moon’s ghostly hue as it moves, spreading her curse across the water; it shimmers and reaches down to her, through the gloom. Her eyes open, touched by it. Like a black split in wood, her mouth moves to a smile, and she rises—the call of death seducing her as she breaks the surface...",
       "paragraph_context": "Scotland: 1630",
@@ -77,7 +77,7 @@
     },
     {
       "title": "A Flutter on the Wind",
-      "img": "flutter_on_the_wind",
+      "img": "covers/flutter_on_the_wind",
       "quote_credit": "Lumeri",
       "quote": "I give you this place—this haven—the heart of Elboru, and I shall call it, The Great Hall of Eminence. It is the ethos of who we are and will remain so for as long as the universe exists. Here, only peace shall dwell alongside the spirits of the great ones who, when time dictates, will glorify within the sanctity of its solitude, for eternity. Together, they will silently reign inside its grandeur while quietly watching those who will follow after and carry on our traditions. But take heed … do not let the stain of evil mark this sacred place – for sacred it is … and shall remain so, henceforth.",
       "paragraph_context": "Scotland: 1630",
@@ -87,6 +87,30 @@
         {
           "name": "Amazon",
           "link": "https://www.amazon.co.uk/Flutter-Wind-historical-fantasy-Amulet-ebook/dp/B0DFQ76RXX?ref_=ast_author_dp"
+        }
+      ]
+    },
+    {
+      "type": "audiobook",
+      "title": "The Sixth Amulet - Audiobook",
+      "img": "covers/audiobooks/the_sixth_amulet",
+      "sample": "the_sixth_amulet",
+      "buy": [
+        {
+          "name": "Audible",
+          "link": "https://www.audible.co.uk/pd/The-Sixth-Amulet-Audiobook/B0CSPTWPSW?eac_link=gWNXhwv8ba4x&amp;ref=web_search_eac_asin_1&amp;eac_selected_type=asin&amp;eac_selected=B0CSPTWPSW&amp;qid=6ZiB3AVEvh&amp;eac_id=257-7577380-8936214_6ZiB3AVEvh&amp;sr=1-1"
+        }
+      ]
+    },
+    {
+      "type": "audiobook",
+      "title": "The Moon Chasers - Audiobook",
+      "img": "covers/audiobooks/the_moon_chasers",
+      "sample": "the_moon_chasers",
+      "buy": [
+        {
+          "name": "Audible",
+          "link": "https://www.audible.co.uk/pd/The-Sixth-Amulet-Audiobook/B0CSPTWPSW?eac_link=gWNXhwv8ba4x&amp;ref=web_search_eac_asin_1&amp;eac_selected_type=asin&amp;eac_selected=B0CSPTWPSW&amp;qid=6ZiB3AVEvh&amp;eac_id=257-7577380-8936214_6ZiB3AVEvh&amp;sr=1-1"
         }
       ]
     }
