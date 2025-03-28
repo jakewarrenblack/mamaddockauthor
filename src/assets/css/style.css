@@ -51,6 +51,7 @@
 #container {
   background: var(--silver);
 }
+
 #header {
   /* background: var(--crimson); */
   position: relative;
@@ -62,6 +63,7 @@
   max-width: 1575px;
   margin: auto;
 }
+
 #header:after {
   content: "";
   position: absolute;
@@ -72,10 +74,12 @@
   background-color: var(--silver);
   z-index: 0;
 }
+
 #short_bio {
   background: var(--silver);
   position: relative;
 }
+
 .short_bio_container {
   color: var(--white);
   position: relative;
@@ -85,6 +89,7 @@
   font-family: "STIXTwo";
   font-size: 5rem;
 }
+
 #short_bio h6 {
   margin: 0 auto;
   width: 100%;
@@ -131,6 +136,7 @@
   text-align: center;
   color: var(--white);
 }
+
 .author_short_desc {
   font-family: "STIXTwo Italic";
   font-size: 2rem;
@@ -138,6 +144,7 @@
   margin: 0;
   padding: 0;
 }
+
 .author_name {
   margin-top: 2rem;
   margin-bottom: 0;
@@ -155,6 +162,14 @@
 .author_image {
   object-fit: cover;
   width: 30rem;
+  height: 30rem;
+  margin: 4rem 4rem 0 0;
+  /* filter: blur(5px); */
+}
+
+.book_section_image {
+  object-fit: cover;
+  width: auto;
   height: 30rem;
   margin: 4rem 4rem 0 0;
   /* filter: blur(5px); */
@@ -545,6 +560,7 @@ textarea:focus-visible {
   .author_short_desc {
     font-size: 1.5rem;
   }
+
   .author_name {
     font-size: 3rem;
   }
@@ -552,25 +568,32 @@ textarea:focus-visible {
   .author_short_desc {
     font-size: 1.5rem;
   }
+
   .author_name {
     letter-spacing: 0.5rem;
   }
+
   .four-rem {
     font-size: 3rem;
   }
+
   .short_bio_container {
     font-size: 4rem;
   }
+
   .author_image {
     margin: 0;
     background-size: cover;
     height: 10rem;
+    width: auto;
     background-position: center;
   }
+
   .author_bio_text {
     margin: 0;
     text-align: center;
   }
+
   .full_bio_container {
     flex-direction: column;
     text-align: center;
@@ -615,6 +638,13 @@ textarea:focus-visible {
 
 @media only screen and (max-width: 767px) {
   .author_image {
+    width: 100%;
+    height: auto !important;
+  }
+
+  .book_section_image{
+    width:100%;
+    margin:auto;
     height: auto !important;
   }
 
@@ -637,6 +667,7 @@ textarea:focus-visible {
     justify-content: flex-start;
     margin-top: 18vh;
   }
+
   .swiper {
     margin: auto;
   }
@@ -670,6 +701,7 @@ textarea:focus-visible {
   .author_short_desc {
     font-size: 1.5rem;
   }
+
   .author_name {
     font-size: 3rem;
   }
@@ -677,24 +709,30 @@ textarea:focus-visible {
   .author_short_desc {
     font-size: 1.5rem;
   }
+
   .author_name {
     letter-spacing: 0.5rem;
   }
+
   .four-rem {
     font-size: 3rem;
   }
+
   .short_bio_container {
     font-size: 4rem;
   }
+
   .author_image {
     margin: 0;
     background-size: cover;
     background-position: center;
   }
+
   .author_bio_text {
     margin: 0;
     text-align: center;
   }
+
   .full_bio_container {
     flex-direction: column;
     text-align: center;
@@ -717,6 +755,7 @@ textarea:focus-visible {
   .swiper-button-prev {
     left: 0px;
   }
+
   .swiper-button-next {
     right: 0px;
   }

@@ -25,14 +25,9 @@
     </section>
     <Divider />
     <section ref="full_bio" id="full_bio">
-      <div
-        class="full_bio_container d-flex justify-space-between align-items-center"
-      >
-        <img
-          src="~@/assets/bio_photo.jpg"
-          data-aos="fade-right"
-          class="author_image miriam_image bg_size_cover clip_corners"
-        />
+      <div class="full_bio_container d-flex justify-space-between align-items-center">
+        <img src="~@/assets/bio_photo.jpg" data-aos="fade-right"
+          class="author_image miriam_image bg_size_cover clip_corners" />
 
         <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
           <h2 class="author_bio_title">{{ this.data.bio.title }}</h2>
@@ -52,12 +47,7 @@
 
     <br /><br />
     <Divider />
-    <h2
-      v-if="this.data"
-      data-aos="fade-up"
-      style="margin-top: 8rem"
-      class="author_bio_title"
-    >
+    <h2 v-if="this.data" data-aos="fade-up" style="margin-top: 8rem" class="author_bio_title">
       {{ this.data.mail.title }}
     </h2>
     <!-- <hr style="max-width: 500px; margin: 2rem auto; color:var(--white)"/> -->
@@ -77,22 +67,12 @@
       <div v-for="(book, index) in this.data.books" :key="book.id">
         <section :key="book.id" id="synopsis" ref="bookSection">
           <!-- row reverse every odd element -->
-          <div
-            class="full_bio_container d-flex justify-space-between align-items-center"
-            :class="index % 2 === 0 ? 'row-reverse' : ''"
-          >
-            <img
-              :src="require(`@/assets/${book.img}.jpg`)"
-              data-aos="fade-left"
-              style="width: auto"
-              class="author_image"
-            />
+          <div style="margin: 0 2rem" class="full_bio_container d-flex justify-space-between align-items-center"
+            :class="index % 2 === 0 ? 'row-reverse' : ''">
+            <img :src="require(`@/assets/${book.img}.jpg`)" data-aos="fade-left"
+              class="book_section_image" />
 
-            <div
-              data-aos="fade-right"
-              style="width: 85%"
-              class="author_bio_text"
-            >
+            <div data-aos="fade-right" style="width: 85%" class="author_bio_text">
               <h2 class="author_bio_title">{{ book.title }}</h2>
               <h5 class="author_bio_body">
                 <q>{{ book.quote }}</q>
@@ -100,37 +80,22 @@
                 <br />
                 <br />
 
-                <strong>{{ book.paragraph_context }}</strong
-                ><br />
+                <strong>{{ book.paragraph_context }}</strong><br />
                 {{ book.preview }}
               </h5>
-              <button
-                v-if="book.show_synopsis"
-                style="border-bottom: 4px solid var(--white)"
-                class="swiper"
-                @click="show()"
-              >
+              <button v-if="book.show_synopsis" style="border-bottom: 4px solid var(--white)" class="swiper"
+                @click="show()">
                 <span class="swiper_text">View synopsis</span>
               </button>
               <Buy :options="book.buy" />
-              <h5
-                style="font-weight: bold; color: var(--crimson)"
-                class="author_bio_body"
-              >
+              <h5 style="font-weight: bold; color: var(--crimson)" class="author_bio_body">
                 NOW AVAILABLE ON AMAZON
               </h5>
             </div>
           </div>
 
-          <modal
-            :adaptive="true"
-            :minHeight="1400"
-            :minWidth="800"
-            height="auto"
-            :scrollable="true"
-            name="synopsis-modal"
-            classes="modal-mobile"
-          >
+          <modal :adaptive="true" :minHeight="1400" :minWidth="800" height="auto" :scrollable="true"
+            name="synopsis-modal" classes="modal-mobile">
             <article v-if="book.show_synopsis" class="synopsis_contain">
               <div slot="top-right">
                 <button @click="$modal.hide('synopsis-modal')">❌</button>
@@ -160,23 +125,9 @@
     <Divider />
     <section v-if="this.data" data-aos="fade-up" id="book_images">
       <div id="example">
-        <carousel-3d
-          :startIndex="0"
-          :width="400"
-          :height="400"
-          :inverse-scaling="1500"
-          :space="800"
-        >
-          <slide
-            style="width: max-content"
-            v-for="slide in this.data.slides"
-            :index="slide.img"
-            :key="slide.img"
-          >
-            <img
-              class="carousel_img"
-              :src="require(`@/assets/review_images/${slide.img}.webp`)"
-            />
+        <carousel-3d :startIndex="0" :width="400" :height="400" :inverse-scaling="1500" :space="800">
+          <slide style="width: max-content" v-for="slide in this.data.slides" :index="slide.img" :key="slide.img">
+            <img class="carousel_img" :src="require(`@/assets/review_images/${slide.img}.webp`)" />
             <span class="carousel_img_caption">{{ slide.caption }}</span>
           </slide>
         </carousel-3d>
@@ -228,49 +179,23 @@
       <h1 class="contact_title">Contact</h1>
       <br />
       <div class="contact_form_contain" id="vanta_form">
-        <form
-          action="https://formsubmit.co/mamaddock1@gmail.com"
-          method="POST"
-          class="contact"
-        >
+        <form action="https://formsubmit.co/mamaddock1@gmail.com" method="POST" class="contact">
           <div class="form_input_contain">
-            <input
-              required
-              v-model="form.subject"
-              type="text"
-              name="subject"
-              id="subject"
-              placeholder="Your subject here"
-            />
+            <input required v-model="form.subject" type="text" name="subject" id="subject"
+              placeholder="Your subject here" />
           </div>
 
           <div class="form_input_contain">
-            <input
-              required
-              v-model="form.email"
-              type="email"
-              name="email"
-              placeholder="name@example.com"
-            />
+            <input required v-model="form.email" type="email" name="email" placeholder="name@example.com" />
           </div>
 
           <div class="form_input_contain">
-            <textarea
-              required
-              v-model="form.message"
-              name="message"
-              placeholder="Your message here"
-            />
+            <textarea required v-model="form.message" name="message" placeholder="Your message here" />
           </div>
 
           <input type="text" name="_honey" style="display: none" />
 
-          <button
-            @submit="handleSubmit()"
-            class="swiper contact_button"
-            type="submit"
-            value="Submit"
-          >
+          <button @submit="handleSubmit()" class="swiper contact_button" type="submit" value="Submit">
             Submit
           </button>
         </form>
@@ -476,6 +401,7 @@ export default {
 <!-- Can't be scoped -->
 <style>
 @media only screen and (max-width: 767px) {
+
   /* Allow scroll on mobile */
   .modal-mobile {
     left: 0 !important;
