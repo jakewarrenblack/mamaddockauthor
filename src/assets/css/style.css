@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.vue-video-section {
+  width: 60dvw !important;
+}
+
 #newsletter form input {
   margin-bottom: 2rem;
   padding: 1rem 0;
@@ -143,19 +147,6 @@
   text-transform: uppercase;
 }
 
-/* Author full bio section */
-/* .author_image {
-    background-image: url("~@/assets/bio_photo.jpg");
-    background-size: contain;
-    clip-path: none;
-  } */
-
-/* .book-image {
-    background-image: url("~@/assets/sixth_amulet.jpg");
-    background-size: contain;
-    clip-path: none;
-  } */
-
 .full_bio_container {
   max-width: 1800px;
   margin: auto;
@@ -163,8 +154,8 @@
 
 .author_image {
   object-fit: cover;
-  height: 55rem;
-  width: 75%;
+  width: 30rem;
+  height: 30rem;
   margin: 4rem 4rem 0 0;
   /* filter: blur(5px); */
 }
@@ -573,7 +564,7 @@ textarea:focus-visible {
   .author_image {
     margin: 0;
     background-size: cover;
-    height: 30rem;
+    height: 10rem;
     background-position: center;
   }
   .author_bio_text {
@@ -601,11 +592,32 @@ textarea:focus-visible {
   background: unset !important;
 } */
 
+.vue-video-section {
+  position: absolute !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  height: 100% !important;
+}
+
+.vue-video-section div {
+  width: 100% !important;
+  overflow: hidden;
+}
+
+.vue-video-section video {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .video_bg_none {
   background: unset !important;
 }
 
 @media only screen and (max-width: 767px) {
+  .author_image {
+    height: auto !important;
+  }
+
   /* Disable aos animations on mobile */
 
   [data-aos] {
@@ -677,7 +689,6 @@ textarea:focus-visible {
   .author_image {
     margin: 0;
     background-size: cover;
-    height: 30rem;
     background-position: center;
   }
   .author_bio_text {

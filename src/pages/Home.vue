@@ -31,7 +31,7 @@
         <img
           src="~@/assets/bio_photo.jpg"
           data-aos="fade-right"
-          class="author_image miriam_image bg_size_cover clip_towards_left"
+          class="author_image miriam_image bg_size_cover clip_corners"
         />
 
         <div v-if="this.data" data-aos="fade-left" class="author_bio_text">
@@ -71,74 +71,88 @@
       <Mailerlite />
     </section>
     <Divider />
-    <section v-if="this.data" id="synopsis" ref="bookSection">
-      <div
-        class="full_bio_container d-flex justify-space-between align-items-center row-reverse"
-      >
-        <img
-          src="~@/assets/sixth_amulet.jpg"
-          data-aos="fade-left"
-          style="width: auto"
-          class="author_image"
-        />
 
-        <div data-aos="fade-right" style="width: 85%" class="author_bio_text">
-          <h2 class="author_bio_title">{{ this.data.synopsis.title }}</h2>
-          <h5 class="author_bio_body">
-            <q>{{ this.data.synopsis.quote }}</q>
-            <br /><cite>{{ this.data.synopsis.quote_credit }}</cite>
-            <br />
-            <br />
-
-            <strong>{{ this.data.synopsis.paragraph_context }}</strong
-            ><br />
-            {{ this.data.synopsis.preview }}
-          </h5>
-          <button
-            style="border-bottom: 4px solid var(--white)"
-            class="swiper"
-            @click="show()"
+    <!-- iterate through data.books -->
+    <div v-if="this.data">
+      <div v-for="(book, index) in this.data.books" :key="book.id">
+        <section :key="book.id" id="synopsis" ref="bookSection">
+          <!-- row reverse every odd element -->
+          <div
+            class="full_bio_container d-flex justify-space-between align-items-center"
+            :class="index % 2 === 0 ? 'row-reverse' : ''"
           >
-            <span class="swiper_text">View synopsis</span>
-          </button>
-          <Buy />
-          <h5
-            style="font-weight: bold; color: var(--crimson)"
-            class="author_bio_body"
-          >
-            NOW AVAILABLE ON AMAZON
-          </h5>
-        </div>
-      </div>
+            <img
+              :src="require(`@/assets/${book.img}.jpg`)"
+              data-aos="fade-left"
+              style="width: auto"
+              class="author_image"
+            />
 
-      <modal
-        :adaptive="true"
-        :minHeight="1400"
-        :minWidth="800"
-        height="auto"
-        :scrollable="true"
-        name="synopsis-modal"
-        classes="modal-mobile"
-      >
-        <article v-if="this.data" class="synopsis_contain">
-          <div slot="top-right">
-            <button @click="$modal.hide('synopsis-modal')">❌</button>
+            <div
+              data-aos="fade-right"
+              style="width: 85%"
+              class="author_bio_text"
+            >
+              <h2 class="author_bio_title">{{ book.title }}</h2>
+              <h5 class="author_bio_body">
+                <q>{{ book.quote }}</q>
+                <br /><cite>{{ book.quote_credit }}</cite>
+                <br />
+                <br />
+
+                <strong>{{ book.paragraph_context }}</strong
+                ><br />
+                {{ book.preview }}
+              </h5>
+              <button
+                v-if="book.show_synopsis"
+                style="border-bottom: 4px solid var(--white)"
+                class="swiper"
+                @click="show()"
+              >
+                <span class="swiper_text">View synopsis</span>
+              </button>
+              <Buy :options="book.buy" />
+              <h5
+                style="font-weight: bold; color: var(--crimson)"
+                class="author_bio_body"
+              >
+                NOW AVAILABLE ON AMAZON
+              </h5>
+            </div>
           </div>
-          <h1>Synopsis</h1>
-          <br />
 
-          <p>
-            <strong>{{ this.data.synopsis.paragraph_context }}</strong>
-            {{ this.data.synopsis.full_part_1 }}
-          </p>
+          <modal
+            :adaptive="true"
+            :minHeight="1400"
+            :minWidth="800"
+            height="auto"
+            :scrollable="true"
+            name="synopsis-modal"
+            classes="modal-mobile"
+          >
+            <article v-if="book.show_synopsis" class="synopsis_contain">
+              <div slot="top-right">
+                <button @click="$modal.hide('synopsis-modal')">❌</button>
+              </div>
+              <h1>Synopsis</h1>
+              <br />
 
-          <p>
-            <strong>{{ this.data.synopsis.later }}</strong>
-            {{ this.data.synopsis.full_part_2 }}
-          </p>
-        </article>
-      </modal>
-    </section>
+              <p>
+                <strong>{{ book.paragraph_context }}</strong>
+                {{ book.full_part_1 }}
+              </p>
+
+              <p>
+                <strong>{{ book.later }}</strong>
+                {{ book.full_part_2 }}
+              </p>
+            </article>
+          </modal>
+        </section>
+      </div>
+    </div>
+
     <br /><br />
     <Divider />
     <h2 data-aos="fade-up" class="author_bio_title">Gallery</h2>
@@ -147,7 +161,7 @@
     <section v-if="this.data" data-aos="fade-up" id="book_images">
       <div id="example">
         <carousel-3d
-          :startIndex="11"
+          :startIndex="0"
           :width="400"
           :height="400"
           :inverse-scaling="1500"

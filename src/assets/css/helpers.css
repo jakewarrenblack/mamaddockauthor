@@ -68,6 +68,24 @@
   clip-path: polygon(0 0, 100% 0, 100% 52%, 23% 100%, 0 78%);
 }
 
+.clip_corners {
+  clip-path: polygon(
+    18px 19px,
+    6.98% 0%,
+    55.52% 0%,
+    91.56% 0%,
+    94.79% 13px,
+    99.97% 5.44%,
+    99.5% 93.27%,
+    96.33% 96.55%,
+    93.02% 99.76%,
+    7.6% 99.98%,
+    17px 95.22%,
+    0% 93.27%,
+    0% 6.32%
+  );
+}
+
 .w-100 {
   width: 100%;
 }
@@ -102,6 +120,10 @@
   .clip_towards_right_pointed_bottom {
     clip-path: unset;
   }
+
+  .clip_corners {
+    clip-path: unset;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -112,6 +134,10 @@
     clip-path: unset;
   }
   .clip_towards_right_pointed_bottom {
+    clip-path: unset;
+  }
+
+  .clip_corners {
     clip-path: unset;
   }
 }

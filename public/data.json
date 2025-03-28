@@ -10,19 +10,88 @@
   },
   "bio": {
     "title": "About the author",
-    "content": "Asking an Irish person to write a 'few' words about themselves is, putting it mildly, almost impossible! But, here goes. My name is Miriam and I was born and raised in Dublin, Ireland. I'm lucky to live near the sea as well as my local historical park (St. Anne's, Raheny/Clontarf) where I love to go for long walks with my dog, Sherlock—one very clever Beagle (seriously, it's like living with Einstein!).\n\nHaving dabbled in other 'interests' over the years (I won't bore you), in the background, however, I was always an avid reader, with words constantly floating around in my mind yet doing nothing about them—in a literary sense. I used to always say, 'One day, I'll write that book!' But never seemed to get around to doing it. I think the mere thought of putting those words—along with my imagination—to literary use, was daunting, therefore, always putting it off. That is, until 2011 when I finally took the plunge and picked up that pen and notebook (still have them, too!). I began to string those words into sentences, then paragraphs, then pages, eventually joining them together to create my first novel—The Sixth Amulet - Book One. Then my imagination had other plans; it didn't want to stop at just one. Why would it? And so, one novel turned into two, then three, then … Who knows where it will end?\n\nI believe everyone has a story to tell, a potential book tucked away inside them, dying to get out. And all that's needed to create it, is a simple recipe: a pen and a notebook. So, open your mind and let your imagination roam through the endless possibilities it has to offer … then simply write!",
+    "content": "Asking an Irish person to write a ‘few’ words about themselves is, to put it mildly, almost impossible! But, here goes … My name is Miriam, and I was born and raised in Dublin, Ireland. Having dabbled in other “interests” over the years (I won’t bore you), in the background, however, I was always an avid reader, with words constantly floating around in my mind yet doing nothing about them—in a literary sense. I always said I’d write a book, but never seemed to get around to it. I think the mere thought of putting those words—along with my imagination—to literary use was daunting, thus always putting it off. That is, until 2011. After doing several writing courses, I finally took the plunge and picked up that pen and notebook (still have them, too!). I began to string those words into sentences, which evolved into paragraphs, eventually filling the pages of what would become my first novel—The Sixth Amulet – Book One. Everyone has a story to tell—a potential book tucked away inside them, just dying to get out. All that’s needed to create it is a simple recipe: a pen and a notebook. So, open your mind and let your imagination roam through the endless possibilities it has … and then write! I hope you enjoyed A Flutter on the Wind. I am currently in the throes of writing book four (untitled). But big books do take time to write, especially when “life” gets in the way. So, do bear with me. In the meantime, and if you’re inclined, the Audiobooks of The Sixth Amulet and The Moon Chasers (Book Two) are available now. All books and audiobooks are available via the links provided. Finally, I want to thank you for your ongoing support. It is much appreciated—more than you know.",
     "splitAfter": { "numberInt": "24" }
   },
-  "synopsis": {
-    "title": "The Sixth Amulet",
-    "quote_credit": "Lothian",
-    "quote": "In the realm of my soul, I believe him to be a great Ruler.",
-    "paragraph_context": "Scotland: 1564",
-    "preview": "Deep within the bowels of Elboru, it waits—an immense force—locked inside a sacred stone, destined to give its bearer the power to be a formidable Ruler. It belongs to just one—the Magus—Lord of all Warlocks—and he belongs to it. But the world of mortals has been overshadowed by a menace: an evil entity that would have it to dominate and destroy all that is good. And yet, all is not lost. From within this stone, a light is about to re-ignite by innocence, instilling hope into the hearts of those who would risk everything, to see it placed in the hands of the chosen one—to see it shine beyond the darkness.",
-    "full_part_1": "Oran Shaw is no ordinary man: a Warlock, determined to leave his lengthy past behind, he disregards his elders, choosing to live a normal life among mortals … until he crosses paths with Kristene—a young, innocent woman, wrongfully accused of witchcraft. He feels compelled to rescue her from her death sentence. It is an act he would later regret.\n\nTogether, they flee to a new life, settling in Triora—Italy. But life alters when a sinister rival from Oran's past—Magia Nera, a dark Warlock—discovers them. He secretly manipulates Kristene, luring her away from Oran, bitterly ending their relationship. However, his interference eventually forces the three to go their separate ways.",
-    "later": "Four decades later:",
-    "full_part_2": "Oran has returned to Scotland, where he meets Rosalyn, a young widow with a baby. They marry and settle in the small village of Balloch, near the shores of Lac Lomond. At last, Oran feels content, living a normal and peaceful life with his new family. But when Rosalyn bears him a son, Gillis, life changes utterly for the reluctant Warlock.\n\nOran's past creeps up on him in the form of a Sorceress, named L'Ordana. He recognises her as Kristene, and there is an element of evil inside her. She is not alone and wants something from him: the location of a powerful amulet—the Shenn. Aware his son is destined to rule over the precious item, Oran vows to protect him … no matter what! Bound by duty, he is forced by his “council”—the Elliyan—to seek out the Sorceress and destroy her. Oran, however, is torn between their past and the present. But, when they come face to face, the Warlock unexpectedly finds himself as her prisoner.\n\nOver time, he allies with three unlikely characters, to help him escape; they are not what they seem. Half-human—half Vampire, the three Dhampir, Reece (a Soldier), Asai (a Samurai), and Tam (a Highlander), are also L'Ordana's prisoners—through no fault of their own. They, too, want freedom and their mortality restored. Therefore, Oran makes a bargain with them: in exchange for their freedom, they find and protect his son. With many lives at stake, and time running out, a twist of fate then turns the table on them all, when Reece makes a shocking discovery …"
-  },
+  "books": [
+    {
+      "title": "The Sixth Amulet",
+      "img": "sixth_amulet",
+      "quote_credit": "Lothian",
+      "quote": "In the realm of my soul, I believe him to be a great Ruler.",
+      "paragraph_context": "Scotland: 1564",
+      "preview": "Deep within the bowels of Elboru, it waits—an immense force—locked inside a sacred stone, destined to give its bearer the power to be a formidable Ruler. It belongs to just one—the Magus—Lord of all Warlocks—and he belongs to it. But the world of mortals has been overshadowed by a menace: an evil entity that would have it to dominate and destroy all that is good. And yet, all is not lost. From within this stone, a light is about to re-ignite by innocence, instilling hope into the hearts of those who would risk everything, to see it placed in the hands of the chosen one—to see it shine beyond the darkness.",
+      "show_synopsis": true,
+      "full_part_1": "Oran Shaw is no ordinary man: a Warlock, determined to leave his lengthy past behind, he disregards his elders, choosing to live a normal life among mortals … until he crosses paths with Kristene—a young, innocent woman, wrongfully accused of witchcraft. He feels compelled to rescue her from her death sentence. It is an act he would later regret.\n\nTogether, they flee to a new life, settling in Triora—Italy. But life alters when a sinister rival from Oran's past—Magia Nera, a dark Warlock—discovers them. He secretly manipulates Kristene, luring her away from Oran, bitterly ending their relationship. However, his interference eventually forces the three to go their separate ways.",
+      "later": "Four decades later:",
+      "full_part_2": "Oran has returned to Scotland, where he meets Rosalyn, a young widow with a baby. They marry and settle in the small village of Balloch, near the shores of Lac Lomond. At last, Oran feels content, living a normal and peaceful life with his new family. But when Rosalyn bears him a son, Gillis, life changes utterly for the reluctant Warlock.\n\nOran's past creeps up on him in the form of a Sorceress, named L'Ordana. He recognises her as Kristene, and there is an element of evil inside her. She is not alone and wants something from him: the location of a powerful amulet—the Shenn. Aware his son is destined to rule over the precious item, Oran vows to protect him … no matter what! Bound by duty, he is forced by his “council”—the Elliyan—to seek out the Sorceress and destroy her. Oran, however, is torn between their past and the present. But, when they come face to face, the Warlock unexpectedly finds himself as her prisoner.\n\nOver time, he allies with three unlikely characters, to help him escape; they are not what they seem. Half-human—half Vampire, the three Dhampir, Reece (a Soldier), Asai (a Samurai), and Tam (a Highlander), are also L'Ordana's prisoners—through no fault of their own. They, too, want freedom and their mortality restored. Therefore, Oran makes a bargain with them: in exchange for their freedom, they find and protect his son. With many lives at stake, and time running out, a twist of fate then turns the table on them all, when Reece makes a shocking discovery …",
+      "buy": [
+        {
+          "name": "Hatchards of London",
+          "link": "https://www.hatchards.co.uk/book/the-sixth-amulet/miriam-a-maddock/9781739744908"
+        },
+        {
+          "name": "Waterstones",
+          "link": "https://www.waterstones.com/book/the-sixth-amulet/miriam-a-maddock/9781739744908"
+        },
+        {
+          "name": "Blackwells UK",
+          "link": "https://blackwells.co.uk/bookshop/product/The-Sixth-Amulet--An-epic-historical-fantasy-by-Maddock-Miriam-A/9781739744908"
+        },
+        {
+          "name": "Barnes & Noble",
+          "link": "https://www.barnesandnoble.com/w/the-sixth-amulet-miriam-a-maddock/1142332759?ean=9781739744908"
+        },
+        {
+          "name": "Awesome Books",
+          "link": "https://www.awesomebooks.com/book/9781739744908/the-sixth-amulet"
+        },
+        {
+          "name": "Audible",
+          "link": "https://www.audible.co.uk/pd/The-Sixth-Amulet-Audiobook/B0CSPTWPSW?eac_link=gWNXhwv8ba4x&amp;ref=web_search_eac_asin_1&amp;eac_selected_type=asin&amp;eac_selected=B0CSPTWPSW&amp;qid=6ZiB3AVEvh&amp;eac_id=257-7577380-8936214_6ZiB3AVEvh&amp;sr=1-1"
+        },
+        {
+          "name": "Amazon",
+          "link": "https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy-ebook/dp/B0BG8T8ZCN?ref_=ast_author_dp"
+        }
+      ]
+    },
+    {
+      "title": "The Moon Chasers",
+      "img": "moon_chasers",
+      "quote_credit": "Eilidh Stiúbhar - Seanchaidh á Peairt",
+      "quote": "She awakens beneath the inky depths, stirred by the moon’s ghostly hue as it moves, spreading her curse across the water; it shimmers and reaches down to her, through the gloom. Her eyes open, touched by it. Like a black split in wood, her mouth moves to a smile, and she rises—the call of death seducing her as she breaks the surface...",
+      "paragraph_context": "Scotland: 1630",
+      "preview": "Having accepted his fate, Gillis Shaw embarks on his journey towards an unknown future that will dramatically change his life. But the would-be Magus knows he is not yet prepared for the monumental role that awaits him. With his sister, Eleanor, still missing, his journey becomes increasingly challenging, altering the precious time he has left to reach Elboru and claim what his rightfully his: the Shenn amulet. But Gill is not alone … With his protectors, Reece, Asai, Tam and Kai, by his side, he is determined to rescue Eleanor first. But events are about to take a dramatic turn when they meet Daine, a Highland guide with his own agenda. This crossing of paths throws chaos on their desperate task when  they realise, they have yet to face the treacherous Cordhu Pass.",
+      "show_synopsis": false,
+      "buy": [
+        {
+          "name": "Amazon",
+          "link": "https://www.amazon.co.uk/Moon-Chasers-Book-Sixth-Amulet-ebook/dp/B0C94LJY9Z?ref_=ast_author_dp"
+        },
+        {
+          "name": "Audible",
+          "link": "https://www.audible.co.uk/pd/The-Moon-Chasers-Audiobook/B0F1NKPDF4?eac_link=ViEoQemAb2DD&amp;ref=web_search_eac_asin_1&amp;eac_selected_type=asin&amp;eac_selected=B0F1NKPDF4&amp;qid=RZcJJ9dAQe&amp;eac_id=257-7577380-8936214_RZcJJ9dAQe&amp;sr=1-1"
+        }
+      ]
+    },
+    {
+      "title": "A Flutter on the Wind",
+      "img": "flutter_on_the_wind",
+      "quote_credit": "Lumeri",
+      "quote": "I give you this place—this haven—the heart of Elboru, and I shall call it, The Great Hall of Eminence. It is the ethos of who we are and will remain so for as long as the universe exists. Here, only peace shall dwell alongside the spirits of the great ones who, when time dictates, will glorify within the sanctity of its solitude, for eternity. Together, they will silently reign inside its grandeur while quietly watching those who will follow after and carry on our traditions. But take heed … do not let the stain of evil mark this sacred place – for sacred it is … and shall remain so, henceforth.",
+      "paragraph_context": "Scotland: 1630",
+      "preview": "Still reeling from the turbulent events at the accursed Cordhu Pass, Gill and his companions press on in their search of his sister, Eleanor, who remains L’Ordana’s prisoner. But Elboru beckons the would-be Magus, who must heed the calling. However, when Gill faces a near- to-impossible task at the volatile Paths of Lome, an unexpected and life-threatening twist of fate changes everything …",
+      "show_synopsis": false,
+      "buy": [
+        {
+          "name": "Amazon",
+          "link": "https://www.amazon.co.uk/Flutter-Wind-historical-fantasy-Amulet-ebook/dp/B0DFQ76RXX?ref_=ast_author_dp"
+        }
+      ]
+    }
+  ],
+
   "balloch": {
     "heading1": "Balloch Castle",
     "p1": "Yes, it exists!\n\nMany people have asked me; “Why Scotland? And why Balloch?” Well, it was on my first trip there (around 2005) while visiting good friends, when I fell in love with the place. Always the perfect hosts, whenever I visit, Billy, Ciara and Megan are lucky to live a stone's throw from Balloch Castle, on the stunning shores of Loch Lomond (definitely worth a visit if you happen to be passing through). It is truly a beautiful location. And when the sun shines … Glorious! So, naturally, it inspired me to use it as the backdrop for The Sixth Amulet. It simply felt right. And, who knows, maybe I'll retire there … one day.",

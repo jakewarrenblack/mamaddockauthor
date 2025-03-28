@@ -1,27 +1,14 @@
 <template>
-  <div class="container">
+  <div>
     <button class="buy-button" @click="expand()">Buy Now</button>
-    <div ref="buyButton" class="buy-buttons">
-      <a
-        href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy-ebook/dp/B0BG8T8ZCN/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
-        ><button class="buy-button">Kindle</button></a
-      >
-      <a
-        href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy/dp/1739744926/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
-        ><button class="buy-button">Hardback</button></a
-      >
-      <a
-        href="https://www.amazon.co.uk/Sixth-Amulet-epic-historical-fantasy/dp/173974490X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1664559617&sr=8-1"
-        ><button class="buy-button">Softback</button></a
-      >
-      <a
-        href="https://www.bookdepository.com/The-Sixth-Amulet-Miriam-Maddock/9781739744908"
-        ><button class="buy-button">Book Depository</button></a
-      >
-      <a
-        href="https://www.goodreads.com/book/show/62695806-the-sixth-amulet?ac=1&from_search=true&qid=XYsCzR4I31&rank=1"
-        ><button class="buy-button">Goodreads</button></a
-      >
+    <div v-if="this.options" class="container">
+      <div v-for="option in this.options" :key="option.link">
+        <div ref="buyButton" class="buy-buttons">
+          <a href="option.link"
+            ><button class="buy-button">{{ option.name }}</button></a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -29,6 +16,12 @@
 <script>
 export default {
   name: "Buy",
+  props: {
+    options: {
+      type: Array,
+      default: () => [],
+    },
+  },
   components: {},
   data() {
     return { drawerOpen: false, counter: 0 };
@@ -36,13 +29,16 @@ export default {
   mounted() {},
   methods: {
     expand() {
-      if (this.counter % 2 == 0) {
-        this.$refs.buyButton.classList.remove("fadeSlideB");
-        this.$refs.buyButton.classList.add("fadeSlideF");
-      } else {
-        this.$refs.buyButton.classList.remove("fadeSlideF");
-        this.$refs.buyButton.classList.add("fadeSlideB");
-      }
+      // Loop through all the buyButton refs
+      this.$refs.buyButton.forEach((button) => {
+        if (this.counter % 2 === 0) {
+          button.classList.remove("fadeSlideB");
+          button.classList.add("fadeSlideF");
+        } else {
+          button.classList.remove("fadeSlideF");
+          button.classList.add("fadeSlideB");
+        }
+      });
       this.counter++;
     },
   },
@@ -53,8 +49,13 @@ export default {
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 80%;
+  flex-wrap: wrap;
+}
+
+.container div {
+  padding: 1rem 1rem 1rem 0;
 }
 
 .buy-buttons {
@@ -73,7 +74,6 @@ export default {
 }
 
 .buy-buttons button {
-  margin: auto 2rem;
   font-family: "STIXTwo";
 }
 
@@ -83,6 +83,7 @@ export default {
   font-family: "STIXTwo";
   min-width: 8rem;
   min-height: 5rem;
+  padding-left: 0;
 }
 
 .buy-button {
@@ -96,6 +97,7 @@ export default {
   border: 2px solid var(--crimson);
   background: transparent;
   height: 100%;
+  padding: 0 1rem;
 }
 
 button:hover {

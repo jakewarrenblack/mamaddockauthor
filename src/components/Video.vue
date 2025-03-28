@@ -3,9 +3,10 @@
     class="img_contain"
     :elementId="'header-background-video'"
     :ref="'header-background-video'"
-    :mp4Source="require('@/assets/trailer_web.mp4')"
-    :posterSource="require('@/assets/trailer_placeholder.webp')"
+    :mp4Source="require('@/assets/trailer_2025.mp4')"
+    :posterSource="require('@/assets/placeholder_2025.png')"
     :mobileBreakpoint="762"
+    :desktopWidth="1920"
     :desktopHeight="850"
     :mobileHeight="450"
     :playsinline="true"
@@ -16,9 +17,9 @@
   >
     <div slot="overlay-content" id="overlay-content" class="overlay-content">
       <h4 id="video_title" class="two-rem STIXTwo" @click="playVideo()">
-        The new revised edition
+        Book two of The Sixth Amulet series
       </h4>
-      <h2 id="video_subtitle" class="four-rem STIXTwo">The Sixth Amulet</h2>
+      <h2 id="video_subtitle" class="four-rem STIXTwo">The Moon Chasers</h2>
       <button
         id="video_button"
         class="swiper"
