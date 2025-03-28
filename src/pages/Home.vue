@@ -94,8 +94,8 @@
               class="author_bio_text"
             >
               <h2 class="author_bio_title">{{ book.title }}</h2>
-              <h5 class="author_bio_body">
-                <q>{{ book.quote }}</q>
+              <h5 v-if="book.type != 'audiobook'" class="author_bio_body">
+                <q>{{ book?.quote }}</q>
                 <br /><cite>{{ book.quote_credit }}</cite>
                 <br />
                 <br />
@@ -113,12 +113,26 @@
                 <span class="swiper_text">View synopsis</span>
               </button>
               <Buy :options="book.buy" />
-              <h5
-                style="font-weight: bold; color: var(--crimson)"
-                class="author_bio_body"
-              >
-                NOW AVAILABLE ON AMAZON
-              </h5>
+
+              <div class="audio_container" v-if="book.type == 'audiobook'">
+                <h5
+                  style="
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    color: var(--crimson);
+                    font-family: 'stixTwo';
+                    margin-top: 0;
+                  "
+                >
+                  Hear a sample:
+                </h5>
+
+                <audio
+                  class="audio_player"
+                  controls
+                  :src="require(`@/assets/audio_samples/${book.sample}.mp3`)"
+                ></audio>
+              </div>
             </div>
           </div>
 
@@ -191,6 +205,75 @@
     <section v-if="this.data" data-aos="fade-up" id="reviews">
       <div class="quotation_container"></div>
       <MySwiper :slides="this.data.reviews" />
+    </section>
+
+    <br /><br />
+    <Divider />
+    <h2 data-aos="fade-up" class="author_bio_title">Acknowledgements</h2>
+    <br /><br />
+    <Divider />
+    <br />
+
+    <section data-aos="fade-up" id="acknowledgements">
+      <h1 data-aos="fade-up" class="author_name narrator_name">
+        J Dallon Taylor
+      </h1>
+      <h2>About the Narrator</h2>
+      <div class="narrator_bio_container">
+        <img
+          class="acknowledgements_image"
+          alt="Acknowledgements"
+          :src="require('@/assets/man.jpg')"
+        />
+        <p class="narrator_bio_body">
+          Born and raised in Alberta, Canada, J Dallin Taylor grew up with a
+          natural flair for performing. He would often act out his favourite
+          scenes from film and TV—a passion that has not changed. Through hard
+          work and dedication, he progressed from supporting to leading roles in
+          his grade school theatre productions. This would lead to Dallin being
+          awarded multiple awards for acting during his senior year. Dallin
+          eventually found his way to Audible where he began auditioning as an
+          audiobook narrator.
+          <br /><br />
+          This is where his path crossed with author, M. A. Maddock. After a
+          rigorous audition, he landed the job, taking on the mammoth task of
+          elevating her fantasy fiction novels to another level, by bringing her
+          misfit of characters to “life”. Maddock’s Sixth Amulet Series is
+          currently an ongoing project, which Dallin describes as a “Labour of
+          love” – and for which Maddock sings his praises; “I could not be
+          happier with what Dallin has done with my characters. He’s truly a
+          gifted actor.” Dallin is also an accomplished screenwriter and is
+          currently in the process of submitting his latest venture, After
+          Eden—a post society Sc-Fi—co-written with fellow screenwriter, Scott
+          Biggs, to production companies.
+        </p>
+      </div>
+
+      <div class="final_acknowledgements_container">
+        <h2>Final Acknowledgements</h2>
+        <ul class="acknowledgements_list">
+          <li>
+            <span style="color: var(--crimson); padding: 0.25rem">*</span>Book
+            Cover design by Diana Toledo Calcado – Triumph Book Covers
+          </li>
+          <li>
+            <span style="color: var(--crimson); padding: 0.25rem">*</span>Cover
+            illustrations by Tegan Sommers – Artist
+          </li>
+          <li>
+            <span style="color: var(--crimson); padding: 0.25rem">*</span
+            >Interior illustrations by Geraldine O’Malley – Artist
+          </li>
+          <li>
+            <span style="color: var(--crimson); padding: 0.25rem">*</span>Maps
+            by Lewis Hickson – Cartographer – Fantasy Maps
+          </li>
+          <li>
+            <span style="color: var(--crimson); padding: 0.25rem">*</span
+            >Website by my “Wee Master of the Web” – Jake Warren Black
+          </li>
+        </ul>
+      </div>
     </section>
 
     <br /><br />

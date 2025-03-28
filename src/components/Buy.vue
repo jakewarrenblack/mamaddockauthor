@@ -1,10 +1,10 @@
 <template>
   <div>
-    <button class="buy-button" @click="expand()">Buy Now</button>
+    <!-- <button class="buy-button" @click="expand()">Buy Now</button> -->
     <div v-if="this.options" class="container">
       <div v-for="option in this.options" :key="option.link">
-        <div ref="buyButton" class="buy-buttons">
-          <a href="option.link"
+        <div ref="buyButton">
+          <a target="_blank" :href="option.link"
             ><button class="buy-button">{{ option.name }}</button></a
           >
         </div>
@@ -55,7 +55,7 @@ export default {
 }
 
 .container div {
-  padding: 1rem 1rem 1rem 0;
+  padding: 0rem 0.75rem 0.5rem 0;
 }
 
 .buy-buttons {
@@ -73,17 +73,11 @@ export default {
   animation: fadeSlideB 0.5s ease-in-out backwards;
 }
 
-.buy-buttons button {
-  font-family: "STIXTwo";
-}
-
 .buy-button {
   font-size: 1.4rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 0.5rem;
   font-family: "STIXTwo";
-  min-width: 8rem;
-  min-height: 5rem;
-  padding-left: 0;
+  border-radius: 0.25rem;
 }
 
 .buy-button {
@@ -93,11 +87,7 @@ export default {
 }
 
 .buy-buttons button {
-  color: var(--white);
   border: 2px solid var(--crimson);
-  background: transparent;
-  height: 100%;
-  padding: 0 1rem;
 }
 
 button:hover {
