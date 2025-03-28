@@ -7,14 +7,6 @@
         <h3>M.A. MADDOCK</h3>
       </div>
       <div class="socials d-flex justify-space-around">
-        <a target="_blank" href="https://twitter.com/mamaddock1_a">
-          <div class="icon_contain">
-            <img
-              class="social_icon"
-              :src="require('@/assets/social_icons/icons_twitter.svg')"
-            />
-          </div>
-        </a>
         <a target="_blank" href="https://www.instagram.com/ma.maddock_author">
           <div class="icon_contain">
             <img
@@ -71,7 +63,7 @@ footer {
 }
 
 .socials {
-  width: 25%;
+  width: 10%;
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -90,6 +82,10 @@ footer {
 @media only screen and (max-width: 767px) {
   .footer_contain {
     margin-top: 0rem;
+  }
+
+  .socials {
+    width: 25%;
   }
 }
 </style>
