@@ -100,8 +100,22 @@ button:hover {
     width: 100%;
   }
 
+  .acknowledgements_list ul li {
+    font-size: 0;
+    display: none;
+  }
+
+  .container div {
+    padding-right: 0;
+  }
+
   .fadeSlideB {
     display: none;
+  }
+
+  .buy-button {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 
   .buy-buttons {

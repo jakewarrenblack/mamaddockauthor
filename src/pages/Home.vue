@@ -78,7 +78,6 @@
         <section :key="book.id" id="synopsis" ref="bookSection">
           <!-- row reverse every odd element -->
           <div
-            style="margin: 0 2rem"
             class="full_bio_container d-flex justify-space-between align-items-center"
             :class="index % 2 === 0 ? 'row-reverse' : ''"
           >
@@ -270,7 +269,7 @@
           </li>
           <li>
             <span style="color: var(--crimson); padding: 0.25rem">*</span
-            >Website by my “Wee Master of the Web” – Jake Warren Black
+            >Website by my “Wee Master of the Web” – Jake Black
           </li>
         </ul>
       </div>

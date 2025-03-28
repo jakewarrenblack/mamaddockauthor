@@ -707,6 +707,14 @@ textarea:focus-visible {
 }
 
 @media only screen and (max-width: 767px) {
+  .audio_player {
+    width: 100%;
+  }
+
+  .narrator_bio_body {
+    width: 80%;
+  }
+
   .author_image {
     width: 100%;
     height: auto !important;
