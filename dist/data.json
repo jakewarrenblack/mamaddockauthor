@@ -152,15 +152,15 @@
   "slides": [
     {
       "img": 0,
-      "caption": "The lotus flower - engraved on Asai Nara's Katana sword."
+      "caption": "'Bruce' The Stag. Illustrated by Tegan Sommers."
     },
     {
       "img": 1,
-      "caption": "The Kelpie - a Scottish mythical creature."
+      "caption": "Butterfly 'Ayumi's Spirit' Illustrated by Tegan Sommers"
     },
     {
       "img": 2,
-      "caption": "fictional map of the lower Highlands - circa late 1500's early 1600's - by Lewis Hickson - Instagram    fantasy_map_cartographer"
+      "caption": "The lotus flower - engraved on Asai Nara's Katana sword."
     },
     {
       "img": 3,
@@ -168,25 +168,33 @@
     },
     {
       "img": 4,
-      "caption": "Scottish dirk (dagger) belonging to Eleanor Shaw."
+      "caption": "fictional map of the lower Highlands - circa late 1500's early 1600's - by Lewis Hickson - Instagram    fantasy_map_cartographer"
     },
     {
       "img": 5,
-      "caption": "Oran Shaw's coffer (chest) - contains hidden secrets from his past."
+      "caption": "The Kelpie - a Scottish mythical creature."
     },
     {
       "img": 6,
+      "caption": "Scottish dirk (dagger) belonging to Eleanor Shaw."
+    },
+    {
+      "img": 7,
+      "caption": "Oran Shaw's coffer (chest) - contains hidden secrets from his past."
+    },
+    {
+      "img": 8,
       "caption": "The Shaw crest (broach) - made from solid silver. Oran had this made especially for himself, to give him a sense of 'belonging', linking him to his ancestors who were of Pictish origin."
     },
-    { "img": 7, "caption": "The Arezzo Mirror." },
-    { "img": 8, "caption": "The Window." },
-    {
-      "img": 9,
-      "caption": "Sherlock - always by my side."
-    },
-    { "img": 10, "caption": "My \"Little nose on legs\"" },
+    { "img": 9, "caption": "The Arezzo Mirror." },
+    { "img": 10, "caption": "The Window." },
     {
       "img": 11,
+      "caption": "Sherlock - always by my side."
+    },
+    { "img": 12, "caption": "My \"Little nose on legs\"" },
+    {
+      "img": 13,
       "caption": "Sherlock, Forever In My Heart"
     }
   ],
