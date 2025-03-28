@@ -25,7 +25,7 @@
         </a>
       </div>
       <!-- copyright notice -->
-      &copy; Copyright M.A. Maddock 2022
+      &copy; Copyright M.A. Maddock {{ this.getYears(2022).join(", ") }}
     </footer>
   </div>
 </template>
@@ -37,7 +37,19 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    getYears(from) {
+      const current = new Date().getFullYear();
+      const years = [];
+
+      for (var i = from; i <= current; i++) {
+        years.push(i);
+      }
+
+      return years;
+    },
+  },
+
   mounted() {},
 };
 </script>
