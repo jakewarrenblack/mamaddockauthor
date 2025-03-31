@@ -359,9 +359,7 @@
 
         <b
           >*For film and TV enquiries:
-          <a href="mailto:mamaddockauthor@gmail.com"
-            >mamaddockauthor@gmail.com</a
-          >
+          <a href="mailto:mamaddock1@gmail.com">mamaddock1@gmail.com</a>
         </b>
       </div>
 
