@@ -356,6 +356,13 @@
             Submit
           </button>
         </form>
+
+        <b
+          >*For film and TV enquiries:
+          <a href="mailto:mamaddockauthor@gmail.com"
+            >mamaddockauthor@gmail.com</a
+          >
+        </b>
       </div>
 
       <Footer />

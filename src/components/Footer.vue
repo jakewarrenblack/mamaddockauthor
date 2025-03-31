@@ -24,6 +24,11 @@
           </div>
         </a>
       </div>
+      <b style="margin-bottom: 1rem"
+        >Note: These books were written and narrated by humans and not AI. Meta,
+        or any organisation, does not have the right to use this author's work
+        for the purpose of AI training.</b
+      >
       <!-- copyright notice -->
       &copy; Copyright M.A. Maddock {{ this.getYears(2022).join(", ") }}
     </footer>
