@@ -847,3 +847,13 @@ textarea:focus-visible {
     height: unset;
   }
 }
+
+
+.imporantNoteQuote{
+  margin-top:2rem;
+  font-style:italic;
+}
+
+.no-pre-line{
+  white-space: inherit;
+}

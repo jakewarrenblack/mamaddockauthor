@@ -43,33 +43,24 @@
             </span>
             <span id="contentMore">{{ this.bioFull }}</span>
           </p>
+
+          <!-- AI quote piece-->
+           <div>
+            <b>An Important Note: </b>
+            <span>{{ this.data.bio.importantNote }}</span>
+            <br/>
+            <blockquote class="imporantNoteQuote">{{ this.data.bio.quote }}</blockquote>
+            <span>- M.A. Maddock – Author</span>
+          </div>
+
         </div>
         <button id="readMore" @click="readMore()" class="swiper">
           Read more
         </button>
       </div>
-    </section>
+    </section>    
 
     <br /><br />
-    <Divider />
-    <h2
-      v-if="this.data"
-      data-aos="fade-up"
-      style="margin-top: 8rem"
-      class="author_bio_title"
-    >
-      {{ this.data.mail.title }}
-    </h2>
-    <!-- <hr style="max-width: 500px; margin: 2rem auto; color:var(--white)"/> -->
-    <div class="diamond" style="margin: 2rem auto; font-size: 2vh">♦</div>
-    <h4 v-if="this.data" style="font-family: 'STIXTwo">
-      {{ this.data.mail.desc }}
-    </h4>
-    <br /><br />
-    <section id="newsletter">
-      <!-- <ConvertKitForm v-bind="convertKitConfig" /> -->
-      <Mailerlite />
-    </section>
     <Divider />
 
     <!-- iterate through data.books -->
@@ -380,7 +371,6 @@ import Buy from "@/components/Buy";
 import * as THREE from "three";
 import Vanta from "vanta/dist/vanta.fog.min";
 import Flipbook from "flipbook-vue";
-import Mailerlite from "@/components/Mailerlite";
 import axios from "axios";
 
 // Flipbook pages
@@ -400,8 +390,7 @@ export default {
   components: {
     Buy,
     MySwiper,
-    Video,
-    Mailerlite,
+    Video,    
     Flipbook,
     Footer,
     Divider,

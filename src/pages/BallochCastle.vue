@@ -23,7 +23,7 @@
           data-aos="fade-up"
           class="author_bio_text margin-auto balloch_article_paragraph"
         >
-          <h5 class="author_bio_body">
+          <h5 class="author_bio_body no-pre-line">
             {{ this.data.balloch.p1 }}
           </h5>
         </div>
