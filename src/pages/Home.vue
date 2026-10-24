@@ -88,17 +88,19 @@
                 <q>{{ book?.quote }}</q>
                 <br /><cite>{{ book.quote_credit }}</cite>
                 <br />
-                <br />
 
                 <strong>{{ book.paragraph_context }}</strong
                 ><br />
                 {{ book.preview }}
               </h5>
+
+              
+
               <button
                 v-if="book.show_synopsis"
                 style="border-bottom: 4px solid var(--white)"
                 class="swiper"
-                @click="show()"
+                @click="show(index)"
               >
                 <span class="swiper_text">View synopsis</span>
               </button>
@@ -127,20 +129,25 @@
           </div>
 
           <modal
+            v-if="book.show_synopsis"
             :adaptive="true"
             :minHeight="1400"
             :minWidth="800"
             height="auto"
             :scrollable="true"
-            name="synopsis-modal"
+            :name="'synopsis-modal-' + index"
             classes="modal-mobile"
           >
             <article v-if="book.show_synopsis" class="synopsis_contain">
               <div slot="top-right">
-                <button @click="$modal.hide('synopsis-modal')">❌</button>
+                <button @click="hide(index)">❌</button>
               </div>
               <h1>Synopsis</h1>
               <br />
+
+              <div class="synopsis_html"  v-if="book.synopsis_html">
+                <div v-html="book.synopsis_html"></div>
+              </div>
 
               <p>
                 <strong>{{ book.paragraph_context }}</strong>
@@ -151,6 +158,9 @@
                 <strong>{{ book.later }}</strong>
                 {{ book.full_part_2 }}
               </p>
+
+
+
             </article>
           </modal>
         </section>
@@ -440,11 +450,11 @@ export default {
         this.bioPreview = this.data.bio.content;
       }
     },
-    show() {
-      this.$modal.show("synopsis-modal");
+    show(index) {
+      this.$modal.show(`synopsis-modal-${index}`);
     },
-    hide() {
-      this.$modal.hide("synopsis-modal");
+    hide(index) {
+      this.$modal.hide(`synopsis-modal-${index}`);
     },
     readMore() {
       // the full text
